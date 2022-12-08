@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import crypto from "crypto";
 import bcrypt from "bcrypt";
 
-const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/project-mongo";
+const mongoUrl = process.env.MONGO_URL || `mongodb+srv://Font:${process.env.STRING_PW}@cluster0.8xh88s6.mongodb.net/projectAuth?retryWrites=true&w=majority`;
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 
@@ -40,13 +40,13 @@ const User = mongoose.model("User", UserSchema);
 
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
-// npm install bcrypt
-// const code = [1, 2, 4, 4];
-// const makeCodeSecret = (codeArr) => {
-    // const secretMessage = codeArr.map(singleNumber => singleNumber + 1);
-    // return secretMessage
-//}
-// transformedCode = makeCodeSecret(code)
+  // npm install bcrypt
+  // const code = [1, 2, 4, 4];
+  // const makeCodeSecret = (codeArr) => {
+  // const secretMessage = codeArr.map(singleNumber => singleNumber + 1);
+  // return secretMessage
+  //}
+  // transformedCode = makeCodeSecret(code)
   try {
     const salt = bcrypt.genSaltSync();
     if (password.length < 8) {
@@ -55,7 +55,7 @@ app.post("/register", async (req, res) => {
         response: "Password must be at least 8 characters long"
       });
     } else {
-      const newUser = await new User({username: username, password: bcrypt.hashSync(password, salt)}).save();
+      const newUser = await new User({ username: username, password: bcrypt.hashSync(password, salt) }).save();
       res.status(201).json({
         success: true,
         response: {
@@ -65,11 +65,11 @@ app.post("/register", async (req, res) => {
         }
       });
     }
-  } catch(error) {
-      res.status(400).json({
-        success: false,
-        response: error
-      });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      response: error
+    });
   }
 });
 
@@ -77,7 +77,7 @@ app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const user = await User.findOne({username});
+    const user = await User.findOne({ username });
     if (user && bcrypt.compareSync(password, user.password)) {
       res.status(200).json({
         success: true,
@@ -104,7 +104,7 @@ app.post("/login", async (req, res) => {
 const authenticateUser = async (req, res, next) => {
   const accessToken = req.header("Authorization");
   try {
-    const user = await User.findOne({accessToken: accessToken});
+    const user = await User.findOne({ accessToken: accessToken });
     if (user) {
       next();
     } else {
@@ -127,31 +127,31 @@ const ThoughtSchema = new mongoose.Schema({
   },
   createdAt: {
     type: Date,
-    default: () => new Date() 
+    default: () => new Date()
   },
   hearts: {
     type: Number,
     default: 0
   }
-}); 
+});
 
 
 const Thought = mongoose.model("Thought", ThoughtSchema);
 
 app.get("/thoughts", authenticateUser);
-app.get("/thoughts", async (req, res)=> {
+app.get("/thoughts", async (req, res) => {
   const thoughts = await Thought.find({});
-  res.status(200).json({success: true, response: thoughts});
+  res.status(200).json({ success: true, response: thoughts });
 });
 
 app.post("/thoughts", authenticateUser)
 app.post("/thoughts", async (req, res) => {
   const { message } = req.body;
   try {
-    const newThought = await new Thought({message}).save();
-    res.status(201).json({success: true, response: newThought});
+    const newThought = await new Thought({ message }).save();
+    res.status(201).json({ success: true, response: newThought });
   } catch (error) {
-    res.status(400).json({success: false, response: error});
+    res.status(400).json({ success: false, response: error });
   }
 });
 
