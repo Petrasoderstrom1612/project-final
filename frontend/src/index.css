@@ -1,13 +1,181 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Roboto Mono', monospace;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* WRAPPERS */
+
+.outer-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-wrapper {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 30px;
+  align-items: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 100%;
+}
+
+/* USER INPUT CARD */
+
+.input {
+  row-gap: 15px;
+  background-color: rgb(240, 240, 240);
+}
+.input h1 {
+  margin: 0;
+  font-size: 14px;
+}
+
+textarea {
+  padding: 8px;
+  resize: none;
+  border: 1px solid rgb(162, 162, 162);
+  height: 50px;
+  word-wrap: break-word;
+}
+
+textarea:focus {
+  outline: none !important;
+  border: 1px solid pink;
+}
+
+/* THOUGHTS CARD */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 5px 5px;
+  row-gap: 10px;
+}
+
+.card p {
+  margin: 0;
+}
+
+.thoughts-text {
+  word-wrap: break-word;
+}
+
+.thoughts-likes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 5px;
+  color: grey;
+  font-size: 12px;
+  justify-content: space-between;
+}
+
+.likes-counter {
+  flex-grow: 2;
+}
+
+/* BUTTONS */
+
+.btn-like {
+  background-color: lightgrey;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-send-input {
+  background-color: pink;
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+  width: 70%;
+  cursor: pointer;
+}
+
+.btn-send-input:disabled {
+  background-color: lightgrey;
+  cursor: not-allowed;
+}
+
+.heart:after {
+  position: relative;
+  animation-name: heartonclick;
+  animation-duration: 0.4s;
+}
+
+@keyframes heartonclick {
+  0% {
+    bottom: 0px;
+    opacity: 80%;
+  }
+  20% {
+    bottom: 4px;
+    opacity: 60%;
+  }
+  40% {
+    bottom: 6px;
+    opacity: 40%;
+  }
+  60% {
+    bottom: 8px;
+    opacity: 20%;
+  }
+  80% {
+    bottom: 10px;
+    opacity: 0%;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+
+@media (min-width: 668px) and (max-width: 1023px) {
+  .inner-wrapper {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inner-wrapper {
+    width: 40%;
+  }
+
+  .btn-send-input {
+    width: 40%;
+  }
+
+  /*  .btn-like {
+    transition-duration: 0.1s;
+  } */
+  .btn-like:hover {
+    scale: 1.1;
+    background-color: pink;
+  }
 }
