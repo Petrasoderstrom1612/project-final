@@ -3,6 +3,9 @@ import cors from "cors";
 import mongoose from "mongoose";
 import crypto from "crypto";
 import bcrypt from "bcrypt";
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const mongoUrl = process.env.MONGO_URL || `mongodb+srv://Font:${process.env.STRING_PW}@cluster0.8xh88s6.mongodb.net/projectAuth?retryWrites=true&w=majority`;
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -17,7 +20,7 @@ const app = express();
 // Add middlewares to enable cors and json body parsing
 app.use(cors());
 app.use(express.json());
-/////// Monday
+
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -27,9 +30,7 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-    /// My_B4nK_P4$$word
   },
-  // npm install crypto
   accessToken: {
     type: String,
     default: () => crypto.randomBytes(128).toString("hex")
@@ -38,15 +39,15 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
+
+// Start defining your routes here
+app.get("/", (req, res) => {
+  res.send("Hello Technigo!");
+});
+
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
-  // npm install bcrypt
-  // const code = [1, 2, 4, 4];
-  // const makeCodeSecret = (codeArr) => {
-  // const secretMessage = codeArr.map(singleNumber => singleNumber + 1);
-  // return secretMessage
-  //}
-  // transformedCode = makeCodeSecret(code)
+
   try {
     const salt = bcrypt.genSaltSync();
     if (password.length < 8) {
@@ -68,7 +69,7 @@ app.post("/register", async (req, res) => {
   } catch (error) {
     res.status(400).json({
       success: false,
-      response: error
+      response: "The username is already in use"
     });
   }
 });
@@ -155,11 +156,6 @@ app.post("/thoughts", async (req, res) => {
   }
 });
 
-///////
-// Start defining your routes here
-app.get("/", (req, res) => {
-  res.send("Hello Technigo!");
-});
 
 // Start the server
 app.listen(port, () => {
