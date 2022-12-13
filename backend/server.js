@@ -42,7 +42,7 @@ const User = mongoose.model("User", UserSchema);
 
 // Start defining your routes here
 app.get("/", (req, res) => {
-  res.send("Hello Technigo!");
+  res.send("Hello girls!");
 });
 
 app.post("/register", async (req, res) => {
