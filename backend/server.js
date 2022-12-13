@@ -7,7 +7,7 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
-const mongoUrl = process.env.MONGO_URL || `mongodb+srv://Font:${process.env.STRING_PW}@cluster0.8xh88s6.mongodb.net/projectAuth?retryWrites=true&w=majority`;
+const mongoUrl = process.env.MONGO_URL || `mongodb+srv://Paprika:${process.env.STRING_PW}@cluster0.6gvgrxz.mongodb.net/project-final?retryWrites=true&w=majority`;
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 
