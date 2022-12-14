@@ -11,6 +11,7 @@ const mongoUrl = process.env.MONGO_URL || `mongodb+srv://Paprika:${process.env.S
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 
+
 // Defines the port the app will run on. Defaults to 8080, but can be overridden
 // when starting the server. Example command to overwrite PORT env variable value:
 // PORT=9000 npm start
@@ -122,35 +123,101 @@ const authenticateUser = async (req, res, next) => {
   }
 }
 
-const ThoughtSchema = new mongoose.Schema({
-  message: {
+const WeddingSchema = new mongoose.Schema({
+  firstperson: {
     type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 30,
+    trim: true
   },
-  createdAt: {
-    type: Date,
+  secondperson: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 30,
+    trim: true
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  registrationdate: {
+    type: String,
     default: () => new Date()
-  },
-  hearts: {
-    type: Number,
-    default: 0
+  }
+})
+
+const Wedding = mongoose.model("Wedding", WeddingSchema)
+
+app.get("/weddingform", authenticateUser);
+app.get("/weddingform", async (req, res) => {
+  const weddingform = await Wedding.find({});
+  res.status(200).json({ success: true, response: weddingform });
+});
+
+app.post("/weddingform", authenticateUser)
+app.post("/weddingform", async (req, res) => {
+  const { firstperson, secondperson, email } = req.body; //do not forget destructuring from the WeddingSchema
+  try {
+    const newWedding = await new Wedding({ firstperson, secondperson, email }).save();  //do not forget destructuring from the WeddingSchema
+    res.status(201).json({ success: true, response: newWedding }); 
+  } catch (error) {
+    res.status(400).json({ success: false, response: error });
   }
 });
 
+//create patch
+app.patch("/weddingform/:id/adjust", async (req, res) => {
+  const { id } = req.params;
+  const opts = { runValidators: true };
+  try{
+    const adjustToUpdate = await Wedding.findByIdAndUpdate(id, {firstperson, secondperson, email}, opts);
+    res.status(200).json({success: true, response:`this information: ${adjustToUpdate.id} has been updated`})
+  } catch (error) {
+    res.status(400).json({success: false, response: error});
+  }
+})
 
-const Thought = mongoose.model("Thought", ThoughtSchema);
+const RSVPSchema = new mongoose.Schema({
+  firstperson: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 30,
+    trim: true
+  },
+  secondperson: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 30,
+    trim: true
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  registrationdate: {
+    type: String,
+    default: () => new Date()
+  }
+})
 
-app.get("/thoughts", authenticateUser);
-app.get("/thoughts", async (req, res) => {
-  const thoughts = await Thought.find({});
-  res.status(200).json({ success: true, response: thoughts });
+const RSVP = mongoose.model("RSVP", RSVPSchema)
+
+app.get("/rsvpform", authenticateUser);
+app.get("/rsvpform", async (req, res) => {
+  const rsvpform = await RSVP.find({});
+  res.status(200).json({ success: true, response: rsvpform });
 });
 
-app.post("/thoughts", authenticateUser)
-app.post("/thoughts", async (req, res) => {
-  const { message } = req.body;
+app.post("/rsvpform", authenticateUser)
+app.post("/rsvpform", async (req, res) => {
+  const { firstperson, secondperson, email } = req.body; //do not forget destructuring from the RSVPSchema
   try {
-    const newThought = await new Thought({ message }).save();
-    res.status(201).json({ success: true, response: newThought });
+    const newRSVP = await new RSVP({ firstperson, secondperson, email }).save();  //do not forget destructuring from the RSVPSchema
+    res.status(201).json({ success: true, response: newRSVP }); 
   } catch (error) {
     res.status(400).json({ success: false, response: error });
   }
