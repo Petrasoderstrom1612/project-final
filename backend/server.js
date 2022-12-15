@@ -24,7 +24,7 @@ app.use(express.json());
 
                               // ALL THE SCHEMAS //
 
-//SCHEMA FOR COUPLE REGISTRATION/LOGIN
+//COUPLE REGISTRATION/LOGIN SCHEMA 
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -40,58 +40,9 @@ const UserSchema = new mongoose.Schema({
     default: () => crypto.randomBytes(128).toString("hex")
   }
 });
-
-// SCHEMA FOR GUEST AUTHENTICATION
-const GuestSchema = new mongoose.Schema({
-  password: {
-    type: String,
-    required: true
-  },
-  guestAccessToken: {
-    type: String,
-    default: () => crypto.randomBytes(128).toString("hex")
-  }
-});
-
 const User = mongoose.model("User", UserSchema);
-const RSVPSchema = new mongoose.Schema({
-  firstname: {
-    type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 30,
-    trim: true
-  },
-  lastname: {
-    type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 30,
-    trim: true
-  },
-  email: {
-    type: String,
-    required: true,
-  },
-  registrationdate: {
-    type: String, //date picker
-    default: () => new Date()
-  }/* ,
-  attending: {
-    type: Boolean,
-    default: true,
-    required: true,
-  },
-  foodrestrictions: {
-    type: String
-  },
-  accommodation: {
-    type: Boolean
-  } */
-})
 
-const RSVP = mongoose.model("RSVP", RSVPSchema)
-
+//WEDDING SCHEMA
 const WeddingSchema = new mongoose.Schema({
   firstperson: {
     type: String,
@@ -109,7 +60,13 @@ const WeddingSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
+      validate: {
+        validator: function(v) {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        },
+        message: "Please enter a valid email"
+        },
+      required: [true, "Email required"]
   },
   registrationdate: {
     type: String,
@@ -143,10 +100,70 @@ const WeddingSchema = new mongoose.Schema({
     }
 } */
 })
-
-//Aspstigen 2 , Stockholm, 16869
-
 const Wedding = mongoose.model("Wedding", WeddingSchema)
+
+// SCHEMA FOR GUEST AUTHENTICATION
+const GuestSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  guestAccessToken: {
+    type: String,
+    default: () => crypto.randomBytes(128).toString("hex")
+  }
+});
+const Guest = mongoose.model("Guest", GuestSchema);
+
+//RSVP SCHEMA
+const RSVPSchema = new mongoose.Schema({
+  firstname: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 30,
+    trim: true
+  },
+  lastname: {
+    type: String,
+    required: true,
+    minlength: 2,
+    maxlength: 30,
+    trim: true
+  },
+  email: {
+    type: String,
+      validate: {
+        validator: function(v) {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+        },
+        message: "Please enter a valid email"
+        },
+      required: [true, "Email required"]
+  },
+  registrationdate: {
+    type: String, //date picker
+    default: () => new Date()
+  }/* ,
+  attending: {
+    type: Boolean,
+    default: true,
+    required: true,
+  },
+  foodrestrictions: {
+    type: String
+  },
+  accommodation: {
+    type: Boolean
+  } */
+})
+const RSVP = mongoose.model("RSVP", RSVPSchema)
+
 
 
                                           // ALL THE FUNCTIONS //
@@ -175,8 +192,8 @@ const authenticateUser = async (req, res, next) => {
 const authenticateGuest = async (req, res, next) => {
   const guestAccessToken = req.header("Authorization");
   try {
-    const user = await User.findOne({ guestAccessToken: guestAccessToken });
-    if (user) {
+    const guest = await Guest.findOne({ guestAccessToken: guestAccessToken });
+    if (guest) {
       next(); //here we want to send guest to rsvp-form??
     } else {
       res.status(401).json({
@@ -196,11 +213,21 @@ const authenticateGuest = async (req, res, next) => {
 
 //THE GET REQUEST FOR START PAGE
 app.get("/", (req, res) => {
-  res.send("Hello girls!");
+  res.send({
+  "Message": "Blissfull beginnings agency welcomes you to this API",
+  "RoutesAndMethods": 
+    [{"/register": "a new couple registers here via POST method",
+      "/login": "the couple logs in to access the wedding form via POST method",
+      "/weddingform": "the couple can GET the API information of the wedding form",
+      "/weddingform": "the couple can POST information on the wedding form",
+      "/weddingform/:id/adjust": "the couple can change info on the wedding form via PATCH",
+      "/rsvpform": "the guests GET the entire API for RSVP",
+      "/rsvpform": "the guests POST their RSVP answer"}]
+  });
 });
 
 
-//THE POST REQUEST FOR REGISTER AS COUPLE
+//REGISTER AS COUPLE
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
 
@@ -230,7 +257,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
-//The POST REQUEST for login as couple
+//LOGIN AS A COUPLE
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
@@ -259,12 +286,14 @@ app.post("/login", async (req, res) => {
   }
 });
 
+//GET THE WHOLE WEDDINGFORM API AS A COUPLE |DELETE?|
 app.get("/weddingform", authenticateUser); //login as authorized couple
 app.get("/weddingform", async (req, res) => { //get all weddings info 
   const weddingform = await Wedding.find({});
   res.status(200).json({ success: true, response: weddingform });
 });
 
+//POST THE WEDDING FORM AS A COUPLE
 app.post("/weddingform", authenticateUser) //post information as authenticated couple
 app.post("/weddingform", async (req, res) => {
   const { firstperson, secondperson, email, guestpassword } = req.body; //do not forget destructuring from the WeddingSchema
@@ -276,7 +305,7 @@ app.post("/weddingform", async (req, res) => {
   }
 });
 
-//create patch for wedding form
+//UPDATE THE WEDDING FORM AS A COUPLE |NOT WORKING| //I get an empty array when I try to update and include all the fields, otherwise error
 app.patch("/weddingform/:id/adjust", async (req, res) => {
   const { id } = req.params;
   const opts = { runValidators: true };
@@ -288,13 +317,45 @@ app.patch("/weddingform/:id/adjust", async (req, res) => {
   }
 })
 
-app.get("/rsvpform", authenticateGuest);   //login as authenticated guest
+//REGISTER AS A GUEST
+app.post("/guestregister", async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    const salt = bcrypt.genSaltSync();
+    if (password.length < 8) {
+      res.status(400).json({
+        success: false,
+        response: "Password must be at least 8 characters long"
+      });
+    } else {
+      const newGuest = await new Guest({ username: username, password: bcrypt.hashSync(password, salt) }).save();
+      res.status(201).json({
+        success: true,
+        response: {
+          username: newGuest.username,
+          accessToken: newGuest.guestAccessToken,
+          id: newGuest._id
+        }
+      });
+    }
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      response: "The username is already in use"
+    });
+  }
+});
+
+//GET THE ENTIRE API FOR RSVP FORM AS A GUEST |DELETE?|
+app.get("/rsvpform", authenticateGuest);   
 app.get("/rsvpform", async (req, res) => { //???
   const rsvpform = await RSVP.find({});
   res.status(200).json({ success: true, response: rsvpform });
 });
 
-app.post("/rsvpform", authenticateGuest) //post as authenticated guest
+//POST ON THE RSVP FORM AS A GUEST
+app.post("/rsvpform", authenticateGuest) 
 app.post("/rsvpform", async (req, res) => {
   const { firstname, lastname, email } = req.body; //do not forget destructuring from the RSVPSchema
   try {
@@ -319,3 +380,7 @@ app.listen(port, () => {
 //2. How to authenticate guest by only one secret word? [answered by daniel thursday 15/12 around 10:40 in recording] 
 //3. How can the couple get an email when rsvpform is submitted? 
 //4. How to validate date input in schema?
+
+
+
+
