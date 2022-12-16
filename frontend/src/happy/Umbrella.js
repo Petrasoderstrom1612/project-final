@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import GetThoughts from './GetThoughts';
 import UserInput from './UserInput';
+import Counter from 'components/Counter';
 
 const Main = () => {
   const [getThoughts, setGetThoughts] = useState([]);
@@ -84,6 +85,7 @@ const Main = () => {
 
   return (
     <>
+    <Counter/>
       <UserInput
         handleNewThoughtChange={handleNewThoughtChange}
         handleOnFormSubmit={handleOnFormSubmit}
