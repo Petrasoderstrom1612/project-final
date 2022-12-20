@@ -136,6 +136,9 @@ const WeddingSchema = new mongoose.Schema({
     },
     accommodation: {
       type: Boolean
+    },
+    message: {
+      type: String
     } */
   })
 

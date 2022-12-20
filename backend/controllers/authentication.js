@@ -4,7 +4,7 @@
 const { User, Guest } = require('../models/models.js')
 
 //Function for authenticate guest const authenticateUser = async (req, res, next) => {
-  export const authenticateUser = async (req, res, next) => {
+export const authenticateUser = async (req, res, next) => {
   const accessToken = req.header("Authorization");
   try {
     const user = await User.findOne({ accessToken: accessToken });

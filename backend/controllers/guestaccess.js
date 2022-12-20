@@ -7,7 +7,7 @@ const { Wedding } = require('../models/models.js')
 
 const guestpassword = Wedding.guestpassword;
 //Function for authenticate guest const authenticateUser = async (req, res, next) => {
-  export const giveGuestAccess = async (req, res,) => {
+  export const giveGuestAccess = async (req, res) => {
     const guestAccess = req.body;
     try {
 if (guestAccess === guestpassword){
