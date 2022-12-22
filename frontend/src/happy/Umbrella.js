@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import GetThoughts from './GetThoughts';
 import UserInput from './UserInput';
 import Counter from 'components/Counter';
+import MapLocation from 'components/MapLocation';
 
 const Main = () => {
   const [getThoughts, setGetThoughts] = useState([]);
@@ -85,6 +86,7 @@ const Main = () => {
 
   return (
     <>
+    <MapLocation/>
     <Counter/>
       <UserInput
         handleNewThoughtChange={handleNewThoughtChange}
