@@ -1,15 +1,15 @@
 import React from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
-import Counter from "./Counter";
-import StyledHeading from "./GlobalStyles";
+import { StyledCatchPhrase } from "./GlobalStyles";
+import heroimg from "../assets/hero-img-rings.jpg"
 
 const Header = () => {
 
     return (
         <StyledHeader>
-            <StyledHeading>Blissful Beginnings</StyledHeading>
-            <nav>
+            <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
+            <StyledNav>
                 <NavLink to="/">Home</NavLink>
                 <span> | </span>
                 <NavLink to="/location">Location</NavLink>
@@ -17,8 +17,7 @@ const Header = () => {
                 <NavLink to="/toastmasters">Toastmasters</NavLink>
                 <span> | </span>
                 <NavLink to="/rsvp">RSVP</NavLink>
-            </nav>
-
+            </StyledNav>
         </StyledHeader>
     )
 }
@@ -26,7 +25,21 @@ const Header = () => {
 export default Header
 
 const StyledHeader = styled.header`
-background-image: url(../src/assets/hero-img-rings.jpg);
-width: 85vw;
-height: 40vh;
+background-image: linear-gradient(rgba(255, 255, 255, 0.900), rgba(0, 0, 0, 0.2)), url(${heroimg});
+background-size: cover;
+background-repeat: no-repeat;
+width: 95vw;
+height: 60vh;
+display: flex;
+align-items: center;
+flex-direction: column;
+margin: 0;
+`
+
+const StyledNav = styled.nav`
+color: "(var--color-softBlack)";
+font-size: 0.8em;
+font-weight: 400;
+letter-spacing: 3px;
+text-transform: uppercase;
 `

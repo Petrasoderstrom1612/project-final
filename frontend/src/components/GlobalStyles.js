@@ -3,8 +3,11 @@ import styled from "styled-components/macro";
 export const StyledCatchPhrase = styled.h1`
 font-family: 'Oooh Baby', cursive;
 color: var(--color-softBlack);
-font-size: 3em;
-line-height: 4em;
+font-size: 6em;
+font-weight: 400;
+line-height: 2em;
+margin: 0;
+padding: 0;
 `
 
 export const StyledHeading = styled.h2`

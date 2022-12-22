@@ -4,6 +4,7 @@ import thoughts from "reducers/thoughts";
 import { API_URL, API_HAPPY_URL } from "utils/utils";
 import { useNavigate, Link } from "react-router-dom";
 import Umbrella from "../happy/Umbrella"
+import Header from "./Header";
 
 const Main = () => {
 	const thoughtItems = useSelector((store) => store.thoughts.items);
@@ -43,6 +44,7 @@ const Main = () => {
 			{/* <Link to="/login"> GO TO LOGIN</Link> */}
 			<section className="outer-wrapper">
 				<section className="inner-wrapper">
+					<Header />
 					<Umbrella />
 				</section>
 			</section>

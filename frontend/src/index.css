@@ -11,8 +11,13 @@ H3+P - font-family: 'Lato', sans-serif;
   --color-beige: #F7F3F1;
 }
 
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Lato', sans-serif;
@@ -44,7 +49,7 @@ a {
   justify-content: center;
   row-gap: 30px;
   align-items: center;
-  margin-top: 10%;
+  margin-top: 1%;
   margin-bottom: 10%;
 }
 
