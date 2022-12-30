@@ -1,5 +1,4 @@
-import React from "react";
-import GoogleMapReact from 'google-map-react';
+/* import React from "react";
 
 const MapMarker = ({ text }) => <div>{text}</div>;
 
@@ -30,4 +29,4 @@ export default function MapLocation(){
         </GoogleMapReact>
       </div></>
   );
-}
+} */
