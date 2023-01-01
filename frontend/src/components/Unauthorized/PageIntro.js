@@ -1,17 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import infinity from "assets/icons/icon.svg";
+import TimeLineRow from "./TimelineRow";
 
 
 
 
 const PageIntro = () => {
-return( <StyledIntro><div className="intro-div">
+return( <><StyledIntro><div className="intro-div">
     <StyledSubHeading><h3>some subheading</h3></StyledSubHeading>
     <StyledHeading><h2>Welcome</h2></StyledHeading>
+    <div className="img-div"><img src={infinity} className="infinity"/></div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit felis sapien, ac suscipit velit ornare id. Aliquam vulputate vel metus quis condimentum. Vivamus bibendum orci eget nisi pulvinar iaculis. Maecenas non eros ut erat dictum dapibus. Morbi quis elit libero. Fusce id quam vel orci rhoncus auctor. Suspendisse ac metus tortor. Sed scelerisque velit sed ultricies maximus. Morbi nisi elit, scelerisque sed leo vitae, rhoncus pellentesque elit. Quisque turpis nibh, pulvinar ac nisi vitae, fermentum finibus felis. Quisque id eros eu augue imperdiet imperdiet sed sit amet libero. In in luctus purus. Curabitur tincidunt, elit a porta blandit, orci.</p>
 </div>
+<div><TimeLineRow />
+<TimeLineRow /><TimeLineRow /></div>
 </StyledIntro>
 
+</>
 )}
 
 export default PageIntro;
@@ -19,11 +25,13 @@ export default PageIntro;
 export const StyledIntro = styled.div`
     border: solid 1px grey;
     width: 95vw;
-    height: 40vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10vw;
+    padding: 3vh 10vw 2vh 10vw;
+    flex-direction: column;
+    gap: 80px;
 `
 
 export const StyledHeading = styled.h2`
@@ -33,7 +41,8 @@ line-height: 4em;
 font-size: 1em;
 font-weight: 400;
 text-align: center;
-margin-top: 0;
+margin: 0px;
+padding: 0px;
 /* @media (min-width: 667px) {
     font-size: 1.9em;
 } */
