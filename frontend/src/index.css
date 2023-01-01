@@ -29,9 +29,9 @@ body {
 }
 
 .infinity {
-width: 4.5vw;
-margin-top: -10px;
-margin-bottom: 5px;
+width: 6vw;
+margin-top: -20px;
+margin-bottom: 10px;
 
 }
 
@@ -63,9 +63,11 @@ height: auto;
     width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
     }
 
+    .timeline-content-div p{
+      margin: 0 2vw 0 2vw;
+      }
 
     .timeline-line{
       border-right: rgb(139, 139, 139) 1px solid;
@@ -80,6 +82,38 @@ height: auto;
       left: 6px;
   }
 
+  .timeline-image{
+    width: 28vw;
+  }
+
+h2{
+font-family: 'Cormorant Garamond', serif;
+color: var(--color-darkBlack);
+line-height: 4em;
+font-size: 2em;
+font-weight: 400;
+text-align: center;
+margin: 0px;
+padding: 0px;
+/* @media (min-width: 667px) {
+    font-size: 1.9em;
+} */}
+
+
+h3 {
+  font-family: 'Lato', sans-serif;
+  color: var(--color-softBlack);
+  font-size: 1.5em;
+  line-height: 1em;
+  letter-spacing: .6em;
+  text-transform: uppercase;
+  text-align: center;
+  /* @media (min-width: 667px) and (max-width: 1024px) {
+  font-size: 1.8em;
+  }
+  @media (min-width: 1024px) {
+  font-size: 1.6em;
+  } */}
 
 a {
   color: inherit;
