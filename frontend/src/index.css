@@ -61,6 +61,10 @@ margin-bottom: 10px;
 
 }
 
+.RSVP-form{
+  margin-left: 10%;
+}
+
 .RSVP-input.message{
   height: 20vh;
 
@@ -79,7 +83,7 @@ font-weight: 400;
 }
 
 .button-div{
-  margin:  0  40% 4%;
+  margin:  0    40% 4%;
 }
 
 .submit-button:hover{

@@ -15,7 +15,7 @@ return(
             <h3>RSVP</h3>
         <h2>Will you attend to our special day?</h2>
         <div className="img-div"><img src={infinity} className="infinity"/></div>
-       <form>
+       <form className="RSVP-form">
         <label>
           <input className="RSVP-input" type="text" placeholder="Your First Name"/>
           </label><br/><br/>
