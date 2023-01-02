@@ -36,8 +36,15 @@ return(
           <input type="radio" id="accommodation-done" name="accommodation" value="accommodation-done" />
           <label for="accommodation-done">I already have accommodation</label><br/><br/>
 
-        <label>
-          <input className="RSVP-input food" type="text" placeholder="Food Restrictions"/></label><br/><br/>
+          <select className="RSVP-input" name="food-restrictions" id="food-restrictions">
+          <option value="" disabled selected>Food Restrictions</option>
+  <option value="Gluten Free">Gluten Free</option>
+  <option value="Lactose Free">Lactose Free</option>
+  <option value="Vegetarian">Vegetarian</option>
+  <option value="Vegan">Vegan</option>
+  <option value="Other">Other. Please specify below</option>
+
+</select>
           <label>
           <input className="RSVP-input message" type="text" placeholder="Any Additional Information You would like to add?"/></label><br/><br/>
        <div className="button-div"><Button buttonText={"Send"}/></div>
