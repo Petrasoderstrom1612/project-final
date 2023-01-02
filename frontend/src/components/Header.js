@@ -16,7 +16,7 @@ const Header = () => {
                 <span> | </span>
                 <NavLink to="/toastmasters">Toastmasters</NavLink>
                 <span> | </span>
-                <NavLink to="/rsvp">RSVP</NavLink>
+                <NavLink to="/RSVP">RSVP</NavLink>
             </StyledNav>
         </StyledHeader>
     )

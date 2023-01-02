@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from 'components/Unauthorized/Main';
 import Login from 'components/Login';
 import NotFound from 'components/NotFound';
+import RSVP from 'components/RSVP';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import thoughts from 'reducers/thoughts';
@@ -24,6 +25,7 @@ export const App = () => {
           <Route path='/' element={<Main />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='*' element={<NotFound />}></Route>
+          <Route path='/RSVP' element={<RSVP />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -6,11 +6,8 @@ import flowers from "assets/flowers.jpg";
 import cheers from "assets/cheers.jpg";
 import flowersandring from "assets/flowersandring.jpg";
 
-
-const contentText1 = "What is Blissful Beginnings?";
-
 const PageIntro = (image, contentText) => {
-return( <><StyledIntro><div className="intro-div">
+return( <><StyledDiv><div className="intro-div">
     <StyledSubHeading><h3>some subheading</h3></StyledSubHeading>
     <StyledHeading><h2>Welcome</h2></StyledHeading>
     <div className="img-div"><img src={infinity} className="infinity"/></div>
@@ -20,14 +17,14 @@ return( <><StyledIntro><div className="intro-div">
 <TimeLineRowRight image = {cheers} contentText = {<ContentText2 />} />
 <TimeLineRowLeft image= {flowersandring} contentText = {<ContentText3 />}/>
 </div>
-</StyledIntro>
+</StyledDiv>
 
 </>
 )}
 
 export default PageIntro;
 
-export const StyledIntro = styled.div`
+export const StyledDiv = styled.div`
     border: solid 1px grey;
     width: 95vw;
     height: 100%;
