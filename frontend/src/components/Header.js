@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
 import { StyledCatchPhrase } from "./GlobalStyles";
-import heroimg from "../assets/hero-img-rings.jpg"
+import heroimg from "../assets/images/hero-img-rings.jpg"
 
 const Header = () => {
 

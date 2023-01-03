@@ -1,13 +1,9 @@
 import React from "react";
-import finalPropsSelectorFactory from "react-redux/es/connect/selectorFactory";
-import styled from "styled-components/macro";
+import { StyledButton } from "components/GlobalStyles";
 
 
 const Button = (props) => {
-
-    return (
-        <button className="submit-button" type="submit" value="Submit">{props.buttonText}</button>
-    )
+    <StyledButton type="submit" value="Submit">{props.buttonText}</StyledButton>
 }
 
 export default Button;

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import infinity from "assets/icons/icon.svg";
+import infinity from "assets/icons/icon_infinity.svg";
 import { TimeLineRowLeft , TimeLineRowRight, ContentText1, ContentText2, ContentText3 } from "./TimelineRow";
-import flowers from "assets/flowers.jpg";
-import cheers from "assets/cheers.jpg";
-import flowersandring from "assets/flowersandring.jpg";
+import flowers from "assets/images/timeline_flowers.jpg";
+import cheers from "assets/images/timeline_cheers.jpg";
+import flowersandring from "assets/images/timeline_flowersandring.jpg";
 
 const PageIntro = (image, contentText) => {
 return( <><StyledDiv><div className="intro-div">

@@ -1,5 +1,24 @@
 import styled from "styled-components/macro";
 
+export const OuterWrapper = styled.section`
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+
+export const InnerWrapper = styled.section`
+display: flex;
+width: 80%;
+margin: 0 auto;
+flex-direction: column;
+justify-content: center;
+row-gap: 30px;
+align-items: center;
+margin-top: 1%;
+margin-bottom: 10%;
+`
+
 export const StyledCatchPhrase = styled.h1`
 font-family: 'Oooh Baby', cursive;
 color: var(--color-softBlack);
@@ -46,12 +65,17 @@ export const StyledButton = styled.button `
   border: 1px solid var(--color-darkBlack);
   padding: 0 4em;
   cursor: pointer;
-  color: white;
+  color: black;
   margin-top: 1em;
   @media (min-width: 1024px) {
     :hover {
       background: var(--color-darkBlack);
       color: #fff;
     }
+
+    
   }
+
+
+
 `
