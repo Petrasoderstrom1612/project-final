@@ -10,13 +10,13 @@ const Header = () => {
         <StyledHeader>
             <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
             <StyledNav>
-                <NavLink to="/">Home</NavLink>
+                <StyledLink to="/">Home</StyledLink>
                 <span> | </span>
-                <NavLink to="/location">Location</NavLink>
+                <StyledLink to="/location">Location</StyledLink>
                 <span> | </span>
-                <NavLink to="/toastmasters">Toastmasters</NavLink>
+                <StyledLink to="/toastmasters">Toastmasters</StyledLink>
                 <span> | </span>
-                <NavLink to="/RSVP">RSVP</NavLink>
+                <StyledLink to="/RSVP">RSVP</StyledLink>
             </StyledNav>
         </StyledHeader>
     )
@@ -28,6 +28,7 @@ const StyledHeader = styled.header`
 background-image: linear-gradient(rgba(255, 255, 255, 0.900), rgba(0, 0, 0, 0.2)), url(${heroimg});
 background-size: cover;
 background-repeat: no-repeat;
+background-position: center;
 width: 95vw;
 height: 60vh;
 display: flex;
@@ -37,9 +38,16 @@ margin: 0;
 `
 
 const StyledNav = styled.nav`
-color: "(var--color-softBlack)";
 font-size: 0.8em;
 font-weight: 400;
 letter-spacing: 3px;
 text-transform: uppercase;
 `
+
+const StyledLink = styled(NavLink)`
+  color: "(var--color-softBlack)";
+
+  &.active {
+    font-weight: 700;
+  }
+`;

@@ -1,7 +1,7 @@
 import styled from "styled-components/macro";
 
 export const OuterWrapper = styled.section`
-width: 100%;
+width: 100vw;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -9,14 +9,14 @@ justify-content: center;
 
 export const InnerWrapper = styled.section`
 display: flex;
-width: 80%;
+width: 90vw;
 margin: 0 auto;
 flex-direction: column;
 justify-content: center;
 row-gap: 30px;
 align-items: center;
-margin-top: 1%;
-margin-bottom: 10%;
+/* margin-top: 1%;
+margin-bottom: 10%; */
 `
 
 export const StyledCatchPhrase = styled.h1`
@@ -72,10 +72,5 @@ export const StyledButton = styled.button `
       background: var(--color-darkBlack);
       color: #fff;
     }
-
-    
   }
-
-
-
 `

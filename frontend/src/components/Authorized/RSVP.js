@@ -1,12 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react"
 import { StyledDiv } from "../Unauthorized/PageIntro";
+import { useNavigate } from "react-router-dom";
 import Header from "../Header";
-import Button from "../Button";
+import { API_URL } from "utils/utils";
+import weddings from "reducers/weddings";
 import infinity from "assets/icons/icon_infinity.svg";
-import { OuterWrapper, InnerWrapper } from "components/GlobalStyles"
+import { OuterWrapper, InnerWrapper, StyledButton } from "components/GlobalStyles"
+import { useDispatch, useSelector, batch } from "react-redux";
 
 
-const RSVP = ( {buttonText}) => {
+const RSVP = () => {
+    const [firstname, setFirstName] = useState("");
+	const [lastname, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	const accessToken = useSelector((store) => store.user.accessToken);
+
+	useEffect(() => {
+		if (accessToken) {
+			navigate("/weddingform");
+		}
+	}, [accessToken])
+
+	const onFormSubmit = (event) => {
+		event.preventDefault();
+		const options = {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({ firstname: firstname, lastname: lastname, email: email })
+		}
+		fetch(API_URL(mode), options)
+			.then(response => response.json())
+			.then(data => {
+				if (data.success) {
+					batch(() => {
+						dispatch(weddings.actions.setFirstName(data.response.firstname));
+						dispatch(weddings.actions.setLastName(data.response.lastname));
+						dispatch(weddings.actions.setEmail(data.response.email));
+            dispatch(user.actions.setAccessToken(data.response.accessToken));
+						dispatch(weddings.actions.setError(null));
+					});
+				} else {
+					batch(() => {
+						dispatch(weddings.actions.setFirstName(null));
+						dispatch(weddings.actions.setLastName(null));
+						dispatch(weddings.actions.setEmail(null));
+            dispatch(user.actions.setAccessToken(null));
+						dispatch(weddings.actions.setError(data.response));
+						Swal.fire(data.response)
+					});
+				}
+			})
+	}
 return (
 <OuterWrapper>
     <InnerWrapper>
@@ -15,15 +63,15 @@ return (
         <h3>RSVP</h3>
         <h2>Will you attend to our special day?</h2>
         <div className="img-div"><img src={infinity} className="infinity"/></div>
-       <form className="RSVP-form">
+       <form className="RSVP-form" onSubmit={onFormSubmit}>
         <label>
-          <input className="RSVP-input" type="text" placeholder="Your First Name"/>
+          <input onChange={e => setFirstName(e.target.value)} id="firstname" className="RSVP-input" type="text" placeholder="Your First Name"/>
           </label><br/><br/>
           <label>
-          <input className="RSVP-input" type="text" placeholder="Your Last Name"/>
+          <input onChange={e => setLastName(e.target.value)} id="lastname" className="RSVP-input" type="text" placeholder="Your Last Name"/>
           </label><br/><br/>
           <label>
-          <input className="RSVP-input" type="text" placeholder="Your e-mail"/></label><br/><br/>
+          <input onChange={e => setEmail(e.target.value)} id="email" className="RSVP-input" type="text" placeholder="Your e-mail"/></label><br/><br/>
           <label> Attending?</label><br></br>
           <input type="radio" id="attending" name="attending" value="Yes" />
           <label for="attending">Yes, I'll be there</label>
@@ -46,7 +94,9 @@ return (
 </select>
           <label>
           <input className="RSVP-input message" type="text" placeholder="Any additional information you would like to add?"/></label><br/><br/>
-       <div className="button-div"><Button buttonText={"Send"}/></div>
+       <StyledButton type="submit">Submit</StyledButton>
+        
+   {/*      <Button buttonText={"Send"}/></div> */}
         </form>
     </StyledDiv>
     </InnerWrapper>

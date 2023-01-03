@@ -13,7 +13,7 @@ return(
             <Header />
             <div><p>Description of location</p></div>
             <Footer />
-            <MapLocation/>
+          {/*  <div><MapLocation/></div>  */}
 
         </section>
     </section>)};

@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
 import user from "reducers/user";
 import styled from 'styled-components/macro';
-import Button from '@mui/material/Button';
-import { ownerWindow } from "@mui/material";
+import Button from "components/Button"
 import Swal from 'sweetalert2';
 
 const Login = () => {
@@ -18,7 +17,7 @@ const Login = () => {
 
 	useEffect(() => {
 		if (accessToken) {
-			navigate("/WeddingForm");
+			navigate("/weddingform");
 		}
 	}, [accessToken])
 

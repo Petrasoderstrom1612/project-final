@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Header from "components/Header";
 import PageIntro from "components/Unauthorized/PageIntro";
 import Login from 'components/Login';
+import Footer from 'components/Footer'
 
 const Main = () => {
 	return (
@@ -11,6 +12,7 @@ const Main = () => {
 					<Header />
 					<Login />
 					<PageIntro />
+					<Footer />
 				</section>
 			</section>
 		</>

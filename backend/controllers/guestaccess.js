@@ -1,7 +1,4 @@
-import bcrypt from 'bcrypt';
-
 const { Wedding } = require('../models/models.js')
-
 
 //Vi måste validera mot rätt wedding-id på något sätt här.... 
 
