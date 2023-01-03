@@ -1,5 +1,3 @@
-
-
 //Här måste vi importera User och Guest från 
 const { User, Guest } = require('../models/models.js')
 
@@ -9,7 +7,7 @@ export const authenticateUser = async (req, res, next) => {
   try {
     const user = await User.findOne({ accessToken: accessToken });
     if (user) {
-      next(); //here we want them to access the wedding form??? 
+      next(); //here we want them to access the wedding form??? What is next???
     } else {
       res.status(401).json({
         response: "Please log in",
@@ -24,7 +22,7 @@ export const authenticateUser = async (req, res, next) => {
   };
 }
 
-  //Added export on each function
+  //Added export on each function -- NOT COMPLETE
 export const authenticateGuest = async (req, res, next) => {
     const guestAccessToken = req.header("Authorization");
     try {
