@@ -5,14 +5,14 @@ import { OuterWrapper, InnerWrapper, StyledCatchPhrase, StyledHeading, StyledSub
 const NotFound = () => {
 	return (
 		<OuterWrapper>
-		<InnerWrapper>
-		<StyledCatchPhrase>Oops!</StyledCatchPhrase>
-		<StyledHeading>The page you are looking for does not exist.</StyledHeading>
-		<StyledSubHeading>Here are some useful links:</StyledSubHeading>
-			<Link to="/login">Log in</Link>
-			<Link to="/">Home</Link>
-			<Link to="/RSVP">RSVP</Link>
-		</InnerWrapper>
+			<InnerWrapper>
+				<StyledCatchPhrase>Oops!</StyledCatchPhrase>
+				<StyledHeading>The page you are looking for does not exist.</StyledHeading>
+				<StyledSubHeading>Here are some useful links:</StyledSubHeading>
+				<Link to="/login">Log in</Link>
+				<Link to="/">Home</Link>
+				<Link to="/RSVP">RSVP</Link>
+			</InnerWrapper>
 		</OuterWrapper>
 	)
 }

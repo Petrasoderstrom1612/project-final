@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
 import user from "reducers/user";
 import styled from 'styled-components/macro';
-import Button from "components/Button"
+import { OuterWrapper, InnerWrapper, StyledButton } from "components/GlobalStyles"
 import Swal from 'sweetalert2';
 
 const Login = () => {
@@ -75,9 +75,10 @@ const Login = () => {
 							value={password}
 							onChange={e => setPassword(e.target.value)} />
 					</PersonalDetails>
-					<ButtonSection>
+					<StyledButton type="submit">Submit</StyledButton>
+					{/* 					<ButtonSection>
 						<Button variant="contained" type="submit">Submit</Button>
-					</ButtonSection>
+					</ButtonSection> */}
 				</form>
 			</Section>
 		</section>
