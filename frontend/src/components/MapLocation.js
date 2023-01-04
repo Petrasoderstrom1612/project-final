@@ -1,4 +1,6 @@
 import React from "react";
+import GoogleMapReact from 'google-map-react';
+import Header from "./Header";
 
 const MapMarker = ({ text }) => <div>{text}</div>;
 
@@ -14,8 +16,9 @@ export default function MapLocation(){
   return (
     // Important! Always set the container height explicitly
     <>
+    <Header />
       <h2>The venue</h2>
-      <div style={{ height: '60vh', width: '60%' }}> //CSS to be moved
+      <div style={{ height: '50vh', width: '50vw' }}> //CSS to be moved
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyB8HH4BIwAaN0DV9Dol5AxvyMGfSp4L0Vw" }} //my google maps key
           defaultCenter={defaultProps.center}
@@ -29,3 +32,4 @@ export default function MapLocation(){
       </div></>
   );
 }
+

@@ -4,12 +4,15 @@ import { StyledDiv } from "../components/Unauthorized/PageIntro";
 import Header from "./Header";
 import Button from "./Button";
 import infinity from "assets/icons/icon.svg";
+import MapLocation from "./MapLocation";
+
 
 
 const RSVP = ( {buttonText}) => {
 return(
-   <section className="outer-wrapper">
+  <section className="outer-wrapper">
         <section className="inner-wrapper">
+     <MapLocation/>
             <Header />
             <StyledDiv><div>
             <h3>RSVP</h3>

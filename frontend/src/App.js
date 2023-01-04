@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import thoughts from 'reducers/thoughts';
 import user from 'reducers/user';
+import MapLocation from 'components/MapLocation';
 
 const reducer = combineReducers({
   user: user.reducer,
@@ -24,6 +25,7 @@ export const App = () => {
         <Routes>
           <Route path='/' element={<Main />}></Route>
           <Route path='/login' element={<Login />}></Route>
+          <Route path='/location' element={<MapLocation />}></Route>
           <Route path='*' element={<NotFound />}></Route>
           <Route path='/RSVP' element={<RSVP />}></Route>
         </Routes>
