@@ -6,11 +6,10 @@ import NotFound from 'components/NotFound';
 import RSVP from 'components/Authorized/RSVP';
 import Toastmasters from 'components/Authorized/Toastmasters';
 import WeddingForm from 'components/Authorized/WeddingForm';
-import Location from 'components/Authorized/Location';
+import Location from 'components/Authorized/Location/Location';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import user from 'reducers/user';
-import MapLocation from 'components/MapLocation';
 
 const reducer = combineReducers({
   user: user.reducer
@@ -26,11 +25,11 @@ export const App = () => {
           <Routes>
             <Route path='/' element={<Main />}></Route>
             <Route path='/login' element={<Login />}></Route>
-          <Route path='*' element={<NotFound />}></Route>
             <Route path='/RSVP' element={<RSVP />}></Route>
             <Route path='/WeddingForm' element={<WeddingForm />}></Route>
             <Route path='/Location' element={<Location />}></Route>
             <Route path='/Toastmasters' element={<Toastmasters />}></Route>
+            <Route path='*' element={<NotFound />}></Route>
           </Routes>
         </BrowserRouter>
       </Provider>

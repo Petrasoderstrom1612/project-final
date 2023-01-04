@@ -4,7 +4,7 @@ import { StyledDiv } from "../components/Unauthorized/PageIntro";
 import Header from "./Header";
 import Button from "./Button";
 import infinity from "assets/icons/icon.svg";
-import MapLocation from "./MapLocation";
+import MapLocation from "./Authorized/Location/MapLocation";
 
 
 
