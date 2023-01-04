@@ -6,20 +6,20 @@ import heroimg from "../assets/images/hero-img-rings.jpg"
 
 const Header = () => {
 
-    return (
-        <StyledHeader>
-            <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
-            <StyledNav>
-                <StyledLink to="/">Home</StyledLink>
-                <span> | </span>
-                <StyledLink to="/location">Location</StyledLink>
-                <span> | </span>
-                <StyledLink to="/toastmasters">Toastmasters</StyledLink>
-                <span> | </span>
-                <StyledLink to="/RSVP">RSVP</StyledLink>
-            </StyledNav>
-        </StyledHeader>
-    )
+  return (
+    <StyledHeader>
+      <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
+      <StyledNav>
+        <StyledLink to="/">Home</StyledLink>
+        <span> | </span>
+        <StyledLink to="/location">Location</StyledLink>
+        <span> | </span>
+        <StyledLink to="/toastmasters">Toastmasters</StyledLink>
+        <span> | </span>
+        <StyledLink to="/RSVP">RSVP</StyledLink>
+      </StyledNav>
+    </StyledHeader>
+  )
 }
 
 export default Header

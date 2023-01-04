@@ -2,9 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import TimelineLine from "./TimelineLine";
 
-
-
-
 export const TimeLineRowLeft = (props) => {
     return (
         <div className="timeline-outer-div">
