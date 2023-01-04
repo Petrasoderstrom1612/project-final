@@ -26,7 +26,6 @@ export const App = () => {
           <Routes>
             <Route path='/' element={<Main />}></Route>
             <Route path='/login' element={<Login />}></Route>
-            <Route path='/location' element={<MapLocation />}></Route>
           <Route path='*' element={<NotFound />}></Route>
             <Route path='/RSVP' element={<RSVP />}></Route>
             <Route path='/WeddingForm' element={<WeddingForm />}></Route>
