@@ -22,23 +22,23 @@ export const authenticateUser = async (req, res, next) => {
   };
 }
 
-  //Added export on each function -- NOT COMPLETE
+//Added export on each function -- NOT COMPLETE
 export const authenticateGuest = async (req, res, next) => {
-    const guestAccessToken = req.header("Authorization");
-    try {
-      const guest = await Guest.findOne({ guestAccessToken: guestAccessToken });
-      if (guest) {
-        next(); //here we want to send guest to rsvp-form??
-      } else {
-        res.status(401).json({
-          response: "Please log in",
-          success: false
-        })
-      }
-    } catch (error) {
-      res.status(400).json({
-        response: error,
+  const guestAccessToken = req.header("Authorization");
+  try {
+    const guest = await Guest.findOne({ guestAccessToken: guestAccessToken });
+    if (guest) {
+      next(); //here we want to send guest to rsvp-form??
+    } else {
+      res.status(401).json({
+        response: "Please log in",
         success: false
       })
     }
+  } catch (error) {
+    res.status(400).json({
+      response: error,
+      success: false
+    })
   }
+}

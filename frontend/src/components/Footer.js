@@ -6,12 +6,12 @@ import { OuterWrapper, InnerWrapper, StyledCatchPhrase, StyledHeading, StyledSub
 const Footer = () => {
     return (
         <OuterWrapper>
-    <StyledFooter>
-        <h5>LINE WILL BE OPEN UNTIL SEPTEMBER 1ST</h5>
-        <h2>Please, take a moment and respond to our invitation.</h2>
-        <StyledButton>RSVP</StyledButton>
-    </StyledFooter>
-    </OuterWrapper>
+            <StyledFooter>
+                <h5>LINE WILL BE OPEN UNTIL SEPTEMBER 1ST</h5>
+                <h2>Please, take a moment and respond to our invitation.</h2>
+                <StyledButton>RSVP</StyledButton>
+            </StyledFooter>
+        </OuterWrapper>
     )
 }
 

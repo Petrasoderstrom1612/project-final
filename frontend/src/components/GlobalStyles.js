@@ -55,7 +55,7 @@ export const StyledSubHeading = styled.h3`
   } */
 `
 
-export const StyledButton = styled.button `
+export const StyledButton = styled.button`
   font-family: 'Lato', sans-serif;
   font-size: 1em;
   line-height: 2em;
