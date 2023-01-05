@@ -1,6 +1,7 @@
 import React, { useState }from "react";
+import { useDispatch, useSelector, batch } from "react-redux";
 import { StyledDiv } from "../Unauthorized/PageIntro";
-import Header from "../Header";
+import Navbar from "../Navbar";
 import weddings from "reducers/weddings";
 import Button from "../Button";
 import infinity from "assets/icons/icon_infinity.svg";
@@ -48,7 +49,6 @@ const WeddingForm = () => {
 	return (
 		<OuterWrapper>
 			<InnerWrapper>
-				<Header />
 				<StyledDiv>
 					<h3>Wedding form</h3>
 					<h2>Fill in the form below in order to create your dreamy website</h2>
@@ -69,7 +69,7 @@ const WeddingForm = () => {
 						<label>
 							<input className="wedding-input" type="text" placeholder="Your e-mail" value={email} onChange={e => setEmail(e.target.value)}/></label><br /><br />
 							<label>Wedding Info<br/><br/>							
-							<input className="wedding-input"/></label><br /><br />
+							<input className="wedding-input" type= "date"/></label><br /><br />
 							<label>
 							<input className="wedding-input" type="time"/></label><br /><br />
 							<label>

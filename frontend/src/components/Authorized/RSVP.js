@@ -4,7 +4,7 @@ import { API_URL } from "utils/utils";
 import rsvps from "reducers/rsvps";
 import { StyledDiv } from "../Unauthorized/PageIntro";
 import { OuterWrapper, InnerWrapper, StyledButton } from "components/GlobalStyles";
-import Header from "../Header";
+import Navbar from "../Navbar";
 import infinity from "assets/icons/icon_infinity.svg";
 
 
@@ -53,7 +53,6 @@ const RSVP = () => {
   return (
     <section className="outer-wrapper">
       <section className="inner-wrapper">
-        <Header />
         <StyledDiv><div>
           <h3>RSVP</h3>
           <h2>Will you attend to our special day?</h2>

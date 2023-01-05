@@ -1,6 +1,6 @@
 import React from "react";
 import Counter from "components/Counter";
-import Header from "../Navbar";
+import Navbar from "../Navbar";
 import Footer from "components/Footer";
 
 
@@ -10,7 +10,7 @@ return(
     <>
    <section className="outer-wrapper">
         <section className="inner-wrapper">
-            <Header />
+            <Navbar />
             <Counter />
             <Footer/>
 
