@@ -10,6 +10,9 @@ import Location from 'components/Authorized/Location/Location';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import user from 'reducers/user';
+import Navbar from 'components/Navbar';
+
+
 
 const reducer = combineReducers({
   user: user.reducer
@@ -22,13 +25,14 @@ export const App = () => {
     <div>
       <Provider store={store}>
         <BrowserRouter>
-          <Routes>
+            <Navbar/>
+            <Routes>
             <Route path='/' element={<Main />}></Route>
             <Route path='/login' element={<Login />}></Route>
-            <Route path='/RSVP' element={<RSVP />}></Route>
-            <Route path='/WeddingForm' element={<WeddingForm />}></Route>
-            <Route path='/Location' element={<Location />}></Route>
-            <Route path='/Toastmasters' element={<Toastmasters />}></Route>
+            <Route path='/weddingform' element={<WeddingForm />}></Route>
+            <Route path='/location' element={<Location />}></Route>
+            <Route path='/toastmasters' element={<Toastmasters />}></Route>
+            <Route path='/rsvp' element={<RSVP />}></Route>
             <Route path='*' element={<NotFound />}></Route>
           </Routes>
         </BrowserRouter>

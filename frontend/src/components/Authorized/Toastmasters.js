@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "components/Header";
+import Header from "components/Navbar";
 import Footer from "components/Footer";
 
 
@@ -9,7 +9,7 @@ return(
 
    <section className="outer-wrapper">
         <section className="inner-wrapper">
-            <Header />
+            {/* <Header /> */}
             <div><p>Description of toastmasters</p></div>
             <Footer />
 

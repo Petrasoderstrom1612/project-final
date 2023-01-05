@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Header from "components/Header";
+//import Header from "components/Navbar";
 import PageIntro from "components/Unauthorized/PageIntro";
 import Login from 'components/Login';
 import Footer from 'components/Footer'
@@ -9,7 +9,7 @@ const Main = () => {
 		<>
 			<section className="outer-wrapper">
 				<section className="inner-wrapper">
-					<Header />
+					{/* <Header /> */}
 					<Login />
 					<PageIntro />
 					<Footer />
