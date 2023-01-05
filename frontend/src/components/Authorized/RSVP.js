@@ -13,7 +13,7 @@ import infinity from "assets/icons/icon_infinity.svg";
 const RSVP = () => {
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
-/*   const [attending, setAttending] = useState(""); */
+  const [attending, setAttending] = useState("");
   const [email, setEmail] = useState("");
   const dispatch = useDispatch();
   /* 	const navigate = useNavigate(); */
@@ -25,7 +25,7 @@ const RSVP = () => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ lastname: lastname, firstname: firstname, email: email /* attending: attending */ })
+      body: JSON.stringify({ lastname: lastname, firstname: firstname, email: email, attending: attending })
     }
     fetch(API_URL)
       .then(response => response.json())
@@ -35,7 +35,7 @@ const RSVP = () => {
             dispatch(rsvps.actions.setFirstName(data.response.firstname));
             dispatch(rsvps.actions.setLastName(data.response.lastname));
             dispatch(rsvps.actions.setEmail(data.response.email));
-/*             dispatch(rsvps.actions.setAttending(data.response.attending)); */
+            dispatch(rsvps.actions.setAttending(data.response.attending));
             dispatch(rsvps.actions.setError(null));
           });
         } else {
@@ -43,7 +43,7 @@ const RSVP = () => {
             dispatch(rsvps.actions.setFirstName(null));
             dispatch(rsvps.actions.setUserId(null));
             dispatch(rsvps.actions.setEmail(null));
-/*             dispatch(rsvp.actions.setAttending(null)); */
+            dispatch(rsvp.actions.setAttending(null));
             dispatch(rsvps.actions.setError(data.response));
             Swal.fire(rsvps.response)
           });
