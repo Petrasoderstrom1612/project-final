@@ -4,8 +4,8 @@ const weddings = createSlice({
   name: "weddings",
   initialState: {
     items: [],
-    firstname: null,
-    lastname: null,
+    firstperson: null,
+    secondperson: null,
     email: null,
     error: null,
     accessToken: null
@@ -17,11 +17,11 @@ const weddings = createSlice({
     setError: (store, action) => {
       store.error = action.payload;
     },
-    setFirstName: (store, action) => {
-      store.username = action.payload;
+    setFirstPerson: (store, action) => {
+      store.firstperson = action.payload;
     },
-    setLastName: (store, action) => {
-      store.error = action.payload;
+    setSecondPerson: (store, action) => {
+      store.secondperson = action.payload;
     },
     setEmail: (store, action) => {
       store.userId = action.payload;

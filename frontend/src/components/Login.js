@@ -105,6 +105,7 @@ const Section = styled.section`
   border: 2px solid black;
   box-shadow: 5px 5px;
   row-gap: 10px;
+  width: 300px;
 `
 
 const ButtonSection = styled.section`
