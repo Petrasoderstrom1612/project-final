@@ -6,7 +6,8 @@ import { loginUser } from './controllers/login.js';
 import { registerCouple } from './controllers/register.js';
 import { giveGuestAccess } from "./controllers/guestaccess.js";
 import { createWedding, updateWedding, viewAllWeddings, viewSpecificWedding } from "./controllers/wedding.js";
-import { authenticateUser, authenticateGuest } from './controllers/authentication.js'
+import { viewRSVP, createRSVP } from "./controllers/rsvp.js";
+import { authenticateUser , /* authenticateGuest */ } from './controllers/authentication.js'
 
 
 dotenv.config();
@@ -14,6 +15,8 @@ dotenv.config();
 const { User, Wedding } = require('./models/models.js');
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/project-mongo"
+
+//`mongodb+srv://Paprika:${process.env.STRING_PW}@cluster0.6gvgrxz.mongodb.net/project-final?retryWrites=true&w=majority`;
 
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
@@ -33,17 +36,17 @@ app.use(express.json());
 //THE GET REQUEST FOR START PAGE
 app.get("/", (req, res) => {
   res.send({
-    "Message": "Blissful beginnings agency welcomes you to this API",
-    "RoutesAndMethods":
-      [{
-        "/register": "a new couple registers here via POST method",
-        "/login": "the couple logs in to access the wedding form via POST method",
-        "/weddingform": "the couple can GET the API information of the wedding form",
-        "/weddingform": "the couple can POST information on the wedding form",
-        "/weddingform/:id/adjust": "the couple can change info on the wedding form via PATCH",
-        "/rsvpform": "the guests GET the entire API for RSVP",
-        "/rsvpform": "the guests POST their RSVP answer"
-      }]
+  "Message": "Blissful beginnings agency welcomes you to this API",
+  "RoutesAndMethods": 
+    [{"/register": "a new couple registers here via POST method",
+      "/login": "the couple logs in to access the wedding form via POST method",
+      "/weddingform": "the couple can GET the API information of the wedding form",
+      "/weddingform": "the couple can POST information on the wedding form",
+      "/weddingform/:id/adjust": "the couple can change info on the wedding form via PATCH",
+      "/weddingform/id/:id": "to GET the weddinginfo for specific wedding",
+      "/weddingform/": "to GET a list of all weddings in db",
+      "/rsvpform": "the guests GET the entire API for RSVP",
+      "/rsvpform": "the guests POST their RSVP answer"}]
   });
 });
 
@@ -72,10 +75,10 @@ app.patch('/weddingform/id/:id/adjust', updateWedding);
 app.post('/guestaccess', giveGuestAccess);
 
 //GET THE ENTIRE API FOR RSVP FORM AS A GUEST |DELETE?|
-app.get("/rsvpform", authenticateGuest);
+app.get("/rsvpform", viewRSVP);   
 
-//POST ON THE RSVP FORM AS A GUEST
-app.post("/rsvpform", authenticateGuest)
+//POST ON THE RSVP FORM AS A GUEST (NEEDS to ADD AUTHENTICATION?)
+app.post("/rsvpform", createRSVP);
 
 
 // Start the server

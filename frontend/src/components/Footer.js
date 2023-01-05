@@ -20,5 +20,6 @@ export default Footer
 
 export const StyledFooter = styled(InnerWrapper)`
 background: var(--color-beige);
-margin: 0;
+padding: 2vh;
+width: 95vw;
 `

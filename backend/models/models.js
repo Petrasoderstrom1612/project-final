@@ -125,12 +125,12 @@ const RSVPSchema = new mongoose.Schema({
   registrationdate: {
     type: String, //date picker
     default: () => new Date()
-  }/* ,
+  } ,
     attending: {
       type: Boolean,
       default: true,
       required: true,
-    },
+    }/*,
     foodrestrictions: {
       type: String
     },
