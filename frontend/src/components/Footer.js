@@ -8,8 +8,8 @@ const Footer = () => {
     return (
         <OuterWrapper>
             <StyledFooter>
-                <h5>LINE WILL BE OPEN UNTIL SEPTEMBER 1ST</h5>
-                <h2>Please, take a moment and respond to our invitation.</h2>
+                <StyledSubHeading>Subheading</StyledSubHeading>
+                <StyledHeading>Please, take a moment and respond to our invitation.</StyledHeading>
                 <StyledButton type="button" to="/RSVP">RSVP</StyledButton>
             </StyledFooter>
         </OuterWrapper>

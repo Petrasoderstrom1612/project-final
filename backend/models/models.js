@@ -43,7 +43,7 @@ const WeddingSchema = new mongoose.Schema({
       message: "Please enter a valid email"
     },
     required: [true, "Email required"]
-  },
+  }/*,
   registrationdate: {
     type: String,
     default: () => new Date()
@@ -52,7 +52,7 @@ const WeddingSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
-  }/* ,
+  } ,
     weddingdate: {
       type: String,
       //validate: YYYY-MM-DD?,
