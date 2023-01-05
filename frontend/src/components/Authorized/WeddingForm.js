@@ -1,6 +1,6 @@
 import React from "react";
 import { StyledDiv } from "../Unauthorized/PageIntro";
-import Header from "../Header";
+import Header from "../Navbar";
 import Button from "../Button";
 import infinity from "assets/icons/icon_infinity.svg";
 import { OuterWrapper, InnerWrapper, StyledButton } from "components/GlobalStyles"

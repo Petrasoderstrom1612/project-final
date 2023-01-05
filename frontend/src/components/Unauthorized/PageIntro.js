@@ -9,7 +9,7 @@ import flowersandring from "assets/images/timeline_flowersandring.jpg";
 const PageIntro = (image, contentText) => {
     return (<><StyledDiv><div className="intro-div">
         <StyledSubHeading><h3>some subheading</h3></StyledSubHeading>
-        <StyledHeading><h2>Welcome</h2></StyledHeading>
+        <h2>Welcome</h2>
         <div className="img-div"><img src={infinity} className="infinity" /></div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam suscipit felis sapien, ac suscipit velit ornare id. Aliquam vulputate vel metus quis condimentum. Vivamus bibendum orci eget nisi pulvinar iaculis. Maecenas non eros ut erat dictum dapibus. Morbi quis elit libero. Fusce id quam vel orci rhoncus auctor. Suspendisse ac metus tortor. Sed scelerisque velit sed ultricies maximus. Morbi nisi elit, scelerisque sed leo vitae, rhoncus pellentesque elit. Quisque turpis nibh, pulvinar ac nisi vitae, fermentum finibus felis. Quisque id eros eu augue imperdiet imperdiet sed sit amet libero. In in luctus purus. Curabitur tincidunt, elit a porta blandit, orci.</p>
     </div>

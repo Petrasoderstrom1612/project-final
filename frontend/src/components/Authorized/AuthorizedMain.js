@@ -1,6 +1,6 @@
 import React from "react";
 import Counter from "components/Counter";
-import Header from "../Header";
+import Header from "../Navbar";
 import Footer from "components/Footer";
 
 
