@@ -1,5 +1,5 @@
 //Här måste vi importera User och Guest från 
-const { User, Guest } = require('../models/models.js')
+const { User, /* Guest */ } = require('../models/models.js')
 
 //Function for authenticate guest const authenticateUser = async (req, res, next) => {
 export const authenticateUser = async (req, res, next) => {
@@ -22,7 +22,7 @@ export const authenticateUser = async (req, res, next) => {
   };
 }
 
-//Added export on each function -- NOT COMPLETE
+/* //Added export on each function -- NOT COMPLETE
 export const authenticateGuest = async (req, res, next) => {
   const guestAccessToken = req.header("Authorization");
   try {
@@ -41,4 +41,4 @@ export const authenticateGuest = async (req, res, next) => {
       success: false
     })
   }
-}
+} */
