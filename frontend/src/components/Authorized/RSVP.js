@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { StyledDiv } from "../Unauthorized/PageIntro";
 import Button from "../Button";
-//import infinity from "../assets/icons/icon.svg";
-import MapLocation from "./Location/MapLocation";
+import infinity from "assets/icons/icon_infinity.svg";
+
+
 
 
 
@@ -14,7 +15,7 @@ return(
             <StyledDiv><div>
             <h3>RSVP</h3>
         <h2>Will you attend to our special day?</h2>
-        <div className="img-div"><img src="project-final\frontend\src\assets\icons\icon_infinity.svg" className="infinity"/></div>
+        <div className="img-div"><img src={infinity} className="infinity"/></div>
        <form className="RSVP-form">
         <label>
           <input className="RSVP-input" type="text" placeholder="Your First Name"/>

@@ -9,7 +9,6 @@ return(
 
    <section className="outer-wrapper">
         <section className="inner-wrapper">
-            {/* <Header /> */}
             <div><p>Description of toastmasters</p></div>
             <Footer />
 
