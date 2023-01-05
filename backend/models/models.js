@@ -34,6 +34,11 @@ const WeddingSchema = new mongoose.Schema({
     maxlength: 30,
     trim: true
   },
+  guestpassword: {
+    type: String,
+    required: true,
+    unique: true
+  } ,
   email: {
     type: String,
     validate: {
@@ -48,11 +53,6 @@ const WeddingSchema = new mongoose.Schema({
     type: String,
     default: () => new Date()
   },
-  guestpassword: {
-    type: String,
-    required: true,
-    unique: true
-  } ,
     weddingdate: {
       type: String,
       //validate: YYYY-MM-DD?,

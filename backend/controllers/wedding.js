@@ -3,9 +3,9 @@ const { Wedding } = require('../models/models.js');
 //Här måste vi nog lägga till någon authentication så att bara inloggade kan posta wedding forms?
 
 export const createWedding = async (req, res) => {
-  const { firstperson, secondperson, email/* , guestpassword */ } = req.body; //do not forget destructuring from the WeddingSchema
+  const { firstperson, secondperson, email, guestpassword } = req.body; //do not forget destructuring from the WeddingSchema
   try {
-    const newWedding = await new Wedding({ firstperson, secondperson, email/* , guestpassword */ }).save();  //do not forget destructuring from the WeddingSchema
+    const newWedding = await new Wedding({ firstperson, secondperson, email, guestpassword }).save();  //do not forget destructuring from the WeddingSchema
     res.status(201).json({ success: true, response: newWedding });
   } catch (error) {
     res.status(400).json({ success: false, response: error });
@@ -20,7 +20,7 @@ export const createWedding = async (req, res) => {
 
 export const viewSpecificWedding = async (req, res) => {
   try {
-    const singleWedding = await Wedding.findById(req.params.id)
+    const singleWedding = await Wedding.find({ownerId: req.params.guestpassword})
     if (singleWedding) {
       res.status(200).json({
         success: true,
