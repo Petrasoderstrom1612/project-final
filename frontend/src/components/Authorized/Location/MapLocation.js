@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components/macro";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
-const containerStyle = { //CSS can be moved
+const containerStyle = { 
   width: '80vw',
   height: '50vh',
 };
@@ -36,6 +36,4 @@ export default React.memo(MapLocation)
 
 export const MapStyler = styled.div`
 filter: grayscale(100%) brightness(90%) contrast(1);
-width: '400px';
-height: '400px';
 `

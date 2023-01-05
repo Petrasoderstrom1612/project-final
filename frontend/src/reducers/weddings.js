@@ -1,29 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const weddings = createSlice({
-  name: "weddings",
+  name: "wedding",
   initialState: {
-    items: [],
-    firstname: null,
-    lastname: null,
+    firstperson: null,
+    secondperson: null,
     email: null,
-    error: null,
+    userId: null,
     accessToken: null
   },
   reducers: {
-    setItems: (store, action) => {
-      store.items = action.payload;
+
+    setFirstPerson: (store, action) => {
+      store.firstperson = action.payload;
     },
-    setError: (store, action) => {
-      store.error = action.payload;
-    },
-    setFirstName: (store, action) => {
-      store.username = action.payload;
-    },
-    setLastName: (store, action) => {
-      store.error = action.payload;
+    setSecondPerson: (store, action) => {
+      store.secondperson = action.payload;
     },
     setEmail: (store, action) => {
+      store.email = action.payload;
+    },
+    setUserId: (store, action) => {
       store.userId = action.payload;
     },
     setAccessToken: (store, action) => {

@@ -8,7 +8,6 @@ const Location = () => {
 		<>
 			<section className="outer-wrapper">
 				<section className="inner-wrapper">
-					{/* <Header /> */}
 					<LocationStructure /> 
 					<Footer />
 				</section>

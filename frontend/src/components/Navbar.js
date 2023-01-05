@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
 
-    <><IconContext.Provider value={{ color: '#060b26' }} />
+    <><IconContext.Provider value={{ color: '#060b26' }} /> 
       <div className='navbar'>
         <Link to='#' className='menu-bars'>
           <FaIcons.FaBars onClick={showSidebar} />
@@ -41,7 +41,8 @@ const Navbar = () => {
             );
           })}
         </ul>
-      </nav><StyledHeader>
+      </nav> 
+      <StyledHeader> 
         <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
         <StyledNav>
           <StyledLink to="/">Home</StyledLink>
