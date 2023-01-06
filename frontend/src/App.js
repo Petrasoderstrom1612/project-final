@@ -8,8 +8,8 @@ import Main from 'components/UnauthorizedStartPage/Main';
 import Login from 'components/RegLog/Login';
 import WeddingForm from 'components/Authorized/WeddingForm/WeddingForm';
 import NotFound from 'components/NotFound/NotFound';
-import RSVP from 'components/Authorized/RsvpForm/RSVP';
-import Toastmasters from 'components/Authorized/Toastmasters';
+import RSVP from 'components/Authorized/RSVP/RSVP';
+import Toastmasters from 'components/Authorized/Toastmasters/Toastmasters';
 import Location from 'components/Authorized/Location/Location';
 
 import user from 'reducers/user';

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 import { InnerWrapper, StyledHeading, StyledSubHeading, StyledButton } from "styles/GlobalStyles"
 
 
@@ -8,7 +9,7 @@ const Footer = () => {
         <StyledFooter>
             <StyledSubHeading>Subheading</StyledSubHeading>
             <StyledHeading>Please, take a moment and respond to our invitation.</StyledHeading>
-            <StyledButton type="button" to="/RSVP">RSVP</StyledButton>
+            <Link to="/RSVP"><StyledButton type="button">RSVP</StyledButton></Link>
         </StyledFooter>
     )
 }
