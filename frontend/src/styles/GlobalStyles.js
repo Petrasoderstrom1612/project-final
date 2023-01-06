@@ -15,8 +15,8 @@ flex-direction: column;
 justify-content: center;
 row-gap: 30px;
 align-items: center;
+border: solid 1px grey;
 `
-
 export const StyledCatchPhrase = styled.h1`
 font-family: 'Dancing Script', cursive;
 color: var(--color-softBlack);
@@ -65,8 +65,6 @@ export const StyledButton = styled.button`
   border: 1px solid var(--color-darkBlack);
   padding: 0 4em;
   cursor: pointer;
-  color: black;
-  margin-top: 1em;
   @media (min-width: 1024px) {
     :hover {
       background: var(--color-darkBlack);

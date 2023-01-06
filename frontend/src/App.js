@@ -3,12 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import Navbar from 'components/Navbar/Navbar';
-import Main from 'components/Unauthorized/Main';
+import Header from 'components/HeaderNav/Header';
+import Main from 'components/UnauthorizedStartPage/Main';
 import Login from 'components/RegLog/Login';
-import WeddingForm from 'components/Authorized/WeddingForm';
+import WeddingForm from 'components/Authorized/WeddingForm/WeddingForm';
 import NotFound from 'components/NotFound/NotFound';
-import RSVP from 'components/Authorized/RSVP';
+import RSVP from 'components/Authorized/RsvpForm/RSVP';
 import Toastmasters from 'components/Authorized/Toastmasters';
 import Location from 'components/Authorized/Location/Location';
 
@@ -25,7 +25,7 @@ export const App = () => {
     <div>
       <Provider store={store}>
         <BrowserRouter>
-          <Navbar />
+          <Header />
           <Routes>
             <Route path='/' element={<Main />}></Route>
             <Route path='/login' element={<Login />}></Route>

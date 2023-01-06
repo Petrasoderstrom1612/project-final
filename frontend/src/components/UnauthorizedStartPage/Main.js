@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-//import Header from "components/Navbar";
-import PageIntro from "components/Unauthorized/PageIntro";
+import PageIntro from "components/UnauthorizedStartPage/PageIntro";
 import Login from 'components/RegLog/Login';
 import Footer from 'components/Footer/Footer'
 import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";

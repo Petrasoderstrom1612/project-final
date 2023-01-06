@@ -9,25 +9,23 @@ export const TimeLineRowLeft = (props) => {
             <div className="timeline-inner-div">
                 <div className="timeline-content-div"><img src={props.image} className="timeline-image" /></div>
                 <TimelineLine />
-                <div className="timeline-content-div"><p>{props.contentText}</p></div>
+                <div className="timeline-content-div">{props.contentText}</div>
             </div>
         </div>
     )
 };
 
-
 export const TimeLineRowRight = (props) => {
     return (
         <div className="timeline-outer-div">
             <div className="timeline-inner-div">
-                <div className="timeline-content-div"><p>{props.contentText}</p></div>
+                <div className="timeline-content-div">{props.contentText}</div>
                 <TimelineLine />
                 <div className="timeline-content-div"><img src={props.image} className="timeline-image" /></div>
             </div>
         </div>
     )
 };
-
 
 export const ContentText1 = () => {
     return (

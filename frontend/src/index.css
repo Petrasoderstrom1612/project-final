@@ -34,27 +34,6 @@ a {
   text-decoration: none;
 }
 
-/* FROM here */
-.navbar {
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-}
-
-@media (min-width: 1024px) {
-  .navbar {
-    display: none
-  }
-}
-
-.menu-bars {
-  margin-left: 2rem;
-  font-size: 2rem;
-  background: none;
-}
-
 .nav-menu {
   background-color: var(--color-beige);
   width: 250px;
@@ -95,23 +74,6 @@ a {
 
 .nav-text a:hover {
   background-color: #fff;
-}
-
-.nav-menu-items {
-  width: 100%;
-}
-
-.navbar-toggle {
-  background-color: var(--color-beige);
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-span {
-  margin-left: 16px;
 }
 
 /* to here */
