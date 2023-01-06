@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { OuterWrapper, InnerWrapper, StyledCatchPhrase, StyledHeading, StyledSubHeading } from "components/GlobalStyles"
+import { OuterWrapper, InnerWrapper, StyledCatchPhrase, StyledHeading, StyledSubHeading } from "styles/GlobalStyles"
 
 const NotFound = () => {
 	return (

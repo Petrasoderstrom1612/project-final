@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector, batch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import styled from 'styled-components/macro';
 import { API_URL } from "utils/utils";
 import user from "reducers/user";
-import styled from 'styled-components/macro';
-import { OuterWrapper, InnerWrapper, StyledButton } from "components/GlobalStyles"
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import { OuterWrapper, InnerWrapper, StyledButton } from "styles/GlobalStyles"
 
 const Login = () => {
 	const [username, setUsername] = useState("");
@@ -52,8 +52,8 @@ const Login = () => {
 			})
 	}
 	return (
-		<section className="outer-wrapper">
-			<Section className="inner-wrapper">
+		<OuterWrapper>
+			<InnerWrapper>
 				<RegLog>
 					<input type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
 					<label htmlFor="register">Register</label>
@@ -61,7 +61,7 @@ const Login = () => {
 					<label htmlFor="login">Login</label>
 				</RegLog>
 				<form onSubmit={onFormSubmit}>
-					<PersonalDetails>
+					<UserDetails>
 						<label htmlFor="username">Username</label>
 						<input
 							type="text"
@@ -74,14 +74,11 @@ const Login = () => {
 							id="password"
 							value={password}
 							onChange={e => setPassword(e.target.value)} />
-					</PersonalDetails>
+					</UserDetails>
 					<StyledButton type="submit">Submit</StyledButton>
-					{/* 					<ButtonSection>
-						<Button variant="contained" type="submit">Submit</Button>
-					</ButtonSection> */}
 				</form>
-			</Section>
-		</section>
+			</InnerWrapper>
+		</OuterWrapper>
 	);
 }
 
@@ -92,25 +89,8 @@ const RegLog = styled.div`
 	column-gap: 3px;
 `
 
-const PersonalDetails = styled.section`
+const UserDetails = styled.form`
 	display: flex;
 	flex-direction: column;
 	line-height: 30px;
 `
-
-const Section = styled.section`
-	display: flex;
-  flex-direction: column;
-  padding: 10px;
-  border: 2px solid black;
-  box-shadow: 5px 5px;
-  row-gap: 10px;
-  width: 300px;
-`
-
-const ButtonSection = styled.section`
-	justify-content: center;
-	display: flex;
-	margin-top: 10%;
-`
-

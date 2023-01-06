@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
 import user from "reducers/user";
 import styled from 'styled-components/macro';
-import { OuterWrapper, InnerWrapper, StyledButton } from "components/GlobalStyles"
+import { OuterWrapper, InnerWrapper, StyledButton } from "styles/GlobalStyles"
 import Swal from 'sweetalert2';
 
 const Login = () => {
 	const [firstperson, setFirstPerson] = useState("");
 	const [secondperson, setSecondPerson] = useState("");
-  const [email, setEmail] = useState("");
+	const [email, setEmail] = useState("");
 	const [mode, setMode] = useState("login");
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -37,8 +37,8 @@ const Login = () => {
 				if (data.success) {
 					batch(() => {
 						dispatch(user.actions.setFirstPerson(data.response.username));
-            dispatch(user.actions.setSecondPerson(data.response.username));
-            dispatch(user.actions.setEmail(data.response.username));
+						dispatch(user.actions.setSecondPerson(data.response.username));
+						dispatch(user.actions.setEmail(data.response.username));
 						dispatch(user.actions.setUserId(data.response.id));
 						dispatch(user.actions.setAccessToken(data.response.accessToken));
 						dispatch(user.actions.setError(null));
@@ -46,8 +46,8 @@ const Login = () => {
 				} else {
 					batch(() => {
 						dispatch(user.actions.setFirstPerson(null));
-            dispatch(user.actions.setSecondPerson(data.response.username));
-            dispatch(user.actions.setEmail(data.response.username));
+						dispatch(user.actions.setSecondPerson(data.response.username));
+						dispatch(user.actions.setEmail(data.response.username));
 						dispatch(user.actions.setUserId(null));
 						dispatch(user.actions.setAccessToken(null));
 						dispatch(user.actions.setError(data.response));

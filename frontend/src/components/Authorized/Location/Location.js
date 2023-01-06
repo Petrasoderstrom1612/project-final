@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
-// import Header from "components/Navbar";
+import React from "react";
 import LocationStructure from "components/Authorized/Location/LocationStructure";
-import Footer from 'components/Footer'
+import Footer from 'components/Footer/Footer'
+import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";
 
 const Location = () => {
 	return (
-		<>
-			<section className="outer-wrapper">
-				<section className="inner-wrapper">
-					<LocationStructure /> 
-					<Footer />
-				</section>
-			</section>
-		</>
+		<OuterWrapper>
+			<InnerWrapper>
+				<LocationStructure />
+				<Footer />
+			</InnerWrapper>
+		</OuterWrapper>
 	)
 }
 

@@ -6,8 +6,8 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
-import heroimg from "../assets/images/hero-img-rings.jpg";
-import { StyledCatchPhrase } from "./GlobalStyles";
+import heroimg from "../../assets/images/hero-img-rings.jpg";
+import { StyledCatchPhrase } from "../../styles/GlobalStyles";
 
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
 
-    <><IconContext.Provider value={{ color: '#060b26' }} /> 
+    <><IconContext.Provider value={{ color: '#F7F3F1' }} />
       <div className='navbar'>
         <Link to='#' className='menu-bars'>
           <FaIcons.FaBars onClick={showSidebar} />
@@ -27,7 +27,7 @@ const Navbar = () => {
         <ul className='nav-menu-items' onClick={showSidebar}>
           <li className='navbar-toggle'>
             <Link to='#' className='menu-bars'>
-              <AiIcons.AiOutlineClose /> 
+              <AiIcons.AiOutlineClose />
             </Link>
           </li>
           {SidebarData.map((item, index) => {
@@ -41,16 +41,16 @@ const Navbar = () => {
             );
           })}
         </ul>
-      </nav> 
-      <StyledHeader> 
+      </nav>
+      <StyledHeader>
         <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
         <StyledNav>
           <StyledLink to="/">Home</StyledLink>
-          <span> | </span>
+          <span>|</span>
           <StyledLink to="/location">Location</StyledLink>
-          <span> | </span>
+          <span>|</span>
           <StyledLink to="/toastmasters">Toastmasters</StyledLink>
-          <span> | </span>
+          <span>|</span>
           <StyledLink to="/rsvp">RSVP</StyledLink>
         </StyledNav>
       </StyledHeader></>

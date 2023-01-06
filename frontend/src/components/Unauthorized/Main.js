@@ -1,21 +1,19 @@
 import React, { useEffect } from "react";
 //import Header from "components/Navbar";
 import PageIntro from "components/Unauthorized/PageIntro";
-import Login from 'components/Login';
-import Footer from 'components/Footer'
+import Login from 'components/RegLog/Login';
+import Footer from 'components/Footer/Footer'
+import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";
 
 const Main = () => {
 	return (
-		<>
-			<section className="outer-wrapper">
-				<section className="inner-wrapper">
-					{/* <Header /> */}
-					<Login />
-					<PageIntro />
-					<Footer />
-				</section>
-			</section>
-		</>
+		<OuterWrapper>
+			<InnerWrapper>
+				<Login />
+				<PageIntro />
+				<Footer />
+			</InnerWrapper>
+		</OuterWrapper>
 	)
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledButton } from "components/GlobalStyles";
+import { StyledButton } from "styles/GlobalStyles";
 
 
 const Button = (props) => {

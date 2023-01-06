@@ -10,20 +10,18 @@ justify-content: center;
 export const InnerWrapper = styled.section`
 display: flex;
 width: 90vw;
-margin: 0 auto;
+margin: 0;
 flex-direction: column;
 justify-content: center;
 row-gap: 30px;
 align-items: center;
-/* margin-top: 1%;
-margin-bottom: 10%; */
 `
 
 export const StyledCatchPhrase = styled.h1`
-font-family: 'Oooh Baby', cursive;
+font-family: 'Dancing Script', cursive;
 color: var(--color-softBlack);
 font-size: 6em;
-font-weight: 400;
+font-weight: 200;
 line-height: 2em;
 margin: 0;
 padding: 0;
@@ -32,9 +30,10 @@ padding: 0;
 export const StyledHeading = styled.h2`
 font-family: 'Cormorant Garamond', serif;
 color: var(--color-darkBlack);
-line-height: 4em;
+line-height: 2em;
 font-size: 3.5em;
 font-weight: 400;
+text-align: center;
 /* @media (min-width: 667px) {
     font-size: 1.9em;
 } */
@@ -43,10 +42,11 @@ font-weight: 400;
 export const StyledSubHeading = styled.h3`
   font-family: 'Lato', sans-serif;
   color: var(--color-softBlack);
-  font-size: .8em;
+  font-size: .6em;
   line-height: 1em;
   letter-spacing: .6em;
   text-transform: uppercase;
+  text-align: center;
   /* @media (min-width: 667px) and (max-width: 1024px) {
   font-size: 1.8em;
   }

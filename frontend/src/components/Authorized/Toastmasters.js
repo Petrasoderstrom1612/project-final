@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "components/Navbar";
-import Footer from "components/Footer";
-import { OuterWrapper, InnerWrapper } from "components/GlobalStyles";
+import Header from "components/Navbar/Navbar";
+import Footer from "components/Footer/Footer";
+import { OuterWrapper, InnerWrapper } from "styles/GlobalStyles";
 
 const Toastmasters = () => {
     return (

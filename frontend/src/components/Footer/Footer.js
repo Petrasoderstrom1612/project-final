@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { useNavigate, NavLink } from "react-router-dom";
-import { OuterWrapper, InnerWrapper, StyledCatchPhrase, StyledHeading, StyledSubHeading, StyledButton } from "components/GlobalStyles"
+import { OuterWrapper, InnerWrapper, StyledCatchPhrase, StyledHeading, StyledSubHeading, StyledButton } from "styles/GlobalStyles"
 
 
 const Footer = () => {
@@ -20,6 +20,4 @@ export default Footer
 
 export const StyledFooter = styled(InnerWrapper)`
 background: var(--color-beige);
-padding: 2vh;
-width: 95vw;
 `
