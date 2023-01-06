@@ -47,7 +47,7 @@ const Navbar = () => {
 export default Navbar;
 
 const StyledNavHam = styled.div`
-height: 80px;
+  height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -58,9 +58,9 @@ height: 80px;
 `
 
 const StyledMenuBars = styled.div`
- margin-left: 2rem;
-  font-size: 2rem;
-  background: none;
+margin-left: 2rem;
+font-size: 2rem;
+background: none;
 `
 
 const StyledNavMenuItems = styled.ul`
@@ -69,12 +69,13 @@ width: 100%;
 
 const StyledNavBarToggle = styled.li`
  background-color: var(--color-beige);
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+ width: 100%;
+ height: 80px;
+ display: flex;
+ justify-content: flex-start;
+ align-items: left;
 `
+
 const StyledMenuItemsSpan = styled.span`
   margin-left: 16px;
 `

@@ -52,33 +52,31 @@ const Login = () => {
 			})
 	}
 	return (
-		<OuterWrapper>
-			<InnerWrapper>
-				<RegLog>
-					<input type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
-					<label htmlFor="register">Register</label>
-					<input type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
-					<label htmlFor="login">Login</label>
-				</RegLog>
-				<form onSubmit={onFormSubmit}>
-					<UserDetails>
-						<label htmlFor="username">Username</label>
-						<input
-							type="text"
-							id="username"
-							value={username}
-							onChange={e => setUsername(e.target.value)} />
-						<label htmlFor="password">Password</label>
-						<input
-							type="password"
-							id="password"
-							value={password}
-							onChange={e => setPassword(e.target.value)} />
-					</UserDetails>
-					<StyledButton type="submit">Submit</StyledButton>
-				</form>
-			</InnerWrapper>
-		</OuterWrapper>
+		<InnerWrapper>
+			<RegLog>
+				<input type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
+				<label htmlFor="register">Register</label>
+				<input type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
+				<label htmlFor="login">Login</label>
+			</RegLog>
+			<form onSubmit={onFormSubmit}>
+				<UserDetails>
+					<label htmlFor="username">Username</label>
+					<input
+						type="text"
+						id="username"
+						value={username}
+						onChange={e => setUsername(e.target.value)} />
+					<label htmlFor="password">Password</label>
+					<input
+						type="password"
+						id="password"
+						value={password}
+						onChange={e => setPassword(e.target.value)} />
+				</UserDetails>
+				<StyledButton type="submit">Submit</StyledButton>
+			</form>
+		</InnerWrapper>
 	);
 }
 

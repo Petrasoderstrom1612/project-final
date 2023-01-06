@@ -5,25 +5,25 @@ import { StyledHeading } from "styles/GlobalStyles";
 
 export const TimeLineRowLeft = (props) => {
     return (
-        <div className="timeline-outer-div">
-            <div className="timeline-inner-div">
-                <div className="timeline-content-div"><img src={props.image} className="timeline-image" /></div>
+        <StyledTimelineOuter>
+            <StyledTimelineInner>
+                <StyledTimelineContent><StyledTimelineImg src={props.image} /></StyledTimelineContent>
                 <TimelineLine />
-                <div className="timeline-content-div">{props.contentText}</div>
-            </div>
-        </div>
+                <StyledTimelineContent>{props.contentText}</StyledTimelineContent>
+            </StyledTimelineInner>
+        </StyledTimelineOuter>
     )
 };
 
 export const TimeLineRowRight = (props) => {
     return (
-        <div className="timeline-outer-div">
-            <div className="timeline-inner-div">
-                <div className="timeline-content-div">{props.contentText}</div>
+        <StyledTimelineOuter>
+            <StyledTimelineInner>
+                <StyledTimelineContent>{props.contentText}</StyledTimelineContent>
                 <TimelineLine />
-                <div className="timeline-content-div"><img src={props.image} className="timeline-image" /></div>
-            </div>
-        </div>
+                <StyledTimelineContent><StyledTimelineImg src={props.image} /></StyledTimelineContent>
+            </StyledTimelineInner>
+        </StyledTimelineOuter>
     )
 };
 
@@ -50,3 +50,35 @@ export const ContentText3 = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a mattis ligula. Ut ut ultrices massa. Quisque volutpat tristique euismod. Phasellus a mattis ligula. Ut ut ultrices massa. Quisque volutpat tristique euismod. </p>
         </div>)
 };
+
+const StyledTimelineOuter = styled.div`
+/*border: green solid 1px;*/
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+`
+
+const StyledTimelineInner = styled.div`
+ /*border: red solid 1px;*/
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  min-height: 35vh;
+`
+
+const StyledTimelineContent = styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  p {
+      margin: 0 2vw 0 2vw;
+  }
+`
+
+const StyledTimelineImg = styled.img`
+  width: 28vw;
+`

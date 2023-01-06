@@ -14,7 +14,7 @@ const AuthorizedMain = () => {
                 <Counter />
                 <Footer />
             </InnerWrapper>
-        </OuterWrapper>
+        </OuterWrapper >
     )
 };
 

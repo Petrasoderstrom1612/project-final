@@ -22,21 +22,19 @@ const store = configureStore({ reducer });
 
 export const App = () => {
   return (
-    <div>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path='/' element={<Main />}></Route>
-            <Route path='/login' element={<Login />}></Route>
-            <Route path='/weddingform' element={<WeddingForm />}></Route>
-            <Route path='/location' element={<Location />}></Route>
-            <Route path='/toastmasters' element={<Toastmasters />}></Route>
-            <Route path='/rsvp' element={<RSVP />}></Route>
-            <Route path='*' element={<NotFound />}></Route>
-          </Routes>
-        </BrowserRouter>
-      </Provider>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Main />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/weddingform' element={<WeddingForm />}></Route>
+          <Route path='/location' element={<Location />}></Route>
+          <Route path='/toastmasters' element={<Toastmasters />}></Route>
+          <Route path='/rsvp' element={<RSVP />}></Route>
+          <Route path='*' element={<NotFound />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 };

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+// ! Is this component being used? Or just a duplicate of Login.js?
+
+/* import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector, batch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "utils/utils";
@@ -57,36 +59,31 @@ const Login = () => {
 			})
 	}
 	return (
-		<section className="outer-wrapper">
-			<Section className="inner-wrapper">
-				<RegLog>
-					<input type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
-					<label htmlFor="register">Register</label>
-					<input type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
-					<label htmlFor="login">Login</label>
-				</RegLog>
-				<form onSubmit={onFormSubmit}>
-					<PersonalDetails>
-						<label htmlFor="username">Username</label>
-						<input
-							type="text"
-							id="username"
-							value={username}
-							onChange={e => setUsername(e.target.value)} />
-						<label htmlFor="password">Password</label>
-						<input
-							type="password"
-							id="password"
-							value={password}
-							onChange={e => setPassword(e.target.value)} />
-					</PersonalDetails>
-					<StyledButton type="submit">Submit</StyledButton>
-					{/* 					<ButtonSection>
-						<Button variant="contained" type="submit">Submit</Button>
-					</ButtonSection> */}
-				</form>
-			</Section>
-		</section>
+		<InnerWrapper>
+			<RegLog>
+				<input type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
+				<label htmlFor="register">Register</label>
+				<input type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
+				<label htmlFor="login">Login</label>
+			</RegLog>
+			<form onSubmit={onFormSubmit}>
+				<PersonalDetails>
+					<label htmlFor="username">Username</label>
+					<input
+						type="text"
+						id="username"
+						value={username}
+						onChange={e => setUsername(e.target.value)} />
+					<label htmlFor="password">Password</label>
+					<input
+						type="password"
+						id="password"
+						value={password}
+						onChange={e => setPassword(e.target.value)} />
+				</PersonalDetails>
+				<StyledButton type="submit">Submit</StyledButton>
+			</form>
+		</InnerWrapper>
 	);
 }
 
@@ -111,10 +108,4 @@ const Section = styled.section`
   box-shadow: 5px 5px;
   row-gap: 10px;
 `
-
-const ButtonSection = styled.section`
-	justify-content: center;
-	display: flex;
-	margin-top: 10%;
-`
-
+ */

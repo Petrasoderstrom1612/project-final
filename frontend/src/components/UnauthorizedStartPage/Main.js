@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import PageIntro from "components/UnauthorizedStartPage/PageIntro";
 import Login from 'components/RegLog/Login';
 import Footer from 'components/Footer/Footer'
