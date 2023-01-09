@@ -4,27 +4,34 @@ import { StyledHeading, StyledSubHeading } from "styles/GlobalStyles"
 import infinity from "assets/icons/icon_infinity.svg";
 
 
-const Headings = () => {
+export const Headings = ({ subheading, heading }) => {
 
     return (
-        <div>
-            <StyledSubHeading>{subheading}</StyledSubHeading>
-            <StyledHeading>{heading}</StyledHeading>
-            <StyledInfinityContainer>
-                <StyledInfinityImg src={infinity} />
-            </StyledInfinityContainer>
-        </div>
+        <StyledHeadings>
+            {subheading && <StyledSubHeading>{subheading}</StyledSubHeading>}
+            {heading && <StyledHeading>{heading}</StyledHeading>}
+            <StyledInfinityImg src={infinity} />
+        </StyledHeadings>
     )
 }
 
-export default Headings
 
-const StyledInfinityContainer = styled.div`
-width: 6vw;
-margin-top: -20px;
-margin-bottom: 10px;
+const StyledHeadings = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 1.5em 0;
 `
+
 const StyledInfinityImg = styled.img`
 display: flex;
-justify-content: center;
+align-self: center;
+width: 25vw;
+
+@media (min-width: 667px) {
+ width: 15vw;   
+}
+@media (min-width: 1024px) {
+ width: 10vw;   
+}
 `

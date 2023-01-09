@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import weddings from "reducers/weddings";
-import infinity from "assets/icons/icon_infinity.svg";
 import Swal from "sweetalert2";
-import { OuterWrapper, InnerWrapper, StyledButton, StyledSubHeading, StyledHeading } from "styles/GlobalStyles"
+import { InnerWrapper, StyledButton } from "styles/GlobalStyles"
+import { Headings } from "components/Headings/Headings";
 
 const WeddingForm = () => {
 	const [firstperson, setFirstPerson] = useState("");
@@ -45,9 +45,7 @@ const WeddingForm = () => {
 	}
 	return (
 		<InnerWrapper>
-			<StyledSubHeading>Wedding form</StyledSubHeading>
-			<StyledHeading>Add your information below to generate your dreamy website</StyledHeading>
-			<div className="img-div"><img src={infinity} className="infinity" /></div>
+			<Headings subheading="Wedding form" heading="Add your information below to generate your dreamy website" />
 			<form className="wedding-form" onSubmit={onFormSubmit}>
 				<label>Information about the Wedding Couple
 					<input id="FirstpersonFirstname" className="wedding-input" type="text" placeholder="Person 1 First Name" value={firstperson} onChange={e => setFirstPerson(e.target.value)} />

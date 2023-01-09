@@ -5,7 +5,7 @@ import styled from 'styled-components/macro';
 import { API_URL } from "utils/utils";
 import user from "reducers/user";
 import Swal from "sweetalert2";
-import { OuterWrapper, InnerWrapper, StyledButton } from "styles/GlobalStyles"
+import { InnerWrapper, StyledButton } from "styles/GlobalStyles"
 
 const Login = () => {
 	const [username, setUsername] = useState("");

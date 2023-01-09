@@ -13,11 +13,11 @@ const Header = () => {
       <Link to="/"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
       <StyledNav>
         <StyledLink to="/">Home</StyledLink>
-        <span> | </span>
+        <StyledHeaderSpan> | </StyledHeaderSpan>
         <StyledLink to="/location">Location</StyledLink>
-        <span> | </span>
+        <StyledHeaderSpan> | </StyledHeaderSpan>
         <StyledLink to="/toastmasters">Toastmasters</StyledLink>
-        <span> | </span>
+        <StyledHeaderSpan> | </StyledHeaderSpan>
         <StyledLink to="/rsvp">RSVP</StyledLink>
       </StyledNav>
     </StyledHeader >
@@ -32,16 +32,16 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
 width: 95vw;
-height: 60vh;
+height: 50vh;
 display: flex;
 align-items: center;
 flex-direction: column;
-margin: 0; 
 `
 
 const StyledNav = styled.nav`
-font-size: 0.8em;
-font-weight: 400;
+color: #555; 
+font-size: .9em;
+font-weight: 500;
 letter-spacing: 3px;
 text-transform: uppercase;
 display: none;
@@ -50,10 +50,13 @@ display: none;
   } 
 `
 
-const StyledLink = styled(NavLink)`
-  color: "(var--color-softBlack)";
+const StyledHeaderSpan = styled.span`
+margin: 0 1.5em;
+`
 
+const StyledLink = styled(NavLink)`
   &.active {
     font-weight: 700;
+    color: #333;
   }
 `

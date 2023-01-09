@@ -19,44 +19,34 @@ border: solid 1px grey;
 export const StyledCatchPhrase = styled.h1`
 font-family: 'Dancing Script', cursive;
 color: var(--color-softBlack);
-font-size: 5em;
-font-weight: 200;
-line-height: 1.5em;
-margin: 0;
+font-size: 4.5em;
+font-weight: 300;
 padding: .5em 0;
 text-align: center;
-@media (min-width: 667px) and (max-width: 1024px) {
+@media (min-width: 667px) {
   font-size: 7em;
-  }
-  @media (min-width: 1024px) {
-  font-size: 6em;
   }
 `
 
 export const StyledHeading = styled.h2`
 font-family: 'Cormorant Garamond', serif;
 color: var(--color-darkBlack);
-line-height: 2em;
-font-size: 1.8em;
+font-size: 1.5em;
 font-weight: 400;
 text-align: center;
 @media (min-width: 667px) {
-    font-size: 3em;
+    font-size: 2.5em;
 }
 `
 
 export const StyledSubHeading = styled.h3`
   font-family: 'Lato', sans-serif;
   color: var(--color-softBlack);
-  font-size: .8em;
-  line-height: 1em;
-  letter-spacing: .6em;
+  font-size: .7em;
+  letter-spacing: .4em;
   text-transform: uppercase;
   text-align: center;
-  @media (min-width: 667px) and (max-width: 1024px) {
-  font-size: 1em;
-  }
-  @media (min-width: 1024px) {
+  @media (min-width: 667px) {
   font-size: .6em;
   }
 `

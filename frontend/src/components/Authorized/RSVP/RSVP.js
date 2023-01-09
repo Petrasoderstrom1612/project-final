@@ -3,9 +3,10 @@ import { useDispatch, batch } from "react-redux";
 import { API_URL } from "utils/utils";
 import rsvps from "reducers/rsvps";
 import { InnerWrapper, StyledButton, StyledSubHeading, StyledHeading } from "styles/GlobalStyles";
-import infinity from "assets/icons/icon_infinity.svg";
+import { Headings } from "components/Headings/Headings";
 import Swal from "sweetalert2";
 
+// TODO: Check that this component still works
 
 import FoodRestrictions from "./Foodrestrictions";
 import Accommodation from "./Accomodation";
@@ -52,9 +53,7 @@ const RSVP = () => {
   }
   return (
     <InnerWrapper>
-      <StyledSubHeading>RSVP</StyledSubHeading>
-      <StyledHeading>Will you join us on our special day?</StyledHeading>
-      <div className="img-div"><img src={infinity} className="infinity" /></div>
+      <Headings subheading="RSVP" heading="Will you join us on our special day?" />
       <form className="RSVP-form" onSubmit={onFormSubmit}>
         <label>
           <input id="firstname" className="RSVP-input" type="text" placeholder="First name" value={firstname} onChange={e => setFirstName(e.target.value)} />
