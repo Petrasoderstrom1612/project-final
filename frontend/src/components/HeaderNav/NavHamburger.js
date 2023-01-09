@@ -24,7 +24,7 @@ const Navbar = () => {
         <StyledNavMenuItems onClick={showSidebar}>
           <StyledNavBarToggle>
             <Link to='#'><StyledMenuBars>
-              <AiIcons.AiOutlineClose />
+              <br/><AiIcons.AiOutlineClose />
             </StyledMenuBars>
             </Link>
           </StyledNavBarToggle>
@@ -57,12 +57,10 @@ const StyledNavHam = styled.div`
 }
 `
 const StyledMenuBars = styled.div`
-margin-left: 1.5rem;
-margin-top: 2rem;
 font-size: 2rem;
 background: none;
-display: flex;
-justify-content: flex-start;
+position: absolute;
+left: 8%;
 
 `
 
