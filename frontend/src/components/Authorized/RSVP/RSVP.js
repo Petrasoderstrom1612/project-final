@@ -5,7 +5,7 @@ import rsvps from "reducers/rsvps";
 import { InnerWrapper, StyledButton, StyledSubHeading, StyledHeading } from "styles/GlobalStyles";
 import infinity from "assets/icons/icon_infinity.svg";
 import Swal from "sweetalert2";
-
+import Header from "components/HeaderNav/Header";
 
 import FoodRestrictions from "./Foodrestrictions";
 import Accommodation from "./Accomodation";
@@ -52,6 +52,7 @@ const RSVP = () => {
   }
   return (
     <InnerWrapper>
+      <Header />
       <StyledSubHeading>RSVP</StyledSubHeading>
       <StyledHeading>Will you join us on our special day?</StyledHeading>
       <div className="img-div"><img src={infinity} className="infinity" /></div>
@@ -66,9 +67,11 @@ const RSVP = () => {
           <input id="email" className="RSVP-input" type="text" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} /></label>
         <Attendance />
         <Accommodation />
+        <br/>
         <FoodRestrictions />
         <label>
           <input className="RSVP-input message" type="text" placeholder="Comments" /></label>
+          <br/>
         <StyledButton type="submit">Submit</StyledButton>
       </form>
     </InnerWrapper>
