@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 import crypto from 'crypto';
 
 
+// * WEDDING COUPLE AS THE USER
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -18,7 +19,7 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-//WEDDING SCHEMA
+// * SCHEMA FOR COUPLE'S FORM
 const WeddingSchema = new mongoose.Schema({
   firstperson: {
     type: String,
@@ -38,7 +39,7 @@ const WeddingSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
-  } ,
+  },
   email: {
     type: String,
     validate: {
@@ -78,7 +79,7 @@ const WeddingSchema = new mongoose.Schema({
 })
 
 
-// SCHEMA FOR GUEST AUTHENTICATION
+// * SCHEMA FOR GUEST AUTHENTICATION
 const GuestSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -96,7 +97,7 @@ const GuestSchema = new mongoose.Schema({
 });
 
 
-//RSVP SCHEMA
+// * SCHEMA FOR RSVP FORM
 const RSVPSchema = new mongoose.Schema({
   firstname: {
     type: String,
@@ -125,12 +126,12 @@ const RSVPSchema = new mongoose.Schema({
   registrationdate: {
     type: String, //date picker
     default: () => new Date()
-  } ,
-    attending: {
-      type: Boolean,
-      default: true,
-      required: true,
-    }/*,
+  },
+  attending: {
+    type: Boolean,
+    default: true,
+    required: true,
+  }/*,
     foodrestrictions: {
       type: String
     },

@@ -1,13 +1,13 @@
-//Här måste vi importera User och Guest från 
+// TODO Här måste vi importera User och Guest från 
 const { User, /* Guest */ } = require('../models/models.js')
 
-//Function for authenticate guest const authenticateUser = async (req, res, next) => {
+// * Function for authenticate guest const authenticateUser = async (req, res, next) => {
 export const authenticateUser = async (req, res, next) => {
   const accessToken = req.header("Authorization");
   try {
     const user = await User.findOne({ accessToken: accessToken });
     if (user) {
-      next(); //here we want them to access the wedding form??? What is next???
+      next(); // ? here we want them to access the wedding form??? What is next???
     } else {
       res.status(401).json({
         response: "Please log in",

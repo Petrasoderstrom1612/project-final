@@ -1,9 +1,9 @@
 const { Wedding } = require('../models/models.js')
 
-//Vi måste validera mot rätt wedding-id på något sätt här....
+// TODO Vi måste validera mot rätt wedding-id på något sätt här....
 
 const guestpassword = Wedding.guestpassword;
-//Function for authenticate guest const authenticateUser = async (req, res, next) => {
+// * Function for authenticate guest const authenticateUser = async (req, res, next) => {
 export const giveGuestAccess = async (req, res) => {
   const guestAccess = req.body;
   try {
