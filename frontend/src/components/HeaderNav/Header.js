@@ -3,13 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
 import { StyledCatchPhrase } from "../../styles/GlobalStyles";
 import heroimg from "../../assets/images/hero-img-rings.jpg";
-import Navbar from "./NavHamburger";
+import NavHamburger from "./NavHamburger";
 
 
 const Header = () => {
   return (
     <StyledHeader>
-      <Navbar />
+      <NavHamburger />
       <Link to="/"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
       <StyledNav>
         <StyledLink to="/">Home</StyledLink>

@@ -56,15 +56,19 @@ const StyledNavHam = styled.div`
     display: none
 }
 `
-
 const StyledMenuBars = styled.div`
-margin-left: 2rem;
+margin-left: 1.5rem;
+margin-top: 2rem;
 font-size: 2rem;
 background: none;
+display: flex;
+justify-content: flex-start;
+
 `
 
 const StyledNavMenuItems = styled.ul`
 width: 100%;
+margin-left: .5rem;
 `
 
 const StyledNavBarToggle = styled.li`
@@ -77,5 +81,5 @@ const StyledNavBarToggle = styled.li`
 `
 
 const StyledMenuItemsSpan = styled.span`
-  margin-left: 16px;
+  margin-left: 1.5rem;
 `

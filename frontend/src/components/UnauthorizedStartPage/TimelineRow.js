@@ -52,7 +52,6 @@ export const ContentText3 = () => {
 };
 
 const StyledTimelineOuter = styled.div`
-/*border: green solid 1px;*/
   width: 95vw;
   display: flex;
   justify-content: center;
@@ -62,7 +61,6 @@ const StyledTimelineOuter = styled.div`
 `
 
 const StyledTimelineInner = styled.div`
- /*border: red solid 1px;*/
   width: 70%;
   display: flex;
   justify-content: center;

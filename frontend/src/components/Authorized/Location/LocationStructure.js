@@ -1,7 +1,6 @@
 import React from "react";
-import styled from "styled-components/macro";
 import MapLocation from "./MapLocation"; //the functional main component
-import { OuterWrapper, InnerWrapper, StyledHeading, StyledSubHeading } from "styles/GlobalStyles"
+import { InnerWrapper, StyledHeading, StyledSubHeading } from "styles/GlobalStyles"
 import infinity from "assets/icons/icon_infinity.svg";
 
 
