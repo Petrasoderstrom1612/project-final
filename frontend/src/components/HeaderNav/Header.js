@@ -12,13 +12,13 @@ const Header = () => {
       <NavHamburger />
       <Link to="/"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
       <StyledNav>
-        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/weddingform/guestpassword/:guestpassword">Home</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/location">Location</StyledLink>
+        <StyledLink to="/weddingform/guestpassword/:guestpassword/location">Location</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/toastmasters">Toastmasters</StyledLink>
+        <StyledLink to="/weddingform/guestpassword/:guestpassword/toastmasters">Toastmasters</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/rsvp">RSVP</StyledLink>
+        <StyledLink to="/weddingform/guestpassword/:guestpassword/rsvp">RSVP</StyledLink>
       </StyledNav>
     </StyledHeader >
   )
@@ -26,7 +26,7 @@ const Header = () => {
 
 export default Header
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
 background-image: linear-gradient(rgba(255, 255, 255, 0.900), rgba(0, 0, 0, 0.2)), url(${heroimg});
 background-size: cover;
 background-repeat: no-repeat;

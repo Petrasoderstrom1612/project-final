@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch } from "react-redux";
 import weddings from "reducers/weddings";
 import Swal from "sweetalert2";
-import { InnerWrapper, StyledButton } from "styles/GlobalStyles"
+import { StyledHeader } from "components/HeaderNav/Header";
+import { StyledCatchPhrase } from "styles/GlobalStyles";
+import { InnerWrapper, StyledButton } from "styles/Global
+  Styles"
 import { Headings } from "components/Headings/Headings";
+import { API_URL } from "utils/utils";;
 
 const WeddingForm = () => {
 	const [firstperson, setFirstPerson] = useState("");
-	const [secondperson, setSecondPerson] = useState("");
-	const [email, setEmail] = useState("");
 	const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const goToUniqueWeddingPage = () => {
+    navigate("/weddingform/guestpassword/:guestpassword")
+  }
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
@@ -44,24 +52,28 @@ const WeddingForm = () => {
 			})
 	}
 	return (
-		<InnerWrapper>
+			<InnerWrapper>
+        <StyledHeader>
+        <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
+        </StyledHeader >
 			<Headings subheading="Wedding form" heading="Add your information below to generate your dreamy website" />
 			<form className="wedding-form" onSubmit={onFormSubmit}>
 				<label>Information about the Wedding Couple
-					<input id="FirstpersonFirstname" className="wedding-input" type="text" placeholder="Person 1 First Name" value={firstperson} onChange={e => setFirstPerson(e.target.value)} />
+					<input id="Firstperson" className="wedding-input" type="text" placeholder="Firstperson" value={firstperson} onChange={e => setFirstPerson(e.target.value)} />
+				</label>
+				<StyledButton type="submit" onClick={() => goToUniqueWeddingPage()}>Send</StyledButton>
+			</form>
+      </InnerWrapper>
+	)
+}
+
+export default WeddingForm;
+{/* <label>
+					<input id="Secondperson" className="wedding-input" type="text" placeholder="Secondperson" value={secondperson} onChange={e => setSecondPerson(e.target.value)} />
 				</label>
 				<label>
-					<input id="FirstpersonLasttname" className="wedding-input" type="text" placeholder="Person 1 Last Name" />
-				</label>
-				<label>
-					<input id="SecondpersonFirstname" className="wedding-input" type="text" placeholder="Person 2 First Name" value={secondperson} onChange={e => setSecondPerson(e.target.value)} />
-				</label>
-				<label>
-					<input id="SecondpersonLastname" className="wedding-input" type="text" placeholder="Person 2 Last Name" />
-				</label>
-				<label>
-					<input className="wedding-input" type="text" placeholder="Your e-mail" value={email} onChange={e => setEmail(e.target.value)} /></label>
-				<label>Wedding Info
+					<input className="wedding-input" type="text" placeholder="Your e-mail" value={email} onChange={e => setEmail(e.target.value)} /></label> 
+				 <label>Wedding Info
 					<input className="wedding-input" type="date" /></label>
 				<label>
 					<input className="wedding-input" type="time" /></label>
@@ -70,11 +82,4 @@ const WeddingForm = () => {
 				<label>
 					<input className="wedding-input" type="text" placeholder="Location of the Wedding Party" /></label>
 				<label>
-					<input className="wedding-input message" type="text" placeholder="Add some information about the location" /></label>
-				<StyledButton type="submit">Send</StyledButton>
-			</form>
-		</InnerWrapper>
-	)
-}
-
-export default WeddingForm;
+					<input className="wedding-input message" type="text" placeholder="Add some information about the location" /></label> */}
