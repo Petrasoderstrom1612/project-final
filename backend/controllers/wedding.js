@@ -20,7 +20,7 @@ export const createWedding = async (req, res) => {
 
 export const viewSpecificWedding = async (req, res) => {
   try {
-    const singleWedding = await Wedding.find({ownerId: req.params.guestpassword})
+    const singleWedding = await Wedding.findOne({guestpassword: req.params.guestpassword})
     if (singleWedding) {
       res.status(200).json({
         success: true,
