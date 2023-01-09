@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <NavHamburger />
-      <Link to="/"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
+      <Link to="/weddingform/guestpassword/:guestpassword"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
       <StyledNav>
         <StyledLink to="/weddingform/guestpassword/:guestpassword">Home</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>

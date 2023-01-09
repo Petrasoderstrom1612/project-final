@@ -5,8 +5,7 @@ import weddings from "reducers/weddings";
 import Swal from "sweetalert2";
 import { StyledHeader } from "components/HeaderNav/Header";
 import { StyledCatchPhrase } from "styles/GlobalStyles";
-import { InnerWrapper, StyledButton } from "styles/Global
-  Styles"
+import { InnerWrapper, StyledButton } from "styles/GlobalStyles";
 import { Headings } from "components/Headings/Headings";
 import { API_URL } from "utils/utils";;
 
@@ -36,7 +35,6 @@ const WeddingForm = () => {
 						dispatch(weddings.actions.setFirstPerson(data.response.firstperson));
 						dispatch(weddings.actions.setSecondPerson(data.response.secondperson));
 						dispatch(weddings.actions.setEmail(data.response.email));
-						dispatch(rsvps.actions.setAttending(data.response.attending));
 						dispatch(weddings.actions.setError(null));
 					});
 				} else {
@@ -44,7 +42,6 @@ const WeddingForm = () => {
 						dispatch(weddings.actions.setFirstPerson(null));
 						dispatch(weddings.actions.setSecondPerson(null));
 						dispatch(weddings.actions.setEmail(null));
-						dispatch(weddings.actions.setAttending(null));
 						dispatch(weddings.actions.setError(data.response));
 						Swal.fire(weddings.response)
 					});
