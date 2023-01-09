@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto';
 
-
+// WEDDING COUPLE AS USER
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -33,6 +33,11 @@ const WeddingSchema = new mongoose.Schema({
     minlength: 2,
     maxlength: 30,
     trim: true
+  },
+  guestpassword: {
+    type: String,
+    required: true,
+    unique: true
   },
   email: {
     type: String,
@@ -125,12 +130,12 @@ const RSVPSchema = new mongoose.Schema({
   registrationdate: {
     type: String, //date picker
     default: () => new Date()
-  } ,
-    attending: {
-      type: Boolean,
-      default: true,
-      required: true,
-    }/*,
+  },
+  attending: {
+    type: Boolean,
+    default: true,
+    required: true,
+  }/*,
     foodrestrictions: {
       type: String
     },
