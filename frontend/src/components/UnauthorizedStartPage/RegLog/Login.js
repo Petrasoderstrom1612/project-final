@@ -85,6 +85,8 @@ export default Login;
 const RegLogContainer = styled.section`
 background-color: var(--color-beige);
 padding: 1em;
+min-height: 20vh;
+margin-bottom: 2em;
 `
 
 const RegLog = styled.div`
@@ -96,5 +98,5 @@ const RegLog = styled.div`
 const UserDetails = styled.div`
 	display: flex;
 	flex-direction: column;
-	line-height: 30px;
+	line-height: 2.5em;
 `

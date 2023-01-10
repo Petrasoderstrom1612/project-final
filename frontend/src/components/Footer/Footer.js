@@ -9,7 +9,7 @@ const Footer = () => {
         <StyledFooter>
             <StyledSubHeading>Subheading</StyledSubHeading>
             <StyledHeading>Please, take a moment and respond to our invitation</StyledHeading>
-            <Link to="/RSVP"><StyledButton type="button">RSVP</StyledButton></Link>
+            <Link to="/weddingform/guestpassword/:guestpassword/rsvp"><StyledButton type="button">RSVP</StyledButton></Link>
         </StyledFooter>
     )
 }
@@ -21,16 +21,19 @@ background: var(--color-beige);
 padding: 0 2em;
 margin: 0;
 width: 100vw;
-height: 40vh;
+min-height: 40vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
 @media (min-width: 667px) and (max-width: 1024px) {
-    height: 23vh;
+    min-height: 25vh;
 }
 @media (min-width: 1024px) {
-    height: 20vh;
+    min-height: 25vh;
+}
+& a {
+    text-decoration: none;
 }
 `

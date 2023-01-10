@@ -9,9 +9,9 @@ justify-content: center;
 `
 
 export const InnerWrapper = styled.section`
-width: 80vw;
+width: 70vw;
 min-height: 50vh;
-margin: 1em 0;
+margin: 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -34,7 +34,7 @@ text-align: center;
 export const StyledHeading = styled.h2`
 font-family: 'Cormorant Garamond', serif;
 color: var(--color-darkBlack);
-font-size: 2.5em;
+font-size: 2.2em;
 font-weight: 400;
 text-align: center;
 @media (min-width: 667px) and (max-width: 1024px) {
@@ -68,6 +68,7 @@ export const StyledButton = styled.button`
   border: 1px solid var(--color-darkBlack);
   padding: 0 4em;
   margin: 1em 0;
+  color: var(--color-darkBlack);
   cursor: pointer;
   @media (min-width: 1024px) {
     :hover {
