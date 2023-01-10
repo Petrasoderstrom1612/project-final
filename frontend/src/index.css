@@ -76,18 +76,6 @@ a {
   background-color: #fff;
 }
 
-/* to here */
-.infinity {
-  width: 6vw;
-  margin-top: -20px;
-  margin-bottom: 10px;
-
-}
-
-.img-div {
-  display: flex;
-  justify-content: center;
-}
 
 /*FORMS*/
 .RSVP-input {

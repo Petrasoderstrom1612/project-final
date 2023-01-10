@@ -35,10 +35,3 @@ text-align: center;
     text-decoration: none;
 }
 `
-
-/*  <StyledFooter>
-        <StyledSubHeading>Subheading</StyledSubHeading>
-        <StyledHeading>Please, take a moment and respond to our invitation</StyledHeading>
-        <Link to="/weddingform/guestpassword/:guestpassword/rsvp"><StyledButton type="button">RSVP</StyledButton></Link>}
-    </StyledFooter>
-*/
