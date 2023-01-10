@@ -52,7 +52,7 @@ export const StyledSubHeading = styled.h3`
   letter-spacing: .4em;
   text-transform: uppercase;
   text-align: center;
-  margin:  0 0 .5em 0;
+  margin: 1em 0 .5em 0;
   @media (min-width: 667px) {
   font-size: .7em;
   }

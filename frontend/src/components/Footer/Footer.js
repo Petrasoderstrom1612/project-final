@@ -4,17 +4,15 @@ import { Link } from "react-router-dom";
 import { StyledHeading, StyledSubHeading, StyledButton } from "styles/GlobalStyles"
 
 
-const Footer = () => {
+export const Footer = ({ subheading, heading, footerButton }) => {
     return (
         <StyledFooter>
-            <StyledSubHeading>Subheading</StyledSubHeading>
-            <StyledHeading>Please, take a moment and respond to our invitation</StyledHeading>
-            <Link to="/weddingform/guestpassword/:guestpassword/rsvp"><StyledButton type="button">RSVP</StyledButton></Link>
+            {subheading && <StyledSubHeading>{subheading}</StyledSubHeading>}
+            {heading && <StyledHeading>{heading}</StyledHeading>}
+            {footerButton && <Link to="/weddingform/guestpassword/:guestpassword/rsvp"><StyledButton type="button">{footerButton}</StyledButton></Link>}
         </StyledFooter>
     )
 }
-
-export default Footer
 
 export const StyledFooter = styled.footer`
 background: var(--color-beige);
@@ -37,3 +35,10 @@ text-align: center;
     text-decoration: none;
 }
 `
+
+/*  <StyledFooter>
+        <StyledSubHeading>Subheading</StyledSubHeading>
+        <StyledHeading>Please, take a moment and respond to our invitation</StyledHeading>
+        <Link to="/weddingform/guestpassword/:guestpassword/rsvp"><StyledButton type="button">RSVP</StyledButton></Link>}
+    </StyledFooter>
+*/

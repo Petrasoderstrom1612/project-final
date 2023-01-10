@@ -8,7 +8,7 @@ import { OuterWrapper, StyledCatchPhrase } from "styles/GlobalStyles";
 import { InnerWrapper, StyledButton } from "styles/GlobalStyles";
 import { Headings } from "components/Headings/Headings";
 import { API_URL } from "utils/utils";;
-import WeddingFormFooter from "./WeddingFormFooter";
+import { Footer } from "components/Footer/Footer";
 
 const WeddingForm = () => {
 	const [firstperson, setFirstPerson] = useState("");
@@ -63,7 +63,7 @@ const WeddingForm = () => {
 					<StyledButton type="submit" onClick={() => goToUniqueWeddingPage()}>Send</StyledButton>
 				</form>
 			</InnerWrapper>
-			<WeddingFormFooter />
+			<Footer subheading="Congratulations" heading="We're sure you'll have an amazing wedding day!" />
 		</OuterWrapper>
 	)
 }

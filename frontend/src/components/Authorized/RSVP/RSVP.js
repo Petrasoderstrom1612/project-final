@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 import FoodRestrictions from "./Foodrestrictions";
 import Accommodation from "./Accomodation";
 import Attendance from "./Attendance";
-import RsvpFooter from "./RsvpFooter"
+import { Footer } from "components/Footer/Footer";
 
 const RSVP = () => {
   const [firstname, setFirstName] = useState("");
@@ -76,7 +76,7 @@ const RSVP = () => {
           <StyledButton type="submit">Submit</StyledButton>
         </form>
       </InnerWrapper>
-      < RsvpFooter />
+      <Footer subheading="Hope to see you" heading="Thank you for responding!" />
     </OuterWrapper>
   )
 };

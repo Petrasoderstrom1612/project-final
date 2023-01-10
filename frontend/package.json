@@ -16,7 +16,8 @@
     "react-router-dom": "^6.4.5",
     "redux": "^4.2.0",
     "styled-components": "^5.3.6",
-    "sweetalert2": "^11.6.15"
+    "sweetalert2": "^11.6.15",
+    "swiper": "^8.4.5"
   },
   "scripts": {
     "start": "react-scripts start",

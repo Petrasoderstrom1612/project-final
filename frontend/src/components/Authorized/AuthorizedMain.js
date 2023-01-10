@@ -1,6 +1,6 @@
 import React from "react";
-import Counter from "components/Counter";
-import Footer from "components/Footer/Footer";
+import Counter from "components/Authorized/Counter";
+import { Footer } from "components/Footer/Footer";
 import Header from "components/HeaderNav/Header";
 import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";
 
@@ -11,7 +11,7 @@ const AuthorizedMain = () => {
             <InnerWrapper>
                 <Counter />
             </InnerWrapper>
-            <Footer />
+            <Footer subheading="Subheading" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
         </OuterWrapper >
     )
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import LocationStructure from "components/Authorized/Location/LocationStructure";
-import Footer from 'components/Footer/Footer';
+import { Footer } from 'components/Footer/Footer';
 import Header from "components/HeaderNav/Header";
 import { OuterWrapper } from "styles/GlobalStyles";
 
@@ -9,7 +9,7 @@ const Location = () => {
 		<OuterWrapper>
 			<Header />
 			<LocationStructure />
-			<Footer />
+			<Footer subheading="Subheading" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
 		</OuterWrapper>
 	)
 }
