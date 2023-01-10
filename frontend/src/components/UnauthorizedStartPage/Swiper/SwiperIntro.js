@@ -16,7 +16,7 @@ import "../Swiper/swiper.style.css";
 
 import { Pagination, Navigation } from "swiper";
 
-export default SwiperIntro = () => {
+const SwiperIntro = () => {
     return (
         <>
             <Swiper
@@ -56,6 +56,8 @@ export default SwiperIntro = () => {
         </>
     );
 }
+
+export default SwiperIntro
 
 const SlideTextContainer = styled.div`
 padding: 3.5em;
