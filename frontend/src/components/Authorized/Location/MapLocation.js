@@ -3,8 +3,8 @@ import styled from "styled-components/macro";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '50vw',
-  height: '50vh',
+  width: '18em',
+  height: '18em',
 };
 
 const center = {

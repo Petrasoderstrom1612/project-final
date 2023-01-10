@@ -52,7 +52,7 @@ const Login = () => {
 			})
 	}
 	return (
-		<InnerWrapper>
+		<RegLogContainer>
 			<RegLog>
 				<input type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
 				<label htmlFor="register">Register</label>
@@ -76,18 +76,24 @@ const Login = () => {
 				</UserDetails>
 				<StyledButton type="submit">Submit</StyledButton>
 			</form>
-		</InnerWrapper>
+		</RegLogContainer>
 	);
 }
 
 export default Login;
 
-const RegLog = styled.div`
-	display: flex;
-	column-gap: 3px;
+const RegLogContainer = styled.section`
+background-color: var(--color-beige);
+padding: 1em;
 `
 
-const UserDetails = styled.form`
+const RegLog = styled.div`
+	display: flex;
+	column-gap: 5px;
+	justify-content: center;
+`
+
+const UserDetails = styled.div`
 	display: flex;
 	flex-direction: column;
 	line-height: 30px;

@@ -32,7 +32,7 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
 width: 100vw;
-height: 50vh;
+min-height: 50vh;
 display: flex;
 align-items: center;
 flex-direction: column;

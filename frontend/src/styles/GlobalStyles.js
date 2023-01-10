@@ -9,15 +9,16 @@ justify-content: center;
 `
 
 export const InnerWrapper = styled.section`
-width: 60vw;
+width: 80vw;
+min-height: 50vh;
 margin: 1em 0;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-border: 1px tomato solid;
-`
+/* border: 1px tomato solid; // ! Remember to remove
+ */`
 export const StyledCatchPhrase = styled.h1`
 font-family: 'Dancing Script', cursive;
 color: var(--color-softBlack);

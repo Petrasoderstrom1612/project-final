@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import Main from 'components/UnauthorizedStartPage/Main';
-import Login from 'components/RegLog/Login';
+import Login from 'components/UnauthorizedStartPage/RegLog/Login';
 import WeddingForm from 'components/Authorized/WeddingForm/WeddingForm';
 import NotFound from 'components/NotFound/NotFound';
 import RSVP from 'components/Authorized/RSVP/RSVP';

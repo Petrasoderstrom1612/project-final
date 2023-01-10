@@ -1,6 +1,6 @@
 import React from "react";
 import PageIntro from "components/UnauthorizedStartPage/PageIntro";
-import Login from 'components/RegLog/Login';
+import Login from 'components/UnauthorizedStartPage/RegLog/Login';
 import Footer from 'components/Footer/Footer';
 import { StyledHeader } from "components/HeaderNav/Header";
 import { StyledCatchPhrase } from "styles/GlobalStyles";
@@ -11,9 +11,9 @@ const Main = () => {
 		<OuterWrapper>
 			<StyledHeader>
 				<StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
+				<Login />
 			</StyledHeader >
 			<InnerWrapper>
-				<Login />
 				<PageIntro />
 			</InnerWrapper>
 			<Footer />
