@@ -1,9 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from "react";
+import { InnerWrapper, StyledHeading, StyledSubHeading } from 'styles/GlobalStyles';
 
 const Counter = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2023-01-31T12:00:00+01:00") /*wedding date*/ - +new Date();
+    const difference = +new Date("2023-01-13T16:00:00+01:00") /*wedding date*/ - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -27,10 +28,10 @@ const Counter = () => {
   });
 
   return (
-    <div>
-      <h2>Time left</h2>
+    <InnerWrapper>
+      <StyledHeading>Countdown to our big day</StyledHeading>
       {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
-        <p>
+        <StyledSubHeading>
           <span>{timeLeft.days}d</span>
           <span> </span>
           <span>{timeLeft.hours}h</span>
@@ -38,11 +39,11 @@ const Counter = () => {
           <span>{timeLeft.minutes}m</span>
           <span> </span>
           <span>{timeLeft.seconds}s</span>
-        </p>
+        </StyledSubHeading>
       ) : (
-        <p>The time has come! 💍</p>
+        <StyledSubHeading>The time has come! 💍</StyledSubHeading>
       )}
-    </div>
+    </InnerWrapper>
   )
 }
 

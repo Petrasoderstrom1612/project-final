@@ -9,14 +9,14 @@ import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";
 const Main = () => {
 	return (
 		<OuterWrapper>
+			<StyledHeader>
+				<StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
+			</StyledHeader >
 			<InnerWrapper>
-        <StyledHeader>
-        <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
-        </StyledHeader >
 				<Login />
 				<PageIntro />
-				<Footer />
 			</InnerWrapper>
+			<Footer />
 		</OuterWrapper>
 	)
 }

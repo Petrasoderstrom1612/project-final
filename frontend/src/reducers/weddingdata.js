@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const weddings = createSlice({
-  name: "wedding",
+const weddingdata = createSlice({
+  name: "weddingdata",
   initialState: {
     items: [],
     firstperson: null,
@@ -35,4 +35,4 @@ const weddings = createSlice({
   }
 });
 
-export default weddings;
+export default weddingdata;

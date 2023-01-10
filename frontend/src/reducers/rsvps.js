@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const rsvps = createSlice({
-  name: "rsvps",
+const rsvpdata = createSlice({
+  name: "rsvpdata",
   initialState: {
     firstname: null,
     lastname: null,
@@ -25,8 +25,8 @@ const rsvps = createSlice({
     setAttending: (store, action) => {
       store.attending = action.payload
     }
-    }
   }
+}
 );
 
-export default rsvps;
+export default rsvpdata;

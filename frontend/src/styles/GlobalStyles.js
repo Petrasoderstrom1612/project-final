@@ -3,18 +3,20 @@ import styled from "styled-components/macro";
 export const OuterWrapper = styled.section`
 width: 100vw;
 display: flex;
+flex-direction: column;
 align-items: center;
 justify-content: center;
 `
 
 export const InnerWrapper = styled.section`
+width: 60vw;
+margin: 1em 0;
 display: flex;
-width: 95vw;
-margin: 0;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-border: solid 1px grey;
+text-align: center;
+border: 1px tomato solid;
 `
 export const StyledCatchPhrase = styled.h1`
 font-family: 'Dancing Script', cursive;
@@ -24,21 +26,21 @@ font-weight: 300;
 padding: .5em 0;
 text-align: center;
 @media (min-width: 667px) {
-  font-size: 7em;
+  font-size: 8em;
   }
 `
 
 export const StyledHeading = styled.h2`
 font-family: 'Cormorant Garamond', serif;
 color: var(--color-darkBlack);
-font-size: 1.5em;
+font-size: 2.5em;
 font-weight: 400;
 text-align: center;
 @media (min-width: 667px) and (max-width: 1024px) {
-    font-size: 25em;
+    font-size: 3em;
 }
 @media (min-width: 1024px) {
-    font-size: 3em;
+    font-size: 3.5em;
 }
 `
 
@@ -51,7 +53,7 @@ export const StyledSubHeading = styled.h3`
   text-align: center;
   margin:  0 0 .5em 0;
   @media (min-width: 667px) {
-  font-size: .8em;
+  font-size: .7em;
   }
 `
 

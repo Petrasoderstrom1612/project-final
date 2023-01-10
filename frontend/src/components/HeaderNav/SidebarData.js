@@ -6,25 +6,25 @@ import * as IoIcons from 'react-icons/io';
 export const SidebarData = [
   {
     title: 'Home',
-    path: '/',
+    path: '/weddingform/guestpassword/:guestpassword',
     icon: <AiIcons.AiFillHome />,
     cName: 'nav-text'
   },
   {
     title: 'Location',
-    path: '/location',
+    path: '/weddingform/guestpassword/:guestpassword/location',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
   {
     title: 'Toastmasters',
-    path: '/toastmasters',
+    path: '/weddingform/guestpassword/:guestpassword/toastmasters',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },
   {
     title: 'RSVP',
-    path: '/rsvp',
+    path: '/weddingform/guestpassword/:guestpassword/rsvp',
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   }

@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import { useDispatch, batch } from "react-redux";
 import { API_URL } from "utils/utils";
 import rsvps from "reducers/rsvps";
-import { InnerWrapper, StyledButton, StyledSubHeading, StyledHeading } from "styles/GlobalStyles";
+import { InnerWrapper, OuterWrapper, StyledButton } from "styles/GlobalStyles";
+import Header from "components/HeaderNav/Header";
 import { Headings } from "components/Headings/Headings";
 import Swal from "sweetalert2";
-import Header from "components/HeaderNav/Header";
 // TODO: Check that this component still works
 
 import FoodRestrictions from "./Foodrestrictions";
 import Accommodation from "./Accomodation";
 import Attendance from "./Attendance";
+import RsvpFooter from "./RsvpFooter"
 
 const RSVP = () => {
   const [firstname, setFirstName] = useState("");
@@ -52,28 +53,31 @@ const RSVP = () => {
       })
   }
   return (
-    <InnerWrapper>
+    <OuterWrapper>
       <Header />
-      <Headings subheading="RSVP" heading="Will you join us on our special day?" />
-      <form className="RSVP-form" onSubmit={onFormSubmit}>
-        <label>
-          <input id="firstname" className="RSVP-input" type="text" placeholder="First name" value={firstname} onChange={e => setFirstName(e.target.value)} />
-        </label>
-        <label>
-          <input id="lastname" className="RSVP-input" type="text" placeholder="Last name" value={lastname} onChange={e => setLastName(e.target.value)} />
-        </label>
-        <label>
-          <input id="email" className="RSVP-input" type="text" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} /></label>
-        <Attendance />
-        <Accommodation />
-        <br/>
-        <FoodRestrictions />
-        <label>
-          <input className="RSVP-input message" type="text" placeholder="Comments" /></label>
-          <br/>
-        <StyledButton type="submit">Submit</StyledButton>
-      </form>
-    </InnerWrapper>
+      <InnerWrapper>
+        <Headings subheading="RSVP" heading="Will you join us on our special day?" />
+        <form className="RSVP-form" onSubmit={onFormSubmit}>
+          <label>
+            <input id="firstname" className="RSVP-input" type="text" placeholder="First name" value={firstname} onChange={e => setFirstName(e.target.value)} />
+          </label>
+          <label>
+            <input id="lastname" className="RSVP-input" type="text" placeholder="Last name" value={lastname} onChange={e => setLastName(e.target.value)} />
+          </label>
+          <label>
+            <input id="email" className="RSVP-input" type="text" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} /></label>
+          <Attendance />
+          <Accommodation />
+          <br />
+          <FoodRestrictions />
+          <label>
+            <input className="RSVP-input message" type="text" placeholder="Comments" /></label>
+          <br />
+          <StyledButton type="submit">Submit</StyledButton>
+        </form>
+      </InnerWrapper>
+      < RsvpFooter />
+    </OuterWrapper>
   )
 };
 

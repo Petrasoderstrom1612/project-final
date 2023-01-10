@@ -31,7 +31,7 @@ background-image: linear-gradient(rgba(255, 255, 255, 0.900), rgba(0, 0, 0, 0.2)
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
-width: 95vw;
+width: 100vw;
 height: 50vh;
 display: flex;
 align-items: center;

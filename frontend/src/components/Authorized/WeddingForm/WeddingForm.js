@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch } from "react-redux";
-import weddings from "reducers/weddings";
+import weddings from "reducers/weddingdata";
 import Swal from "sweetalert2";
 import { StyledHeader } from "components/HeaderNav/Header";
-import { StyledCatchPhrase } from "styles/GlobalStyles";
+import { OuterWrapper, StyledCatchPhrase } from "styles/GlobalStyles";
 import { InnerWrapper, StyledButton } from "styles/GlobalStyles";
 import { Headings } from "components/Headings/Headings";
 import { API_URL } from "utils/utils";;
+import WeddingFormFooter from "./WeddingFormFooter";
 
 const WeddingForm = () => {
 	const [firstperson, setFirstPerson] = useState("");
 	const dispatch = useDispatch();
-  const navigate = useNavigate();
+	const navigate = useNavigate();
 
-  const goToUniqueWeddingPage = () => {
-    navigate("/weddingform/guestpassword/:guestpassword")
-  }
+	const goToUniqueWeddingPage = () => {
+		navigate("/weddingform/guestpassword/:guestpassword")
+	}
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
@@ -49,18 +50,21 @@ const WeddingForm = () => {
 			})
 	}
 	return (
+		<OuterWrapper>
+			<StyledHeader>
+				<StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
+			</StyledHeader >
 			<InnerWrapper>
-        <StyledHeader>
-        <StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
-        </StyledHeader >
-			<Headings subheading="Wedding form" heading="Add your information below to generate your dreamy website" />
-			<form className="wedding-form" onSubmit={onFormSubmit}>
-				<label>Information about the Wedding Couple
-					<input id="Firstperson" className="wedding-input" type="text" placeholder="Firstperson" value={firstperson} onChange={e => setFirstPerson(e.target.value)} />
-				</label>
-				<StyledButton type="submit" onClick={() => goToUniqueWeddingPage()}>Send</StyledButton>
-			</form>
-      </InnerWrapper>
+				<Headings subheading="Wedding form" heading="Add your information below to generate your dreamy website" />
+				<form className="wedding-form" onSubmit={onFormSubmit}>
+					<label>Information about the Wedding Couple
+						<input id="Firstperson" className="wedding-input" type="text" placeholder="Firstperson" value={firstperson} onChange={e => setFirstPerson(e.target.value)} />
+					</label>
+					<StyledButton type="submit" onClick={() => goToUniqueWeddingPage()}>Send</StyledButton>
+				</form>
+			</InnerWrapper>
+			<WeddingFormFooter />
+		</OuterWrapper>
 	)
 }
 

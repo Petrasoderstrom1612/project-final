@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
-import { InnerWrapper, StyledHeading, StyledSubHeading, StyledButton } from "styles/GlobalStyles"
+import { StyledHeading, StyledSubHeading, StyledButton } from "styles/GlobalStyles"
 
 
 const Footer = () => {
     return (
         <StyledFooter>
             <StyledSubHeading>Subheading</StyledSubHeading>
-            <StyledHeading>Please, take a moment and respond to our invitation.</StyledHeading>
+            <StyledHeading>Please, take a moment and respond to our invitation</StyledHeading>
             <Link to="/RSVP"><StyledButton type="button">RSVP</StyledButton></Link>
         </StyledFooter>
     )
@@ -16,8 +16,21 @@ const Footer = () => {
 
 export default Footer
 
-export const StyledFooter = styled(InnerWrapper)`
+export const StyledFooter = styled.footer`
 background: var(--color-beige);
-width: 95vw;
-padding: 2em;
+padding: 0 2em;
+margin: 0;
+width: 100vw;
+height: 40vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+@media (min-width: 667px) and (max-width: 1024px) {
+    height: 23vh;
+}
+@media (min-width: 1024px) {
+    height: 20vh;
+}
 `
