@@ -11,7 +11,7 @@ const Location = () => {
 		<OuterWrapper>
 			<Header />
 			<LocationStructure />
-			<Footer subheading="Subheading" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
+			<Footer subheading="Blissful beginnings" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
 		</OuterWrapper>
 	)
 }

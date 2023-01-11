@@ -12,7 +12,7 @@ const Toastmasters = () => {
                 <Headings subheading="Meet your toastmasters" heading="Name 1 & Name 2" />
                 <p>Today PROPS and PROPS are getting married</p>
             </InnerWrapper>
-            <Footer subheading="Subheading" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
+            <Footer subheading="Blissful beginnings" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
         </OuterWrapper>
     )
 };
