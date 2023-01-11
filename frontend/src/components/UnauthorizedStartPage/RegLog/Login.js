@@ -54,21 +54,21 @@ const Login = () => {
 	return (
 		<RegLogContainer>
 			<RegLog>
-				<input type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
+				<StyledRadioButton type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
 				<label htmlFor="register">Register</label>
-				<input type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
-				<label htmlFor="login">Login</label>
+				<StyledRadioButton type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
+				<label htmlFor="login">Log in</label>
 			</RegLog>
 			<form onSubmit={onFormSubmit}>
 				<UserDetails>
 					<label htmlFor="username">Username</label>
-					<input
+					<StyledInputField
 						type="text"
 						id="username"
 						value={username}
 						onChange={e => setUsername(e.target.value)} />
 					<label htmlFor="password">Password</label>
-					<input
+					<StyledInputField
 						type="password"
 						id="password"
 						value={password}
@@ -95,8 +95,18 @@ const RegLog = styled.div`
 	justify-content: center;
 `
 
+const StyledRadioButton = styled.input`
+filter: grayscale(1);
+`
+
 const UserDetails = styled.div`
 	display: flex;
 	flex-direction: column;
 	line-height: 2.5em;
+`
+const StyledInputField = styled.input`
+/* font-size: 1em; */
+line-height: 2em;
+padding-left: .3vw;
+color: var(--color-softBlack);
 `

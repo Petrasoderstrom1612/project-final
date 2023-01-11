@@ -17,7 +17,7 @@ export const Footer = ({ subheading, heading, footerButton }) => {
 export const StyledFooter = styled.footer`
 background: var(--color-beige);
 padding: 0 2em;
-margin: 0;
+margin: 1.5em 0 0 0;
 width: 100vw;
 min-height: 40vh;
 display: flex;
