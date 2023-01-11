@@ -21,8 +21,10 @@ const NotFound = () => {
 export default NotFound;
 
 export const StyledNotFound = styled(OuterWrapper)`
-background-image: radial-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, .1)), url(${heroimg});
+background-image: radial-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, .2)), url(${heroimg});
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
+height: 100vh;
+width: 100vw;
 `

@@ -21,7 +21,7 @@ const SwiperIntro = () => {
         <>
             <Swiper
                 slidesPerView={"1"}
-                spaceBetween={30}
+                spaceBetween={20}
                 loop={true}
                 pagination={{
                     clickable: true,
@@ -33,7 +33,7 @@ const SwiperIntro = () => {
             >
                 <SwiperSlide>
                     <SlideTextContainer>
-                        <StyledHeading>What is Blissful Beginnings?</StyledHeading>
+                        <StyledHeading>Who are we?</StyledHeading>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a mattis ligula. Ut ut ultrices massa. Quisque volutpat tristique euismod. Donec varius dui ac elit pulvinar commodo. Praesent volutpat ornare.</p>
                     </SlideTextContainer>
                     <img src={flowers} />
@@ -60,5 +60,14 @@ const SwiperIntro = () => {
 export default SwiperIntro
 
 const SlideTextContainer = styled.div`
+padding: .8em;
+width: 70vw;
+
+& p {
+    margin-top: .4em;
+}
+
+@media (min-width: 667px) {
 padding: 3.5em;
+}
 `

@@ -17,8 +17,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
-/* border: 1px tomato solid; // ! Remember to remove
- */`
+@media (min-width: 1024px) {
+  max-width: 50vw;
+}
+`
 export const StyledCatchPhrase = styled.h1`
 font-family: 'Dancing Script', cursive;
 color: var(--color-softBlack);

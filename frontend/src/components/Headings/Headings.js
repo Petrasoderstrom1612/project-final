@@ -10,11 +10,10 @@ export const Headings = ({ subheading, heading }) => {
         <StyledHeadings>
             {subheading && <StyledSubHeading>{subheading}</StyledSubHeading>}
             {heading && <StyledHeading>{heading}</StyledHeading>}
-            <StyledInfinityImg src={infinity} />
+            <StyledInfinityImg src={infinity} alt="Infinity shaped icon" />
         </StyledHeadings>
     )
 }
-
 
 const StyledHeadings = styled.div`
 display: flex;
