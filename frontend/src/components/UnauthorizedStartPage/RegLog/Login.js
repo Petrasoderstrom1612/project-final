@@ -5,7 +5,7 @@ import styled from 'styled-components/macro';
 import { API_URL } from "utils/utils";
 import user from "reducers/user";
 import Swal from "sweetalert2";
-import { InnerWrapper, StyledButton } from "styles/GlobalStyles"
+import { StyledRadioButton, StyledButton } from "styles/GlobalStyles"
 
 const Login = () => {
 	const [username, setUsername] = useState("");
@@ -21,8 +21,8 @@ const Login = () => {
 		}
 	}, [accessToken])
 
-	const onFormSubmit = (event) => {
-		event.preventDefault();
+	const onFormSubmit = (e) => {
+		e.preventDefault();
 		const options = {
 			method: "POST",
 			headers: {
@@ -59,7 +59,7 @@ const Login = () => {
 				<StyledRadioButton type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
 				<label htmlFor="login">Log in</label>
 			</RegLog>
-			<form onSubmit={onFormSubmit}>
+			<form onSubmit={onFormSubmit} autoComplete="off">
 				<UserDetails>
 					<label htmlFor="username">Username</label>
 					<StyledInputField
@@ -90,22 +90,18 @@ margin-bottom: 2em;
 `
 
 const RegLog = styled.div`
-	display: flex;
-	column-gap: 5px;
-	justify-content: center;
-`
-
-const StyledRadioButton = styled.input`
-filter: grayscale(1);
+display: flex;
+column-gap: 5px;
+justify-content: center;
 `
 
 const UserDetails = styled.div`
-	display: flex;
-	flex-direction: column;
-	line-height: 2.5em;
+display: flex;
+flex-direction: column;
+line-height: 2.5em;
 `
+
 const StyledInputField = styled.input`
-/* font-size: 1em; */
 line-height: 2em;
 padding-left: .3vw;
 color: var(--color-softBlack);

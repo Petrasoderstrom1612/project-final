@@ -1,14 +1,21 @@
 import React from "react";
+import { StyledSubHeading, StyledRadioContainer, StyledRadioButton } from "styles/GlobalStyles";
 
-const Accommodation = () => {
+const Accommodation = ({ accomodation, setAccomodation }) => {
     return (
-        <>
-            <h5>Accommodation</h5>
-            <input type="radio" id="accommodation-help" name="accommodation" value="accommodation-help" />
-            <label for="accommodation-help">I need help finding accommodation</label>
-            <input type="radio" id="accommodation-done" name="accommodation" value="accommodation-done" />
-            <label for="accommodation-done">I already have accommodation</label>
-        </>
+        <section>
+            <StyledSubHeading>Accommodation</StyledSubHeading>
+            <StyledRadioContainer>
+                <div>
+                    <StyledRadioButton type="radio" id="accommodation-help" name="accommodation" value={accomodation} onChange={e => setAccomodation(e.target.value)} />
+                    <label>I need accommodation</label>
+                </div>
+                <div>
+                    <StyledRadioButton type="radio" id="accommodation-done" name="accommodation" value={accomodation} onChange={e => setAccomodation(e.target.value)} />
+                    <label>I have accommodation</label>
+                </div>
+            </StyledRadioContainer>
+        </section>
     )
 }
 

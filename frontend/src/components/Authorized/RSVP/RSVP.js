@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, batch } from "react-redux";
 import { API_URL } from "utils/utils";
 import rsvps from "reducers/rsvps";
-import { InnerWrapper, OuterWrapper, StyledButton } from "styles/GlobalStyles";
+import { InnerWrapper, OuterWrapper, StyledButton, StyledFormInput } from "styles/GlobalStyles";
+import { StyledComment } from "components/Authorized/WeddingForm/WeddingForm"
 import Header from "components/Authorized/HeaderNav/Header";
 import { Headings } from "components/Reusable/Headings/Headings";
 import Swal from "sweetalert2";
@@ -14,38 +15,44 @@ import Attendance from "./Attendance";
 import { Footer } from "components/Reusable/Footer/Footer";
 
 const RSVP = () => {
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
-  const [attending, setAttending] = useState("");
-  const [email, setEmail] = useState("");
+  const [attendance, setAttendance] = useState("");
+  const [guestname, setGuestName] = useState("");
+  const [guestemail, setGuestEmail] = useState("");
+  const [accomodation, setAccomodation] = useState("");
+  const [foodrestrictions, setFoodrestrictions] = useState("");
+  const [guestcomment, setGuestComment] = useState("");
   const dispatch = useDispatch();
 
-  const onFormSubmit = (event) => {
-    event.preventDefault();
+  const onFormSubmit = (e) => {
+    e.preventDefault();
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ lastname: lastname, firstname: firstname, email: email, attending: attending })
+      body: JSON.stringify({ attendance: attendance, guestname: guestname, guestemail: guestemail, accomodation: accomodation, foodrestrictions: foodrestrictions, guestcomment: guestcomment })
     }
     fetch(API_URL)
       .then(response => response.json())
       .then(data => {
         if (data.success) {
           batch(() => {
-            dispatch(rsvps.actions.setFirstName(data.response.firstname));
-            dispatch(rsvps.actions.setLastName(data.response.lastname));
-            dispatch(rsvps.actions.setEmail(data.response.email));
-            dispatch(rsvps.actions.setAttending(data.response.attending));
+            dispatch(rsvps.actions.setAttendance(data.response.attendance));
+            dispatch(rsvps.actions.setGuestName(data.response.guestname));
+            dispatch(rsvps.actions.setGuestEmail(data.response.guestemail));
+            dispatch(rsvps.actions.setAccomodation(data.response.accomodation));
+            dispatch(rsvps.actions.setFoodrestrictions(data.response.foodrestrictions));
+            dispatch(rsvps.actions.setGuestComment(data.response.guestcomment));
             dispatch(rsvps.actions.setError(null));
           });
         } else {
           batch(() => {
-            dispatch(rsvps.actions.setFirstName(null));
-            dispatch(rsvps.actions.setUserId(null));
-            dispatch(rsvps.actions.setEmail(null));
-            dispatch(rsvps.actions.setAttending(null));
+            dispatch(rsvps.actions.setAttendance(null));
+            dispatch(rsvps.actions.setGuestName(null));
+            dispatch(rsvps.actions.setGuestEmail(null));
+            dispatch(rsvps.actions.setAccomodation(null));
+            dispatch(rsvps.actions.setFoodrestrictions(null));
+            dispatch(rsvps.actions.setGuestComment(null));
             dispatch(rsvps.actions.setError(data.response));
             Swal.fire(rsvps.response)
           });
@@ -57,22 +64,17 @@ const RSVP = () => {
       <Header />
       <InnerWrapper>
         <Headings subheading="RSVP" heading="Will you join us on our special day?" />
-        <form className="RSVP-form" onSubmit={onFormSubmit}>
-          <label>
-            <input id="firstname" className="RSVP-input" type="text" placeholder="First name" value={firstname} onChange={e => setFirstName(e.target.value)} />
-          </label>
-          <label>
-            <input id="lastname" className="RSVP-input" type="text" placeholder="Last name" value={lastname} onChange={e => setLastName(e.target.value)} />
-          </label>
-          <label>
-            <input id="email" className="RSVP-input" type="text" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} /></label>
+        <form onSubmit={onFormSubmit}>
           <Attendance />
+          <label>
+            <StyledFormInput id="guestname" type="text" placeholder="Full name" value={guestname} onChange={e => setGuestName(e.target.value)} />
+          </label>
+          <label>
+            <StyledFormInput id="email" type="email" placeholder="E-mail" value={guestemail} onChange={e => setGuestEmail(e.target.value)} /></label>
           <Accommodation />
-          <br />
           <FoodRestrictions />
           <label>
-            <input className="RSVP-input message" type="text" placeholder="Comments" /></label>
-          <br />
+            <StyledComment type="text" placeholder="Comments" value={guestcomment} onChange={e => setGuestComment(e.target.value)} /></label>
           <StyledButton type="submit">Submit</StyledButton>
         </form>
       </InnerWrapper>

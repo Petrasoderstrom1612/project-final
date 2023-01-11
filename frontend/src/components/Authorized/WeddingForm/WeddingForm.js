@@ -1,17 +1,33 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch } from "react-redux";
-import weddings from "reducers/weddingdata";
 import Swal from "sweetalert2";
+import styled from "styled-components/macro"
+
+import weddings from "reducers/weddingdata";
+import { API_URL } from "utils/utils";
+
+import {
+	OuterWrapper,
+	StyledCatchPhrase,
+	InnerWrapper,
+	StyledButton,
+	StyledSubHeading,
+	StyledFormInput
+} from "styles/GlobalStyles";
 import { StyledHeader } from "components/Authorized/HeaderNav/Header";
-import { OuterWrapper, StyledCatchPhrase } from "styles/GlobalStyles";
-import { InnerWrapper, StyledButton } from "styles/GlobalStyles";
 import { Headings } from "components/Reusable/Headings/Headings";
-import { API_URL } from "utils/utils";;
 import { Footer } from "components/Reusable/Footer/Footer";
 
 const WeddingForm = () => {
 	const [firstperson, setFirstPerson] = useState("");
+	const [secondperson, setSecondPerson] = useState("");
+	const [email, setEmail] = useState("");
+	const [date, setDate] = useState("");
+	const [time, setTime] = useState("");
+	const [location, setLocation] = useState("");
+	const [comment, setComment] = useState("");
+
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -26,7 +42,7 @@ const WeddingForm = () => {
 			headers: {
 				"Content-Type": "application/json"
 			},
-			body: JSON.stringify({ firstperson: firstperson, secondperson: secondperson, email: email })
+			body: JSON.stringify({ firstperson: firstperson, secondperson: secondperson, email: email, date: date, time: time, location: location, comment: comment })
 		}
 		fetch(API_URL)
 			.then(response => response.json())
@@ -36,6 +52,10 @@ const WeddingForm = () => {
 						dispatch(weddings.actions.setFirstPerson(data.response.firstperson));
 						dispatch(weddings.actions.setSecondPerson(data.response.secondperson));
 						dispatch(weddings.actions.setEmail(data.response.email));
+						dispatch(weddings.actions.setDate(data.response.date));
+						dispatch(weddings.actions.setTime(data.response.time));
+						dispatch(weddings.actions.setLocation(data.response.location));
+						dispatch(weddings.actions.setComment(data.response.comment));
 						dispatch(weddings.actions.setError(null));
 					});
 				} else {
@@ -43,6 +63,10 @@ const WeddingForm = () => {
 						dispatch(weddings.actions.setFirstPerson(null));
 						dispatch(weddings.actions.setSecondPerson(null));
 						dispatch(weddings.actions.setEmail(null));
+						dispatch(weddings.actions.setDate(null));
+						dispatch(weddings.actions.setTime(null));
+						dispatch(weddings.actions.setLocation(null));
+						dispatch(weddings.actions.setComment(null));
 						dispatch(weddings.actions.setError(data.response));
 						Swal.fire(weddings.response)
 					});
@@ -55,32 +79,35 @@ const WeddingForm = () => {
 				<StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
 			</StyledHeader >
 			<InnerWrapper>
-				<Headings subheading="Wedding form" heading="Add your information below to generate your dreamy website" />
-				<form className="wedding-form" onSubmit={onFormSubmit}>
-					<label>Information about the Wedding Couple
-						<input id="Firstperson" className="wedding-input" type="text" placeholder="Firstperson" value={firstperson} onChange={e => setFirstPerson(e.target.value)} />
+				<Headings subheading="Wedding form" heading="Generate your dreamy website here" />
+				<form onSubmit={onFormSubmit}>
+					<StyledSubHeading>Information about your wedding</StyledSubHeading>
+					<label>
+						<StyledFormInput id="Firstperson" type="text" placeholder="Name of spouse 1" value={firstperson} onChange={e => setFirstPerson(e.target.value)} required />
 					</label>
+					<label>
+						<StyledFormInput id="Secondperson" type="text" placeholder="Name of spouse 2" value={secondperson} onChange={e => setSecondPerson(e.target.value)} required />
+					</label>
+					<label>
+						<StyledFormInput type="email" placeholder="E-mail address" value={email} onChange={e => setEmail(e.target.value)} required /></label>
+					<label>
+						<StyledFormInput type="date" value={date} onChange={e => setDate(e.target.value)} required /></label>
+					<label>
+						<StyledFormInput type="time" value={time} onChange={e => setTime(e.target.value)} required /></label>
+					<label>
+						<StyledFormInput type="text" placeholder="Location of wedding venue" value={location} onChange={e => setLocation(e.target.value)} required /></label>
+					<label>
+						<StyledComment type="text" placeholder="Comments" value={comment} onChange={e => setComment(e.target.value)} /></label>
 					<StyledButton type="submit" onClick={() => goToUniqueWeddingPage()}>Send</StyledButton>
 				</form>
 			</InnerWrapper>
 			<Footer subheading="Congratulations" heading="We're sure you'll have an amazing wedding day!" />
-		</OuterWrapper>
+		</OuterWrapper >
 	)
 }
 
 export default WeddingForm;
-{/* <label>
-					<input id="Secondperson" className="wedding-input" type="text" placeholder="Secondperson" value={secondperson} onChange={e => setSecondPerson(e.target.value)} />
-				</label>
-				<label>
-					<input className="wedding-input" type="text" placeholder="Your e-mail" value={email} onChange={e => setEmail(e.target.value)} /></label> 
-				 <label>Wedding Info
-					<input className="wedding-input" type="date" /></label>
-				<label>
-					<input className="wedding-input" type="time" /></label>
-				<label>
-					<input className="wedding-input" type="text" placeholder="Location of the Wedding Ceremony" /></label>
-				<label>
-					<input className="wedding-input" type="text" placeholder="Location of the Wedding Party" /></label>
-				<label>
-					<input className="wedding-input message" type="text" placeholder="Add some information about the location" /></label> */}
+
+export const StyledComment = styled(StyledFormInput)`
+ height: 10vh;
+`

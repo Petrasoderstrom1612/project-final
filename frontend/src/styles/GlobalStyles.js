@@ -79,3 +79,33 @@ export const StyledButton = styled.button`
     }
   }
 `
+export const StyledFormInput = styled.input`
+  border: 1px solid var(--color-softBlack);
+  width: 80%;
+  color: var(--color-softBlack);
+  padding: 1em;
+  margin-bottom: 20px;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1em;
+`
+export const StyledFormSelect = styled.select`
+  border: 1px solid var(--color-softBlack);
+  width: 80%;
+  color: var(--color-softBlack);
+  padding: 1em;
+  margin-bottom: 20px;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1em;
+`
+export const StyledRadioContainer = styled.div`
+display: flex;
+flex-direction: column;
+margin-bottom: 1em;
+`
+export const StyledRadioButton = styled.input`
+filter: grayscale(1);
+margin: 1em 1em 1em 0;
+`
+
