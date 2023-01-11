@@ -3,12 +3,12 @@ import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch } from "react-redux";
 import weddings from "reducers/weddingdata";
 import Swal from "sweetalert2";
-import { StyledHeader } from "components/HeaderNav/Header";
+import { StyledHeader } from "components/Authorized/HeaderNav/Header";
 import { OuterWrapper, StyledCatchPhrase } from "styles/GlobalStyles";
 import { InnerWrapper, StyledButton } from "styles/GlobalStyles";
-import { Headings } from "components/Headings/Headings";
+import { Headings } from "components/Reusable/Headings/Headings";
 import { API_URL } from "utils/utils";;
-import { Footer } from "components/Footer/Footer";
+import { Footer } from "components/Reusable/Footer/Footer";
 
 const WeddingForm = () => {
 	const [firstperson, setFirstPerson] = useState("");

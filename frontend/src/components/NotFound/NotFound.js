@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { InnerWrapper, OuterWrapper, StyledCatchPhrase, StyledSubHeading } from "styles/GlobalStyles"
-import { Headings } from "components/Headings/Headings";
+import { Headings } from "components/Reusable/Headings/Headings";
 import heroimg from "../../assets/images/timeline_flowersandring.jpg";
 import styled from "styled-components/macro";
 

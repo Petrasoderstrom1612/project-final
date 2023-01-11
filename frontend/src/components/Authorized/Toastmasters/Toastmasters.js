@@ -1,8 +1,8 @@
 import React from "react";
-import { Footer } from "components/Footer/Footer";
+import { Footer } from "components/Reusable/Footer/Footer";
 import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";
-import Header from "components/HeaderNav/Header";
-import { Headings } from "components/Headings/Headings";
+import Header from "components/Authorized/HeaderNav/Header";
+import { Headings } from "components/Reusable/Headings/Headings";
 
 const Toastmasters = () => {
     return (

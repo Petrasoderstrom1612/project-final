@@ -1,7 +1,7 @@
 import React from "react";
 import MapLocation from "./MapLocation"; //the functional main component
 import { InnerWrapper, StyledSubHeading } from "styles/GlobalStyles"
-import { Headings } from "components/Headings/Headings";
+import { Headings } from "components/Reusable/Headings/Headings";
 
 const LocationStructure = () => {
   return (

@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components/macro";
-import { StyledCatchPhrase } from "../../styles/GlobalStyles";
-import heroimg from "../../assets/images/hero-img-rings.jpg";
+
+import { StyledCatchPhrase } from "../../../styles/GlobalStyles";
+
+import heroimg from "../../../assets/images/hero-img-rings.jpg";
 import NavHamburger from "./NavHamburger";
 
 

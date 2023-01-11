@@ -1,7 +1,7 @@
 import React from "react";
 import Counter from "components/Authorized/Counter";
-import { Footer } from "components/Footer/Footer";
-import Header from "components/HeaderNav/Header";
+import { Footer } from "components/Reusable/Footer/Footer";
+import Header from "components/Authorized/HeaderNav/Header";
 import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";
 
 const AuthorizedMain = () => {

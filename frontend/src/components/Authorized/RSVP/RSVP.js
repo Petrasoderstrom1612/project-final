@@ -3,15 +3,15 @@ import { useDispatch, batch } from "react-redux";
 import { API_URL } from "utils/utils";
 import rsvps from "reducers/rsvps";
 import { InnerWrapper, OuterWrapper, StyledButton } from "styles/GlobalStyles";
-import Header from "components/HeaderNav/Header";
-import { Headings } from "components/Headings/Headings";
+import Header from "components/Authorized/HeaderNav/Header";
+import { Headings } from "components/Reusable/Headings/Headings";
 import Swal from "sweetalert2";
 // TODO: Check that this component still works
 
 import FoodRestrictions from "./Foodrestrictions";
 import Accommodation from "./Accomodation";
 import Attendance from "./Attendance";
-import { Footer } from "components/Footer/Footer";
+import { Footer } from "components/Reusable/Footer/Footer";
 
 const RSVP = () => {
   const [firstname, setFirstName] = useState("");
