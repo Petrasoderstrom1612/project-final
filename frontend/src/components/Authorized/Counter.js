@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-import { InnerWrapper, StyledHeading, StyledSubHeading } from 'styles/GlobalStyles';
+import { StyledHeading, StyledSubHeading } from 'styles/GlobalStyles';
 
 const Counter = () => {
   const calculateTimeLeft = () => {
@@ -28,10 +28,9 @@ const Counter = () => {
   });
 
   return (
-    <InnerWrapper>
-      <StyledHeading>Countdown to our big day</StyledHeading>
+    <>
       {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
-        <StyledSubHeading>
+        <StyledHeading>
           <span>{timeLeft.days}d</span>
           <span> </span>
           <span>{timeLeft.hours}h</span>
@@ -39,11 +38,11 @@ const Counter = () => {
           <span>{timeLeft.minutes}m</span>
           <span> </span>
           <span>{timeLeft.seconds}s</span>
-        </StyledSubHeading>
+        </StyledHeading>
       ) : (
         <StyledSubHeading>The time has come! 💍</StyledSubHeading>
       )}
-    </InnerWrapper>
+    </>
   )
 }
 

@@ -106,6 +106,6 @@ margin-bottom: 1em;
 `
 export const StyledRadioButton = styled.input`
 filter: grayscale(1);
-margin: 1em 1em 1em 0;
+margin: 0 .8em;
 `
 

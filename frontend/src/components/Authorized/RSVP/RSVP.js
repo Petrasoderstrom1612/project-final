@@ -63,7 +63,7 @@ const RSVP = () => {
     <OuterWrapper>
       <Header />
       <InnerWrapper>
-        <Headings subheading="RSVP" heading="Will you join us on our special day?" />
+        <Headings subheading="Magical moments" heading="Will you attend to our special day?" />
         <form onSubmit={onFormSubmit}>
           <Attendance />
           <label>

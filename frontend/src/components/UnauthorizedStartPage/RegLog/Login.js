@@ -54,10 +54,14 @@ const Login = () => {
 	return (
 		<RegLogContainer>
 			<RegLog>
-				<StyledRadioButton type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
-				<label htmlFor="register">Register</label>
-				<StyledRadioButton type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
-				<label htmlFor="login">Log in</label>
+				<div>
+					<StyledRadioButton type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
+					<label htmlFor="register">Register</label>
+				</div>
+				<div>
+					<StyledRadioButton type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
+					<label htmlFor="login">Log in</label>
+				</div>
 			</RegLog>
 			<form onSubmit={onFormSubmit} autoComplete="off">
 				<UserDetails>
