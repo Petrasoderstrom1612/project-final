@@ -49,37 +49,28 @@ const WeddingSchema = new mongoose.Schema({
       message: "Please enter a valid email"
     },
     required: [true, "Email required"]
-  }/*,
-  registrationdate: {
-    type: String,
-    default: () => new Date()
   },
-    weddingdate: {
-      type: String,
-      //validate: YYYY-MM-DD?,
-      required: true
-    },
-    venuename: {
-      type: String
-    },
-    venueadress: {
-      venueaddressstreet: {
-        type: String
-      },
-      venueaddressstreetnumber: {
-        type: Number
-      },
-      venueaddresspostalcode: {
-        type: Number
-      },
-      venueaddresscity: {
-        type: String
-      }
-  } */
+  date: {
+    type: String,
+    // TODO: validate: YYYY-MM-DD?,
+    required: true
+  },
+  time: {
+    type: String,
+    required: true
+  },
+  location: {
+    type: String,
+    required: true
+  },
+  comment: {
+    type: String
+  }
 })
 
 
 // * SCHEMA FOR GUEST AUTHENTICATION
+// ! Is this needed?
 const GuestSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -99,21 +90,19 @@ const GuestSchema = new mongoose.Schema({
 
 // * SCHEMA FOR RSVP FORM
 const RSVPSchema = new mongoose.Schema({
-  firstname: {
+  attendance: {
+    type: Boolean,
+    default: true,
+    required: true,
+  },
+  guestname: {
     type: String,
     required: true,
     minlength: 2,
     maxlength: 30,
     trim: true
   },
-  lastname: {
-    type: String,
-    required: true,
-    minlength: 2,
-    maxlength: 30,
-    trim: true
-  },
-  email: {
+  guestemail: {
     type: String,
     validate: {
       validator: function (v) {
@@ -123,24 +112,15 @@ const RSVPSchema = new mongoose.Schema({
     },
     required: [true, "Email required"]
   },
-  registrationdate: {
-    type: String, //date picker
-    default: () => new Date()
+  accommodation: {
+    type: Boolean
   },
-  attending: {
-    type: Boolean,
-    default: true,
-    required: true,
-  }/*,
-    foodrestrictions: {
-      type: String
-    },
-    accommodation: {
-      type: Boolean
-    },
-    message: {
-      type: String
-    } */
+  foodrestrictions: {
+    type: String
+  },
+  guestcomment: {
+    type: String
+  }
 })
 
 const Guest = mongoose.model("Guest", GuestSchema);
