@@ -6,12 +6,12 @@ import crypto from 'crypto';
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: true,
+    required: [true, "Username required"],
     unique: true
   },
   password: {
     type: String,
-    required: true
+    required: [true, "Password required"]
   },
   accessToken: {
     type: String,
@@ -23,21 +23,21 @@ const UserSchema = new mongoose.Schema({
 const WeddingSchema = new mongoose.Schema({
   firstperson: {
     type: String,
-    required: true,
+    required: [true, "Name required"],
     minlength: 2,
     maxlength: 30,
     trim: true
   },
   secondperson: {
     type: String,
-    required: true,
+    required: [true, "Name required"],
     minlength: 2,
     maxlength: 30,
     trim: true
   },
   guestpassword: {
     type: String,
-    required: true,
+    required: [true, "Password required"],
     unique: true
   },
   email: {
@@ -50,18 +50,20 @@ const WeddingSchema = new mongoose.Schema({
     },
     required: [true, "Email required"]
   },
+  phonenumber: {
+    type: String,
+    required: [true, "Phonenumber required"]
+  },
   date: {
     type: String,
     // TODO: validate: YYYY-MM-DD?,
-    /* required: true */
   },
   time: {
     type: String,
-    /*  required: true */
   },
   location: {
     type: String,
-    required: true
+    required: [true, "Location required"]
   },
   comment: {
     type: String
@@ -91,13 +93,13 @@ const GuestSchema = new mongoose.Schema({
 // * SCHEMA FOR RSVP FORM
 const RSVPSchema = new mongoose.Schema({
   attendance: {
-    type: Boolean,
+    type: String,
     default: true,
-    required: true,
+    required: [true, "Attendance required"]
   },
   guestname: {
     type: String,
-    required: true,
+    required: [true, "Name required"],
     minlength: 2,
     maxlength: 30,
     trim: true
@@ -113,7 +115,7 @@ const RSVPSchema = new mongoose.Schema({
     required: [true, "Email required"]
   },
   accommodation: {
-    type: Boolean
+    type: String
   },
   foodrestrictions: {
     type: String

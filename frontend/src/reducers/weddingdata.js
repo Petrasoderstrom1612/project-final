@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// TODO: Uppdatera!
-
 const weddingdata = createSlice({
   name: "weddingdata",
   initialState: {
@@ -17,9 +15,6 @@ const weddingdata = createSlice({
     error: null
   },
   reducers: {
-    setError: (store, action) => {
-      store.error = action.payload;
-    },
     setFirstPerson: (store, action) => {
       store.firstperson = action.payload;
     },
@@ -29,8 +24,14 @@ const weddingdata = createSlice({
     setEmail: (store, action) => {
       store.email = action.payload;
     },
-    setAccessToken: (store, action) => {
-      store.accessToken = action.payload;
+    setPhonenumber: (store, action) => {
+      store.phonenumber = action.payload;
+    },
+    setDate: (store, action) => {
+      store.date = action.payload;
+    },
+    setTime: (store, action) => {
+      store.time = action.payload;
     },
     setLocation: (store, action) => {
       store.location = action.payload;
@@ -41,12 +42,12 @@ const weddingdata = createSlice({
     setComment: (store, action) => {
       store.comment = action.payload;
     },
-    setDate: (store, action) => {
-      store.date = action.payload;
+    setAccessToken: (store, action) => {
+      store.accessToken = action.payload;
     },
-    setTime: (store, action) => {
-      store.time = action.payload;
-    }
+    setError: (store, action) => {
+      store.error = action.payload;
+    },
   }
 });
 

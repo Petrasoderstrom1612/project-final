@@ -23,6 +23,7 @@ const WeddingForm = () => {
 	const [firstperson, setFirstPerson] = useState("");
 	const [secondperson, setSecondPerson] = useState("");
 	const [email, setEmail] = useState("");
+	const [phonenumber, setPhonenumber] = useState("");
 	const [date, setDate] = useState("");
 	const [time, setTime] = useState("");
 	const [location, setLocation] = useState("");
@@ -41,7 +42,7 @@ const WeddingForm = () => {
 				"Content-Type": "application/json",
 				"Authorization": accessToken
 			},
-			body: JSON.stringify({ firstperson: firstperson, secondperson: secondperson, email: email, date: date, time: time, location: location, guestpassword: guestpassword, comment: comment })
+			body: JSON.stringify({ firstperson: firstperson, secondperson: secondperson, email: email, phonenumber: phonenumber, date: date, time: time, location: location, guestpassword: guestpassword, comment: comment })
 		}
 		fetch(API_URL("weddingform"), options)
 			.then(response => response.json())
@@ -52,6 +53,7 @@ const WeddingForm = () => {
 						dispatch(weddingdata.actions.setFirstPerson(data.response.firstperson));
 						dispatch(weddingdata.actions.setSecondPerson(data.response.secondperson));
 						dispatch(weddingdata.actions.setEmail(data.response.email));
+						dispatch(weddingdata.actions.setPhonenumber(data.response.phonenumber));
 						dispatch(weddingdata.actions.setDate(data.response.date));
 						dispatch(weddingdata.actions.setTime(data.response.time));
 						dispatch(weddingdata.actions.setLocation(data.response.location));
@@ -65,6 +67,7 @@ const WeddingForm = () => {
 						dispatch(weddingdata.actions.setFirstPerson(null));
 						dispatch(weddingdata.actions.setSecondPerson(null));
 						dispatch(weddingdata.actions.setEmail(null));
+						dispatch(weddingdata.actions.setPhonenumber(null));
 						dispatch(weddingdata.actions.setDate(null));
 						dispatch(weddingdata.actions.setTime(null));
 						dispatch(weddingdata.actions.setLocation(null));
@@ -93,6 +96,8 @@ const WeddingForm = () => {
 					</label>
 					<label>
 						<StyledFormInput type="email" placeholder="E-mail address" value={email} onChange={e => setEmail(e.target.value)} required /></label>
+					<label>
+						<StyledFormInput type="text" placeholder="Phone number" value={phonenumber} onChange={e => setPhonenumber(e.target.value)} required /></label>
 					<label>
 						<StyledFormInput type="date" value={date} onChange={e => setDate(e.target.value)} required /></label>
 					<label>

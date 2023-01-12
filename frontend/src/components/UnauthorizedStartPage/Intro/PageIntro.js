@@ -5,7 +5,7 @@ import { Headings } from "components/Reusable/Headings/Headings";
 import SwiperIntro from "components/UnauthorizedStartPage/Swiper/SwiperIntro"
 
 
-const PageIntro = (image, contentText) => {
+const PageIntro = () => {
     return (
         <InnerWrapper>
             <Headings subheading="Beginning of true love" heading="Our concept" />

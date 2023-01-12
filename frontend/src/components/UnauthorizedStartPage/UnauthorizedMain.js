@@ -1,5 +1,5 @@
 import React from "react";
-import PageIntro from "components/UnauthorizedStartPage/PageIntro";
+import PageIntro from "components/UnauthorizedStartPage/Intro/PageIntro";
 import Login from 'components/UnauthorizedStartPage/RegLog/Login';
 import { Footer } from "components/Reusable/Footer/Footer";
 

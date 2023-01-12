@@ -1,9 +1,8 @@
+// ! Not in use
 import React from "react";
 import { StyledRadioButton, StyledRadioContainer } from "styles/GlobalStyles";
 
-// TODO: Do these need to be a bolean with true/false for attending?
-
-const Attendance = ({ setAttendance }) => {
+const Attendance = () => {
     return (
         <StyledRadioContainer>
             <div>
