@@ -9,8 +9,6 @@ import { Headings } from "components/Reusable/Headings/Headings";
 
 // TODO: Add icons
 
-
-
 const LocationStructure = () => {
 
   const weddingdata = useSelector((store) => store.weddingdata)
@@ -21,9 +19,9 @@ const LocationStructure = () => {
       <Headings subheading="Magical moments" heading="We are in love with this place" />
       <StyledLocationContainer>
         <StyledLocationInfo>
-          <StyledSubHeading>Address via props {weddingdata.firstperson}</StyledSubHeading>
-          <StyledSubHeading>Phonenumber via props</StyledSubHeading>
-          <StyledSubHeading>Email via props</StyledSubHeading>
+          <StyledSubHeading>{weddingdata.location}</StyledSubHeading>
+          <StyledSubHeading>{weddingdata.phonenumber}</StyledSubHeading>
+          <StyledSubHeading>{weddingdata.email}</StyledSubHeading>
         </StyledLocationInfo>
         <MapLocation />
       </StyledLocationContainer>

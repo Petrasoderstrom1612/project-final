@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
@@ -36,7 +36,8 @@ export const App = () => {
           <Route path='/weddingform/guestpassword/:guestpassword/toastmasters' element={<Toastmasters />}></Route>
           <Route path='/weddingform/guestpassword/:guestpassword/rsvp' element={<RSVP />}></Route>
           <Route path='/weddingform/guestpassword/:guestpassword' element={<AuthorizedMain />}></Route>
-          <Route path='*' element={<NotFound />}></Route>
+          <Route path='/404' element={<NotFound />}></Route>
+          <Route path='*' element={<Navigate to="/404" />}></Route>
         </Routes>
       </BrowserRouter>
     </Provider>

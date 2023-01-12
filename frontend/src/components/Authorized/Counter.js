@@ -4,7 +4,7 @@ import { StyledHeading, StyledSubHeading } from 'styles/GlobalStyles';
 
 const Counter = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2023-01-13T16:00:00+01:00") /*wedding date*/ - +new Date();
+    const difference = +new Date("2023-01-15T16:00:00+01:00") /*wedding date*/ - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -30,7 +30,7 @@ const Counter = () => {
   return (
     <>
       {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
-        <StyledHeading>
+        <StyledSubHeading>
           <span>{timeLeft.days}d</span>
           <span> </span>
           <span>{timeLeft.hours}h</span>
@@ -38,7 +38,7 @@ const Counter = () => {
           <span>{timeLeft.minutes}m</span>
           <span> </span>
           <span>{timeLeft.seconds}s</span>
-        </StyledHeading>
+        </StyledSubHeading>
       ) : (
         <StyledSubHeading>The time has come! 💍</StyledSubHeading>
       )}
