@@ -1,4 +1,5 @@
-const { RSVP } = require('../models/models.js');
+import { RSVP } from '../models/models.js';
+
 
 export const createRSVP = async (req, res) => {
   const { attendance, guestname, guestemail, accomodation, foodrestrictions, guestcomment } = req.body; //do not forget destructuring from the RSVPSchema

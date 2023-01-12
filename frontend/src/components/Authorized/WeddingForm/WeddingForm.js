@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from "react-redux";
+import { useDispatch, batch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import styled from "styled-components/macro"
 
-import weddings from "reducers/weddingdata";
+import weddingdata from "reducers/weddingdata";
 import { API_URL } from "utils/utils";
 
 import {
@@ -26,49 +26,52 @@ const WeddingForm = () => {
 	const [date, setDate] = useState("");
 	const [time, setTime] = useState("");
 	const [location, setLocation] = useState("");
+	const [guestpassword, setGuestpassword] = useState("");
 	const [comment, setComment] = useState("");
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-
-	const goToUniqueWeddingPage = () => {
-		navigate("/weddingform/guestpassword/:guestpassword")
-	}
+	const accessToken = useSelector((store) => store.user.accessToken)
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
 		const options = {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/json"
+				"Content-Type": "application/json",
+				"Authorization": accessToken
 			},
-			body: JSON.stringify({ firstperson: firstperson, secondperson: secondperson, email: email, date: date, time: time, location: location, comment: comment })
+			body: JSON.stringify({ firstperson: firstperson, secondperson: secondperson, email: email, date: date, time: time, location: location, guestpassword: guestpassword, comment: comment })
 		}
-		fetch(API_URL)
+		fetch(API_URL("weddingform"), options)
 			.then(response => response.json())
 			.then(data => {
 				if (data.success) {
+					console.log("Weddingform post", data.response)
 					batch(() => {
-						dispatch(weddings.actions.setFirstPerson(data.response.firstperson));
-						dispatch(weddings.actions.setSecondPerson(data.response.secondperson));
-						dispatch(weddings.actions.setEmail(data.response.email));
-						dispatch(weddings.actions.setDate(data.response.date));
-						dispatch(weddings.actions.setTime(data.response.time));
-						dispatch(weddings.actions.setLocation(data.response.location));
-						dispatch(weddings.actions.setComment(data.response.comment));
-						dispatch(weddings.actions.setError(null));
+						dispatch(weddingdata.actions.setFirstPerson(data.response.firstperson));
+						dispatch(weddingdata.actions.setSecondPerson(data.response.secondperson));
+						dispatch(weddingdata.actions.setEmail(data.response.email));
+						dispatch(weddingdata.actions.setDate(data.response.date));
+						dispatch(weddingdata.actions.setTime(data.response.time));
+						dispatch(weddingdata.actions.setLocation(data.response.location));
+						dispatch(weddingdata.actions.setGuestpassword(data.response.guestpassword));
+						dispatch(weddingdata.actions.setComment(data.response.comment));
+						dispatch(weddingdata.actions.setError(null));
+						navigate("/weddingform/guestpassword/:guestpassword")
 					});
 				} else {
 					batch(() => {
-						dispatch(weddings.actions.setFirstPerson(null));
-						dispatch(weddings.actions.setSecondPerson(null));
-						dispatch(weddings.actions.setEmail(null));
-						dispatch(weddings.actions.setDate(null));
-						dispatch(weddings.actions.setTime(null));
-						dispatch(weddings.actions.setLocation(null));
-						dispatch(weddings.actions.setComment(null));
-						dispatch(weddings.actions.setError(data.response));
-						Swal.fire(weddings.response)
+						dispatch(weddingdata.actions.setFirstPerson(null));
+						dispatch(weddingdata.actions.setSecondPerson(null));
+						dispatch(weddingdata.actions.setEmail(null));
+						dispatch(weddingdata.actions.setDate(null));
+						dispatch(weddingdata.actions.setTime(null));
+						dispatch(weddingdata.actions.setLocation(null));
+						dispatch(weddingdata.actions.setComment(null));
+						dispatch(weddingdata.actions.setGuestpassword(null));
+						dispatch(weddingdata.actions.setError(data.response));
+						Swal.fire(weddingdata.response)
 					});
 				}
 			})
@@ -97,8 +100,10 @@ const WeddingForm = () => {
 					<label>
 						<StyledFormInput type="text" placeholder="Location of wedding venue" value={location} onChange={e => setLocation(e.target.value)} required /></label>
 					<label>
+						<StyledFormInput type="text" placeholder="Guest password" value={guestpassword} onChange={e => setGuestpassword(e.target.value)} required /></label>
+					<label>
 						<StyledComment type="text" placeholder="Comments" value={comment} onChange={e => setComment(e.target.value)} /></label>
-					<StyledButton type="submit" onClick={() => goToUniqueWeddingPage()}>Send</StyledButton>
+					<StyledButton type="submit">Send</StyledButton>
 				</form>
 			</InnerWrapper>
 			<Footer subheading="Congratulations" heading="We're sure you'll have an amazing wedding day!" />

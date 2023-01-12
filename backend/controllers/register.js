@@ -1,12 +1,12 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
+import { User } from '../models/models.js';
 
-const { User } = require('../models/models.js');
+const salt = bcrypt.genSaltSync();
 
 export const registerCouple = async (req, res) => {
   const { username, password } = req.body;
 
   try {
-    const salt = bcrypt.genSaltSync();
     if (password.length >= 8) {
       const newUser = await new User({ username: username, password: bcrypt.hashSync(password, salt) }).save();
       res.status(201).json({
@@ -27,7 +27,7 @@ export const registerCouple = async (req, res) => {
   } catch (error) {
     res.status(400).json({
       success: false,
-      response: "problem"
+      response: error.stack
     });
   }
 };

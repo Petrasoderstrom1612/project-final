@@ -1,6 +1,5 @@
-import bcrypt from "bcrypt";
-
-const { User } = require("../models/models.js");
+import bcrypt from "bcryptjs";
+import { User } from '../models/models.js';
 
 export const loginUser = async (req, res) => {
   const { username, password } = req.body;
@@ -25,7 +24,7 @@ export const loginUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      response: error
+      response: error.stack
     });
   }
 };

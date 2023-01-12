@@ -1,19 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// TODO: Uppdatera!
+
 const weddingdata = createSlice({
   name: "weddingdata",
   initialState: {
-    items: [],
     firstperson: null,
     secondperson: null,
     email: null,
-    userId: null,
-    accessToken: null
+    date: null,
+    time: null,
+    location: null,
+    guestpassword: null,
+    comment: null,
+    accessToken: null,
+    error: null
   },
   reducers: {
-    setItems: (store, action) => {
-      store.items = action.payload;
-    },
     setError: (store, action) => {
       store.error = action.payload;
     },
@@ -26,11 +29,23 @@ const weddingdata = createSlice({
     setEmail: (store, action) => {
       store.email = action.payload;
     },
-    setUserId: (store, action) => {
-      store.userId = action.payload;
-    },
     setAccessToken: (store, action) => {
       store.accessToken = action.payload;
+    },
+    setLocation: (store, action) => {
+      store.location = action.payload;
+    },
+    setGuestpassword: (store, action) => {
+      store.guestpassword = action.payload;
+    },
+    setComment: (store, action) => {
+      store.comment = action.payload;
+    },
+    setDate: (store, action) => {
+      store.date = action.payload;
+    },
+    setTime: (store, action) => {
+      store.time = action.payload;
     }
   }
 });

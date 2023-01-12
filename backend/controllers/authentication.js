@@ -1,7 +1,8 @@
-const { User } = require('../models/models.js')
+import { User } from '../models/models.js';
 
 export const authenticateUser = async (req, res, next) => {
   const accessToken = req.header("Authorization");
+  console.log('dethär är accesstoken', accessToken)
   try {
     const user = await User.findOne({ accessToken: accessToken });
     if (user) {
@@ -14,7 +15,7 @@ export const authenticateUser = async (req, res, next) => {
     }
   } catch (error) {
     res.status(400).json({
-      response: error,
+      response: error.stack,
       success: false
     })
   };

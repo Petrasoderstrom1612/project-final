@@ -1,4 +1,5 @@
-const { Wedding } = require('../models/models.js')
+import { Wedding } from '../models/models.js';
+
 
 // TODO Vi måste validera mot rätt wedding-id på något sätt här....
 // ! Is this needed?
@@ -23,7 +24,7 @@ export const giveGuestAccess = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      response: error
+      response: error.stack
     });
   }
 };
