@@ -60,7 +60,7 @@ const WeddingForm = () => {
 						dispatch(weddingdata.actions.setGuestpassword(data.response.guestpassword));
 						dispatch(weddingdata.actions.setComment(data.response.comment));
 						dispatch(weddingdata.actions.setError(null));
-						navigate("/weddingform/guestpassword/:guestpassword")
+						navigate("/weddingform/:guestpassword")
 					});
 				} else {
 					batch(() => {

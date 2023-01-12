@@ -33,22 +33,23 @@ const SwiperIntro = () => {
             >
                 <SwiperSlide>
                     <SlideTextContainer>
-                        <StyledHeading>Who are we?</StyledHeading>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a mattis ligula. Ut ut ultrices massa. Quisque volutpat tristique euismod. Donec varius dui ac elit pulvinar commodo. Praesent volutpat ornare.</p>
+                        <StyledHeading>About us</StyledHeading>
+                        {/*                         <p>Blissful Beginnings creates personalized wedding landing pages for couples to share information with guests. Our platform includes couple details, venue information, and easy RSVP.</p>
+ */}                        <p>We specialize in creating beautiful and personalized wedding landing pages for couples. With Blissful Beginnings, you can rest assured that your guests will have all the information they need to make your special day even more memorable.</p>
                     </SlideTextContainer>
                     <img src={flowers} />
                 </SwiperSlide>
                 <SwiperSlide>
                     <SlideTextContainer>
-                        <StyledHeading>What we offer?</StyledHeading>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a mattis ligula. Ut ut ultrices massa. Quisque volutpat tristique euismod. Donec varius dui ac elit pulvinar commodo. Praesent volutpat ornare.</p>
+                        <StyledHeading>Offerings</StyledHeading>
+                        <p>Our easy-to-use platform allows couples to provide their guests with all the information they need in one convenient location, including details about the happy couple, the venue, and the possibility to RSVP.</p>
                     </SlideTextContainer>
                     <img src={cheers} />
                 </SwiperSlide>
                 <SwiperSlide>
                     <SlideTextContainer>
-                        <StyledHeading>How to sign up</StyledHeading>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a mattis ligula. Ut ut ultrices massa. Quisque volutpat tristique euismod. Donec varius dui ac elit pulvinar commodo. Praesent volutpat ornare.</p>
+                        <StyledHeading>Sign up</StyledHeading>
+                        <p>To sign up for our services, please scroll to the top of the page and locate the sign-up form. Once you have created your account, you will be directed to the wedding information form where you can input all the details of your wedding.</p>
                     </SlideTextContainer>
                     <img src={flowersandring} />
                 </SwiperSlide>

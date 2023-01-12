@@ -50,7 +50,7 @@ app.post('/login', loginUser);
 app.post('/weddingform', authenticateUser, createWedding); //Osäker på authenticateUser här....
 
 //GET THE WHOLE WEDDINGFORM API AS A COUPLE |DELETE?| for a specific wedding
-app.get("/weddingform/guestpassword/:guestpassword", authenticateUser, viewSpecificWedding); //login as authorized couple
+app.get("/weddingform/:guestpassword", authenticateUser, viewSpecificWedding); //login as authorized couple
 
 //UPDATE THE WEDDING FORM AS A COUPLE |NOT WORKING| //I get an empty array when I try to update and include all the fields, otherwise error
 app.patch('/weddingform/id/:id/adjust', updateWedding);
