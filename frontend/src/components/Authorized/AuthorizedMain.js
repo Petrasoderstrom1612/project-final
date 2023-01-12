@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import { useSelector } from "react-redux";
 
-import Counter from "components/Authorized/Counter";
+import Countdown from "components/Authorized/Countdown/Countdown";
 import { Footer } from "components/Reusable/Footer/Footer";
 import Header from "components/Authorized/HeaderNav/Header";
 import { InnerWrapper, OuterWrapper, StyledHeading, StyledSubHeading } from "styles/GlobalStyles";
@@ -20,7 +20,7 @@ const AuthorizedMain = () => {
                 <Headings subheading="Save the date" heading="Celebrate love with us" />
                 <StyledSubHeading>{weddingdata.date} {weddingdata.time}</StyledSubHeading>
                 <StyledHeading>{weddingdata.firstperson} & {weddingdata.secondperson} are getting married!</StyledHeading>
-                <Counter />
+                <Countdown />
                 <StyledImg src={cheers} />
             </InnerWrapper>
             <Footer subheading="Blissful beginnings" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />

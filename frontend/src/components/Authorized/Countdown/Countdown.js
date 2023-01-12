@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-import { StyledHeading, StyledSubHeading } from 'styles/GlobalStyles';
+import { StyledSubHeading } from 'styles/GlobalStyles';
 
-const Counter = () => {
+const Countdown = () => {
   const calculateTimeLeft = () => {
     const difference = +new Date("2023-01-15T16:00:00+01:00") /*wedding date*/ - +new Date();
     let timeLeft = {};
@@ -46,4 +46,4 @@ const Counter = () => {
   )
 }
 
-export default Counter
+export default Countdown

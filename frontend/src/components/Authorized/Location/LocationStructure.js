@@ -9,8 +9,6 @@ import { InnerWrapper, StyledSubHeading } from "styles/GlobalStyles"
 import MapLocation from "./MapLocation";
 import { Headings } from "components/Reusable/Headings/Headings";
 
-// TODO: Add icons
-
 const LocationStructure = () => {
 
   const weddingdata = useSelector((store) => store.weddingdata)

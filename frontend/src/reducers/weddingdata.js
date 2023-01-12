@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// TODO: Uppdatera!
-
 const weddingdata = createSlice({
   name: "weddingdata",
   initialState: {

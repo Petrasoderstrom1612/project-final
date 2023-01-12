@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import Main from 'components/UnauthorizedStartPage/Main';
+import UnauthorizedMain from 'components/UnauthorizedStartPage/UnauthorizedMain';
 import Login from 'components/UnauthorizedStartPage/RegLog/Login';
 import WeddingForm from 'components/Authorized/WeddingForm/WeddingForm';
 import NotFound from 'components/NotFound/NotFound';
@@ -30,7 +30,7 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Main />}></Route>
+          <Route path='/' element={<UnauthorizedMain />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/weddingform' element={<WeddingForm />}></Route>
           <Route path='/weddingform/guestpassword/:guestpassword/location' element={<Location />}></Route>
