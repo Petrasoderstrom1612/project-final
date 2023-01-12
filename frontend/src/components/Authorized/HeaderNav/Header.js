@@ -12,15 +12,15 @@ const Header = () => {
   return (
     <StyledHeader>
       <NavHamburger />
-      <Link to="/weddingform/guestpassword/:guestpassword"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
+      <Link to="/weddingform/:guestpassword"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
       <StyledNav>
-        <StyledLink to="/weddingform/guestpassword/:guestpassword">Home</StyledLink>
+        <StyledLink to="/weddingform/:guestpassword">Home</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/weddingform/guestpassword/:guestpassword/location">Location</StyledLink>
+        <StyledLink to="/weddingform/:guestpassword/location">Location</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/weddingform/guestpassword/:guestpassword/toastmasters">Toastmasters</StyledLink>
+        <StyledLink to="/weddingform/:guestpassword/toastmasters">Toastmasters</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/weddingform/guestpassword/:guestpassword/rsvp">RSVP</StyledLink>
+        <StyledLink to="/weddingform/:guestpassword/rsvp">RSVP</StyledLink>
       </StyledNav>
     </StyledHeader >
   )
