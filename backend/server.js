@@ -10,8 +10,6 @@ import { authenticateUser } from './controllers/authentication.js'
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/project-mongo"
 
-//`mongodb+srv://Paprika:${process.env.STRING_PW}@cluster0.6gvgrxz.mongodb.net/project-final?retryWrites=true&w=majority`;
-
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
 
@@ -49,14 +47,10 @@ app.post('/register', registerCouple);
 app.post('/login', loginUser);
 
 //POST THE WEDDINGFORM API AS A COUPLE
-
 app.post('/weddingform', authenticateUser, createWedding); //Osäker på authenticateUser här....
 
 //GET THE WHOLE WEDDINGFORM API AS A COUPLE |DELETE?| for a specific wedding
 app.get("/weddingform/guestpassword/:guestpassword", authenticateUser, viewSpecificWedding); //login as authorized couple
-
-//Get all weddings in the database
-// app.get("/weddingform/", viewAllWeddings, authenticateUser); //login as authorized couple
 
 //UPDATE THE WEDDING FORM AS A COUPLE |NOT WORKING| //I get an empty array when I try to update and include all the fields, otherwise error
 app.patch('/weddingform/id/:id/adjust', updateWedding);
