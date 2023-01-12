@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components/macro";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import { InnerWrapper, StyledSubHeading } from "styles/GlobalStyles"
 
@@ -19,9 +21,9 @@ const LocationStructure = () => {
       <Headings subheading="Magical moments" heading="We are in love with this place" />
       <StyledLocationContainer>
         <StyledLocationInfo>
-          <StyledSubHeading>{weddingdata.location}</StyledSubHeading>
-          <StyledSubHeading>{weddingdata.phonenumber}</StyledSubHeading>
-          <StyledSubHeading>{weddingdata.email}</StyledSubHeading>
+          <FontAwesomeIcon icon={faLocationDot} /><StyledSubHeading>{weddingdata.location}</StyledSubHeading>
+          <FontAwesomeIcon icon={faPhone} /><StyledSubHeading>{weddingdata.phonenumber}</StyledSubHeading>
+          <FontAwesomeIcon icon={faEnvelope} /><StyledSubHeading>{weddingdata.email}</StyledSubHeading>
         </StyledLocationInfo>
         <MapLocation />
       </StyledLocationContainer>

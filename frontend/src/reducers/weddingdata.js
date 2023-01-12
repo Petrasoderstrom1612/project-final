@@ -26,6 +26,9 @@ const weddingdata = createSlice({
     setEmail: (store, action) => {
       store.email = action.payload;
     },
+    setPhonenumber: (store, action) => {
+      store.phonenumber = action.payload;
+    },
     setDate: (store, action) => {
       store.date = action.payload;
     },

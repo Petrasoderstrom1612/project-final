@@ -5,6 +5,7 @@ export const createWedding = async (req, res) => {
     firstperson,
     secondperson,
     email,
+    phonenumber,
     guestpassword,
     date,
     time,
@@ -16,6 +17,7 @@ export const createWedding = async (req, res) => {
     firstperson,
     secondperson,
     email,
+    phonenumber,
     guestpassword,
     date,
     time,
@@ -23,7 +25,7 @@ export const createWedding = async (req, res) => {
     const singleWedding = await Wedding.findOne({ guestpassword: guestpassword }) // FirstOne - databasen : SecondOne - incomming
     if (singleWedding === null) {
       try {
-        const newWedding = await new Wedding({ firstperson, secondperson, email, guestpassword, date, time, location, comment }).save();  // ! do not forget destructuring from the WeddingSchema
+        const newWedding = await new Wedding({ firstperson, secondperson, email, phonenumber, guestpassword, date, time, location, comment }).save();  // ! do not forget destructuring from the WeddingSchema
         res.status(201).json({ success: true, response: newWedding });
       } catch (error) {
         res.status(400).json({ success: false, response: error.stack });
