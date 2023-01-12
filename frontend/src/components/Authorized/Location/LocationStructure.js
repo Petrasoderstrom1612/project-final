@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components/macro";
 
 import { InnerWrapper, StyledSubHeading } from "styles/GlobalStyles"
@@ -8,13 +9,19 @@ import { Headings } from "components/Reusable/Headings/Headings";
 
 // TODO: Add icons
 
+
+
 const LocationStructure = () => {
+
+  const weddingdata = useSelector((store) => store.weddingdata)
+  console.log("Data", weddingdata)
+
   return (
     <InnerWrapper>
       <Headings subheading="Magical moments" heading="We are in love with this place" />
       <StyledLocationContainer>
         <StyledLocationInfo>
-          <StyledSubHeading>Address via props</StyledSubHeading>
+          <StyledSubHeading>Address via props {weddingdata.firstperson}</StyledSubHeading>
           <StyledSubHeading>Phonenumber via props</StyledSubHeading>
           <StyledSubHeading>Email via props</StyledSubHeading>
         </StyledLocationInfo>

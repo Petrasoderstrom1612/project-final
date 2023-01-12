@@ -53,11 +53,11 @@ const WeddingSchema = new mongoose.Schema({
   date: {
     type: String,
     // TODO: validate: YYYY-MM-DD?,
-    required: true
+    /* required: true */
   },
   time: {
     type: String,
-    required: true
+    /*  required: true */
   },
   location: {
     type: String,

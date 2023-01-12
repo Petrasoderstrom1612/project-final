@@ -1,18 +1,12 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 import { loginUser } from './controllers/login.js';
 import { registerCouple } from './controllers/register.js';
 import { giveGuestAccess } from "./controllers/guestaccess.js";
-import { createWedding, updateWedding, viewAllWeddings, viewSpecificWedding } from "./controllers/wedding.js";
+import { createWedding, updateWedding, viewSpecificWedding } from "./controllers/wedding.js";
 import { viewRSVP, createRSVP } from "./controllers/rsvp.js";
-import { authenticateUser, /* authenticateGuest */ } from './controllers/authentication.js'
-
-
-dotenv.config();
-
-const { User, Wedding } = require('./models/models.js');
+import { authenticateUser } from './controllers/authentication.js'
 
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/project-mongo"
 
@@ -55,14 +49,11 @@ app.post('/register', registerCouple);
 app.post('/login', loginUser);
 
 //POST THE WEDDINGFORM API AS A COUPLE
-app.post('/weddingform', createWedding, authenticateUser); //Osäker på authenticateUser här....
 
-
-//POST THE WEDDINGFORM API AS A COUPLE
-app.post('/weddingform/', createWedding, authenticateUser); //????
+app.post('/weddingform', authenticateUser, createWedding); //Osäker på authenticateUser här....
 
 //GET THE WHOLE WEDDINGFORM API AS A COUPLE |DELETE?| for a specific wedding
-app.get("/weddingform/guestpassword/:guestpassword", viewSpecificWedding, authenticateUser); //login as authorized couple
+app.get("/weddingform/guestpassword/:guestpassword", authenticateUser, viewSpecificWedding); //login as authorized couple
 
 //Get all weddings in the database
 // app.get("/weddingform/", viewAllWeddings, authenticateUser); //login as authorized couple
@@ -83,16 +74,6 @@ app.post("/rsvpform", createRSVP);
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
-
-
-
-                                                        //QUESTIONS
-//Questions thursday 15/12: 👌
-//1. row 216 : How do we display the Wedding-form instead of the db response? answer: added through the frontend but must be mapped with schema objects
-//2. How to authenticate guest by only one secret word? [answered by daniel thursday 15/12 around 10:40 in recording]
-//3. How can the couple get an email when rsvpform is submitted?
-//4. How to validate date input in schema?
-
 
 
 
