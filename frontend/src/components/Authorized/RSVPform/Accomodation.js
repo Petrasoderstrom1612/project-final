@@ -1,6 +1,6 @@
+// ! Not in use
 import React from "react";
 import { StyledSubHeading, StyledRadioContainer, StyledRadioButton } from "styles/GlobalStyles";
-
 const Accommodation = ({ accomodation, setAccomodation }) => {
     return (
         <section>

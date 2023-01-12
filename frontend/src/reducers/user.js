@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const user = createSlice({
   name: "user",
   initialState: {
-    error: null,
     username: null,
+    error: null,
     userId: null,
     accessToken: null
   },

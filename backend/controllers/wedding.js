@@ -10,7 +10,7 @@ export const createWedding = async (req, res) => {
     time,
     location,
     comment
-  } = req.body; // ! do not forget destructuring from the WeddingSchema
+  } = req.body;
 
   if (
     firstperson,
@@ -32,10 +32,10 @@ export const createWedding = async (req, res) => {
     else if (singleWedding.guestpassword === guestpassword) { // FirstOne - databasen === SecondOne - incomming
       res.status(400).json({
         success: false,
-        response: 'Password allready exists, choose another password.'
+        response: 'Password already exists, choose another password.'
       })
     } else {
-      res.status(400).json({ success: false, response: 'Some parameters are missing' });
+      res.status(400).json({ success: false, response: 'Some required fields are missing' });
     }
   }
 }

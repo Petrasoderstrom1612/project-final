@@ -91,7 +91,7 @@ const GuestSchema = new mongoose.Schema({
 // * SCHEMA FOR RSVP FORM
 const RSVPSchema = new mongoose.Schema({
   attendance: {
-    type: Boolean,
+    type: String,
     default: true,
     required: true,
   },
@@ -113,7 +113,7 @@ const RSVPSchema = new mongoose.Schema({
     required: [true, "Email required"]
   },
   accommodation: {
-    type: Boolean
+    type: String
   },
   foodrestrictions: {
     type: String

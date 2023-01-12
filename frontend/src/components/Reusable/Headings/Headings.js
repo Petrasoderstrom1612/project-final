@@ -18,7 +18,6 @@ export const Headings = ({ subheading, heading }) => {
 const StyledHeadings = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: center;
 padding: 1.5em 0;
 `
 

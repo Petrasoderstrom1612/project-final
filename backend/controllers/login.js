@@ -18,7 +18,7 @@ export const loginUser = async (req, res) => {
     } else {
       res.status(400).json({
         success: false,
-        response: "Credentials didn't match"
+        response: "Your username or password was incorrect"
       });
     }
   } catch (error) {

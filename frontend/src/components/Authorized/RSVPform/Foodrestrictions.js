@@ -1,7 +1,9 @@
+// ! Not in use
+
 import React from "react";
 import { StyledFormSelect } from "styles/GlobalStyles"
 
-const FoodRestrictions = ({ setFoodrestrictions }) => {
+const FoodRestrictions = () => {
     return (
         <StyledFormSelect name="food-restrictions" id="food-restrictions" defaultValue='default' onChange={e => setFoodrestrictions(e.target.value)}>
             <option value="default">Food Restrictions</option>
