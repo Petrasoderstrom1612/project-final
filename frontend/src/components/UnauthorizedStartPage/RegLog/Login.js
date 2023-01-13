@@ -17,7 +17,7 @@ const Login = () => {
 
 	useEffect(() => {
 		if (accessToken) {
-			navigate("/weddingform");
+			navigate("/wedding");
 		}
 	}, [accessToken])
 

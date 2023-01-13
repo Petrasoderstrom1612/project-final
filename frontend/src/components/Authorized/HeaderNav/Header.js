@@ -12,15 +12,15 @@ const Header = () => {
   return (
     <StyledHeader>
       <NavHamburger />
-      <Link to="/weddingform/:guestpassword"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
+      <Link to="/wedding/:guestpassword"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
       <StyledNav>
-        <StyledLink to="/weddingform/:guestpassword">Home</StyledLink>
+        <StyledLink to="/wedding/:guestpassword">Home</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/weddingform/:guestpassword/location">Location</StyledLink>
+        <StyledLink to="/wedding/:guestpassword/location">Location</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        {/*  <StyledLink to="/weddingform/:guestpassword/toastmasters">Toastmasters</StyledLink>
+        {/*  <StyledLink to="/wedding/:guestpassword/toastmasters">Toastmasters</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan> */}
-        <StyledLink to="/weddingform/:guestpassword/rsvp">RSVP</StyledLink>
+        <StyledLink to="/wedding/:guestpassword/rsvp">RSVP</StyledLink>
       </StyledNav>
     </StyledHeader >
   )
@@ -34,10 +34,14 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
 width: 100vw;
-height: 70vh;
+min-height: 50vh;
 display: flex;
 align-items: center;
 flex-direction: column;
+
+@media (min-width: 1024px) {
+    min-height: 70vh;
+}
 `
 
 const StyledNav = styled.nav`

@@ -9,7 +9,7 @@ export const Footer = ({ subheading, heading, footerButton }) => {
         <StyledFooter>
             {subheading && <StyledSubHeading>{subheading}</StyledSubHeading>}
             {heading && <StyledHeading>{heading}</StyledHeading>}
-            {footerButton && <Link to="/weddingform/guestpassword/:guestpassword/rsvp"><StyledButton type="button">{footerButton}</StyledButton></Link>}
+            {footerButton && <Link to="/wedding/:guestpassword/rsvp"><StyledButton type="button">{footerButton}</StyledButton></Link>}
         </StyledFooter>
     )
 }
