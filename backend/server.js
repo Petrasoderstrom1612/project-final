@@ -49,10 +49,10 @@ app.post('/wedding', authenticateUser, createWedding);
 //GET THE WHOLE WEDDINGFORM API AS A COUPLE 
 app.get("/wedding/:guestpassword", authenticateUser, viewSpecificWedding);
 
-//GET THE ENTIRE API FOR RSVP FORM AS A GUEST |DELETE?|
+//GET THE ENTIRE API FOR RSVP FORM AS A GUEST |
 app.get("/rsvpform", viewRSVP);
 
-//POST ON THE RSVP FORM AS A GUEST (NEEDS to ADD AUTHENTICATION?)
+//POST ON THE RSVP FORM AS A GUEST
 app.post("/rsvpform", createRSVP);
 
 
