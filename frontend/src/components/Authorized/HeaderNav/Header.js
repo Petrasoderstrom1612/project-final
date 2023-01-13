@@ -36,6 +36,13 @@ min-height: 50vh;
 display: flex;
 align-items: center;
 flex-direction: column;
+<<<<<<< HEAD
+=======
+
+@media (min-width: 1024px) {
+    min-height: 60vh;
+}
+>>>>>>> cc8a6a8 (updated og-image, adjusted height of header and footer, changed project name from auth to final in package.json)
 `
 
 const StyledNav = styled.nav`
