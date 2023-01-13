@@ -29,11 +29,11 @@ app.get("/", (req, res) => {
       [{
         "/register": "a new couple registers here via POST method",
         "/login": "the couple logs in to access the wedding form via POST method",
-        "/weddingform": "the couple can GET the API information of the wedding form",
-        "/weddingform": "the couple can POST information on the wedding form",
-        "/weddingform/:id/adjust": "the couple can change info on the wedding form via PATCH",
-        "/weddingform/id/:id": "to GET the weddinginfo for specific wedding",
-        "/weddingform/": "to GET a list of all weddings in db",
+        "/wedding": "the couple can GET the API information of the wedding form",
+        "/wedding": "the couple can POST information on the wedding form",
+        "/wedding/:id/adjust": "the couple can change info on the wedding form via PATCH",
+        "/wedding/id/:id": "to GET the weddinginfo for specific wedding",
+        "/wedding/": "to GET a list of all weddings in db",
         "/rsvpform": "the guests GET the entire API for RSVP",
         "/rsvpform": "the guests POST their RSVP answer"
       }]
@@ -47,20 +47,20 @@ app.post('/register', registerCouple);
 app.post('/login', loginUser);
 
 //POST THE WEDDINGFORM API AS A COUPLE
-app.post('/weddingform', authenticateUser, createWedding); //Osäker på authenticateUser här....
+app.post('/wedding', authenticateUser, createWedding);
 
-//GET THE WHOLE WEDDINGFORM API AS A COUPLE |DELETE?| for a specific wedding
-app.get("/weddingform/:guestpassword", authenticateUser, viewSpecificWedding); //login as authorized couple
+//GET THE WHOLE WEDDINGFORM API AS A COUPLE | for a specific wedding
+app.get("/wedding/:guestpassword", authenticateUser, viewSpecificWedding);
 
-//UPDATE THE WEDDING FORM AS A COUPLE |NOT WORKING| //I get an empty array when I try to update and include all the fields, otherwise error
-app.patch('/weddingform/id/:id/adjust', updateWedding);
+//UPDATE THE WEDDING FORM AS A COUPLE |NOT WORKING|
+app.patch('/wedding/id/:id/adjust', updateWedding);
 
 app.post('/guestaccess', giveGuestAccess);
 
-//GET THE ENTIRE API FOR RSVP FORM AS A GUEST |DELETE?|
+//GET THE ENTIRE API FOR RSVP FORM AS A GUEST |
 app.get("/rsvpform", viewRSVP);
 
-//POST ON THE RSVP FORM AS A GUEST (NEEDS to ADD AUTHENTICATION?)
+//POST ON THE RSVP FORM AS A GUEST
 app.post("/rsvpform", createRSVP);
 
 
