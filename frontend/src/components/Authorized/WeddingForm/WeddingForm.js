@@ -44,7 +44,7 @@ const WeddingForm = () => {
 			},
 			body: JSON.stringify({ firstperson: firstperson, secondperson: secondperson, email: email, phonenumber: phonenumber, date: date, time: time, location: location, guestpassword: guestpassword, comment: comment })
 		}
-		fetch(API_URL("weddingform"), options)
+		fetch(API_URL("wedding"), options)
 			.then(response => response.json())
 			.then(data => {
 				if (data.success) {
