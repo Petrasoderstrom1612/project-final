@@ -46,7 +46,7 @@ const RSVP = () => {
             dispatch(rsvps.actions.setFoodrestrictions(data.response.foodrestrictions));
             dispatch(rsvps.actions.setGuestComment(data.response.guestcomment));
             dispatch(rsvps.actions.setError(null));
-            navigate("/weddingform/guestpassword/:guestpassword/confirmation")
+            navigate("/wedding/:guestpassword/confirmation")
           });
         } else {
           batch(() => {

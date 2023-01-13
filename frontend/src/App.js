@@ -32,12 +32,12 @@ export const App = () => {
         <Routes>
           <Route path='/' element={<UnauthorizedMain />}></Route>
           <Route path='/login' element={<Login />}></Route>
-          <Route path='/weddingform' element={<WeddingForm />}></Route>
-          <Route path='/weddingform/:guestpassword/location' element={<Location />}></Route>
-          <Route path='/weddingform/:guestpassword/toastmasters' element={<Toastmasters />}></Route>
-          <Route path='/weddingform/:guestpassword/rsvp' element={<RSVP />}></Route>
-          <Route path='/weddingform/:guestpassword' element={<AuthorizedMain />}></Route>
-          <Route path='/weddingform/:guestpassword/confirmation' element={<RsvpConfirmation />}></Route>
+          <Route path='/wedding' element={<WeddingForm />}></Route>
+          <Route path='/wedding/:guestpassword/location' element={<Location />}></Route>
+          <Route path='/wedding/:guestpassword/toastmasters' element={<Toastmasters />}></Route>
+          <Route path='/wedding/:guestpassword/rsvp' element={<RSVP />}></Route>
+          <Route path='/wedding/:guestpassword' element={<AuthorizedMain />}></Route>
+          <Route path='/wedding/:guestpassword/confirmation' element={<RsvpConfirmation />}></Route>
           <Route path='/404' element={<NotFound />}></Route>
           <Route path='*' element={<Navigate to="/404" />}></Route>
         </Routes>

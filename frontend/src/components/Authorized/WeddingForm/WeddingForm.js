@@ -48,7 +48,7 @@ const WeddingForm = () => {
 			.then(response => response.json())
 			.then(data => {
 				if (data.success) {
-					console.log("Weddingform post", data.response)
+					console.log("Wedding form post", data.response)
 					batch(() => {
 						dispatch(weddingdata.actions.setFirstPerson(data.response.firstperson));
 						dispatch(weddingdata.actions.setSecondPerson(data.response.secondperson));
@@ -60,7 +60,7 @@ const WeddingForm = () => {
 						dispatch(weddingdata.actions.setGuestpassword(data.response.guestpassword));
 						dispatch(weddingdata.actions.setComment(data.response.comment));
 						dispatch(weddingdata.actions.setError(null));
-						navigate("/weddingform/:guestpassword")
+						navigate("/wedding/:guestpassword")
 					});
 				} else {
 					batch(() => {
