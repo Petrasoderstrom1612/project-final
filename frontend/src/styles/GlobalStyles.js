@@ -10,7 +10,7 @@ justify-content: center;
 
 export const InnerWrapper = styled.section`
 width: 70vw;
-min-height: 50vh;
+min-height: 60vh;
 margin: 0;
 display: flex;
 flex-direction: column;

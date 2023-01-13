@@ -19,7 +19,7 @@ background: var(--color-beige);
 padding: 0 2em;
 margin: 1.5em 0 0 0;
 width: 100vw;
-min-height: 40vh;
+height: 40vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
