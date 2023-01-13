@@ -40,7 +40,7 @@ align-items: center;
 flex-direction: column;
 
 @media (min-width: 1024px) {
-    min-height: 70vh;
+    min-height: 60vh;
 }
 `
 

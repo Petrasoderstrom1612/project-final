@@ -26,10 +26,10 @@ justify-content: center;
 align-items: center;
 text-align: center;
 @media (min-width: 667px) and (max-width: 1024px) {
-    min-height: 25vh;
+    max-height: 25vh;
 }
 @media (min-width: 1024px) {
-    min-height: 25vh;
+    max-height: 20vh;
 }
 & a {
     text-decoration: none;
