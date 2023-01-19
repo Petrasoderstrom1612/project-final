@@ -39,9 +39,9 @@ display: flex;
 align-items: center;
 flex-direction: column;
 
-@media (min-width: 1024px) {
-    min-height: 70vh;
-}
+/* @media (min-width: 1024px) {
+    min-height: 50vh;
+} */
 `
 
 const StyledNav = styled.nav`
