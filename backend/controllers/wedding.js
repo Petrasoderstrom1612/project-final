@@ -69,7 +69,7 @@ export const viewSpecificWedding = async (req, res) => {
 };
 
 
-// * This does not work ATM... empty array
+/* // * This does not work ATM... empty array
 // ! Remember to remove
 export const updateWedding = async (req, res) => {
   const { id } = req.params;
@@ -81,3 +81,4 @@ export const updateWedding = async (req, res) => {
     res.status(400).json({ success: false, response: error.stack });
   }
 };
+ */
