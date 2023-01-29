@@ -6,10 +6,10 @@ import { StyledHeading, StyledSubHeading, StyledButton } from "styles/GlobalStyl
 
 export const Footer = ({ subheading, heading, footerButton }) => {
     return (
-        <StyledFooter>
+        <StyledFooter tabIndex="0">
             {subheading && <StyledSubHeading>{subheading}</StyledSubHeading>}
             {heading && <StyledHeading>{heading}</StyledHeading>}
-            {footerButton && <Link to="/wedding/:guestpassword/rsvp"><StyledButton type="button">{footerButton}</StyledButton></Link>}
+            {footerButton && <Link to="/wedding/:guestpassword/rsvp"><StyledButton type="button" tabIndex="0">{footerButton}</StyledButton></Link>}
         </StyledFooter>
     )
 }

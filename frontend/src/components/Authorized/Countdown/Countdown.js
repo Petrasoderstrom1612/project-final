@@ -30,7 +30,7 @@ const Countdown = () => {
   return (
     <>
       {timeLeft.days || timeLeft.hours || timeLeft.minutes || timeLeft.seconds ? (
-        <StyledSubHeading>
+        <StyledSubHeading tabIndex="0">
           <span>{timeLeft.days}d</span>
           <span> </span>
           <span>{timeLeft.hours}h</span>
@@ -40,7 +40,7 @@ const Countdown = () => {
           <span>{timeLeft.seconds}s</span>
         </StyledSubHeading>
       ) : (
-        <StyledSubHeading>The time has come! 💍</StyledSubHeading>
+        <StyledSubHeading tabIndex="0">The time has come! 💍</StyledSubHeading>
       )}
     </>
   )

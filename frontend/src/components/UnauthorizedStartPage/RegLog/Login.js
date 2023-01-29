@@ -54,32 +54,34 @@ const Login = () => {
 	}
 	return (
 		<RegLogContainer>
-			<RegLog>
+			<RegLog tabIndex="0">
 				<div>
-					<StyledRadioButton type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
-					<label htmlFor="register">Register</label>
+					<StyledRadioButton tabIndex="0" type="radio" id="register" checked={mode === "register"} onChange={() => setMode("register")} />
+					<label htmlFor="register" tabIndex="0">Register</label>
 				</div>
 				<div>
-					<StyledRadioButton type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
-					<label htmlFor="login">Log in</label>
+					<StyledRadioButton tabIndex="0" type="radio" id="login" checked={mode === "login"} onChange={() => setMode("login")} />
+					<label htmlFor="login" tabIndex="0">Log in</label>
 				</div>
 			</RegLog>
 			<form onSubmit={onFormSubmit} autoComplete="off">
 				<UserDetails>
-					<label htmlFor="username">Username</label>
+					<label htmlFor="username" tabIndex="0">Username</label>
 					<StyledInputField
+          tabIndex="0"
 						type="text"
 						id="username"
 						value={username}
 						onChange={e => setUsername(e.target.value)} />
-					<label htmlFor="password">Password</label>
+					<label htmlFor="password" tabIndex="0">Password</label>
 					<StyledInputField
+          tabIndex="0"
 						type="password"
 						id="password"
 						value={password}
 						onChange={e => setPassword(e.target.value)} />
 				</UserDetails>
-				<StyledButton type="submit">Submit</StyledButton>
+				<StyledButton type="submit" tabIndex="0">Submit</StyledButton>
 			</form>
 		</RegLogContainer>
 	);

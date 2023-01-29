@@ -8,7 +8,7 @@ import SwiperIntro from "components/UnauthorizedStartPage/Swiper/SwiperIntro";
 const PageIntro = () => {
     return (
         <InnerWrapper>
-            <Headings tabIndex="3" subheading="Beginning of true love" heading="Our concept" />
+            <Headings tabIndex="0" subheading="Beginning of true love" heading="Our concept" />
             <SwiperIntro />
         </InnerWrapper>
     )

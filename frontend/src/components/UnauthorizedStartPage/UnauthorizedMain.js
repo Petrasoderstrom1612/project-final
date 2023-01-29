@@ -10,14 +10,14 @@ import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";
 const Main = () => {
 	return (
 		<OuterWrapper>
-			<StyledHeader>
-				<StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
+			<StyledHeader tabIndex="0">
+				<StyledCatchPhrase tabIndex="0">Blissful Beginnings</StyledCatchPhrase>
 				<Login />
 			</StyledHeader >
 			<InnerWrapper>
-				<PageIntro />
+				<PageIntro tabIndex="0"/>
 			</InnerWrapper>
-			<Footer subheading="Congratulations" heading="We're sure you'll have an amazing wedding day!" />
+			<Footer tabIndex="0" subheading="Congratulations" heading="We're sure you'll have an amazing wedding day!" />
 		</OuterWrapper>
 	)
 }

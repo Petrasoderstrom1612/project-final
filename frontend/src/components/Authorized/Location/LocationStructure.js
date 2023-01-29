@@ -16,12 +16,12 @@ const LocationStructure = () => {
 
   return (
     <InnerWrapper>
-      <Headings subheading="Magical moments" heading="We are in love with this place" />
+      <Headings tabIndex="0" subheading="Magical moments" heading="We are in love with this place" />
       <StyledLocationContainer>
         <StyledLocationInfo>
-          <FontAwesomeIcon icon={faLocationDot} /><StyledSubHeading>{weddingdata.location}</StyledSubHeading>
-          <FontAwesomeIcon icon={faPhone} /><StyledSubHeading>{weddingdata.phonenumber}</StyledSubHeading>
-          <FontAwesomeIcon icon={faEnvelope} /><StyledSubHeading>{weddingdata.email}</StyledSubHeading>
+          <FontAwesomeIcon tabIndex="0" icon={faLocationDot} /><StyledSubHeading tabIndex="0">{weddingdata.location}</StyledSubHeading>
+          <FontAwesomeIcon tabIndex="0" icon={faPhone} /><StyledSubHeading tabIndex="0">{weddingdata.phonenumber}</StyledSubHeading>
+          <FontAwesomeIcon tabIndex="0" icon={faEnvelope} /><StyledSubHeading tabIndex="0">{weddingdata.email}</StyledSubHeading>
         </StyledLocationInfo>
         <MapLocation />
       </StyledLocationContainer>

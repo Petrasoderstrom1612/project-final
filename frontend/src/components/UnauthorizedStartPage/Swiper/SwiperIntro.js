@@ -19,6 +19,7 @@ const SwiperIntro = () => {
     return (
         <>
             <Swiper
+            tabIndex="0"
                 slidesPerView={"1"}
                 spaceBetween={20}
                 loop={true}
@@ -32,24 +33,24 @@ const SwiperIntro = () => {
             >
                 <SwiperSlide>
                     <SlideTextContainer>
-                        <StyledHeading>About us</StyledHeading>
-<p>We specialize in creating beautiful and personalized wedding landing pages for couples. With Blissful Beginnings, you can rest assured that your guests will have all the information they need to make your special day even more memorable.</p>
+                        <StyledHeading tabIndex="0">About us</StyledHeading>
+<p tabIndex="0">We specialize in creating beautiful and personalized wedding landing pages for couples. With Blissful Beginnings, you can rest assured that your guests will have all the information they need to make your special day even more memorable.</p>
                     </SlideTextContainer>
                     <img src={flowers} />
                 </SwiperSlide>
                 <SwiperSlide>
                     <SlideTextContainer>
-                        <StyledHeading>Offerings</StyledHeading>
-                        <p>Our easy-to-use platform allows couples to provide their guests with all the information they need in one convenient location, including details about the happy couple, the venue, and the possibility to RSVP.</p>
+                        <StyledHeading tabIndex="0">Offerings</StyledHeading>
+                        <p tabIndex="0">Our easy-to-use platform allows couples to provide their guests with all the information they need in one convenient location, including details about the happy couple, the venue, and the possibility to RSVP.</p>
                     </SlideTextContainer>
-                    <img src={cheers} />
+                    <img src={cheers} tabIndex="0" alt="cheers with champagne"/>
                 </SwiperSlide>
                 <SwiperSlide>
                     <SlideTextContainer>
-                        <StyledHeading>Sign up</StyledHeading>
-                        <p>To sign up for our services, please scroll to the top of the page and locate the sign-up form. Once you have created your account, you will be directed to the wedding information form where you can input all the details of your wedding.</p>
+                        <StyledHeading tabIndex="0">Sign up</StyledHeading>
+                        <p tabIndex="0">To sign up for our services, please scroll to the top of the page and locate the sign-up form. Once you have created your account, you will be directed to the wedding information form where you can input all the details of your wedding.</p>
                     </SlideTextContainer>
-                    <img src={flowersandring} />
+                    <img src={flowersandring} tabIndex="0" alt="flowers and ring"/>
                 </SwiperSlide>
             </Swiper>
         </>

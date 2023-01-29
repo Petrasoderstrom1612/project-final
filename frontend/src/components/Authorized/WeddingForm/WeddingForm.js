@@ -81,12 +81,12 @@ const WeddingForm = () => {
 	return (
 		<OuterWrapper>
 			<StyledHeader>
-				<StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase>
+				<StyledCatchPhrase tabIndex="0">Blissful Beginnings</StyledCatchPhrase>
 			</StyledHeader >
 			<InnerWrapper>
-				<Headings subheading="Wedding form" heading="Generate your dreamy website here" />
+				<Headings tabIndex="0" subheading="Wedding form" heading="Generate your dreamy website here" />
 				<form onSubmit={onFormSubmit}>
-					<StyledSubHeading>Information about your wedding</StyledSubHeading>
+					<StyledSubHeading tabIndex="0">Information about your wedding</StyledSubHeading>
 					<label>
 						<StyledFormInput id="Firstperson" type="text" placeholder="Name of spouse 1" value={firstperson} onChange={e => setFirstPerson(e.target.value)} required />
 					</label>

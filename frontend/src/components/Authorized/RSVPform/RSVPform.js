@@ -63,18 +63,18 @@ const RSVP = () => {
   }
   return (
     <OuterWrapper>
-      <Header />
+      <Header tabIndex="0"/>
       <InnerWrapper>
-        <Headings subheading="Magical moments" heading="Will you attend to our special day?" />
+        <Headings tabIndex="0" subheading="Magical moments" heading="Will you attend to our special day?" />
         <form onSubmit={onFormSubmit}>
           <StyledRadioContainer>
             <div>
               <StyledRadioButton type="radio" id="attendance" name="attendance" value={attendance} onChange={e => setAttendance(e.target.value)} />
-              <label>Yes, I will join you</label>
+              <label tabIndex="0">Yes, I will join you</label>
             </div>
             <div>
               <StyledRadioButton type="radio" id="attendance" name="attendance" value={attendance} onChange={e => setAttendance(e.target.value)} />
-              <label>No, I will not</label>
+              <label tabIndex="0">No, I will not</label>
             </div>
           </StyledRadioContainer>
           <label>
@@ -82,15 +82,15 @@ const RSVP = () => {
           </label>
           <label>
             <StyledFormInput id="email" type="email" placeholder="E-mail" value={guestemail} onChange={e => setGuestEmail(e.target.value)} required /></label>
-          <StyledSubHeading>Accommodation</StyledSubHeading>
+          <StyledSubHeading tabIndex="0">Accommodation</StyledSubHeading>
           <StyledRadioContainer>
             <div>
               <StyledRadioButton type="radio" id="accommodation-help" name="accommodation" value={accomodation} onChange={e => setAccomodation(e.target.value)} />
-              <label>I need accommodation</label>
+              <label tabIndex="0">I need accommodation</label>
             </div>
             <div>
               <StyledRadioButton type="radio" id="accommodation-done" name="accommodation" value={accomodation} onChange={e => setAccomodation(e.target.value)} />
-              <label>I have accommodation</label>
+              <label tabIndex="0">I have accommodation</label>
             </div>
           </StyledRadioContainer>
           <StyledFormSelect name="food-restrictions" id="food-restrictions" defaultValue='default' onChange={e => setFoodrestrictions(e.target.value)}>

@@ -9,9 +9,9 @@ import { OuterWrapper } from "styles/GlobalStyles";
 const Location = () => {
 	return (
 		<OuterWrapper>
-			<Header />
-			<LocationStructure />
-			<Footer subheading="Blissful beginnings" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
+			<Header tabIndex="0"/>
+			<LocationStructure tabIndex="0"/>
+			<Footer tabIndex="0" subheading="Blissful beginnings" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
 		</OuterWrapper>
 	)
 }

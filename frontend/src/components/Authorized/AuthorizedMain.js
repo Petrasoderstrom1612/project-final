@@ -18,13 +18,13 @@ const AuthorizedMain = () => {
         <OuterWrapper>
             <Header />
             <InnerWrapper>
-                <Headings tabIndex={0}  subheading="Save the date" heading="Celebrate love with us" />
-                <StyledSubHeading>{weddingdata.date} {weddingdata.time}</StyledSubHeading>
-                <StyledHeading>{weddingdata.firstperson} & {weddingdata.secondperson} are getting married!</StyledHeading>
+                <Headings  tabIndex="0"  subheading="Save the date" heading="Celebrate love with us" />
+                <StyledSubHeading  tabIndex="0">{weddingdata.date} {weddingdata.time}</StyledSubHeading>
+                <StyledHeading  tabIndex="0">{weddingdata.firstperson} & {weddingdata.secondperson} are getting married!</StyledHeading>
                 <Countdown/>
-                <StyledImg src={cheers} />
+                <StyledImg src={cheers}  tabIndex="0" alt="wedding cheers"/>
             </InnerWrapper>
-            <Footer subheading="Blissful beginnings" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
+            <Footer tabIndex="0" subheading="Blissful beginnings" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />
         </OuterWrapper >
     )
 };
