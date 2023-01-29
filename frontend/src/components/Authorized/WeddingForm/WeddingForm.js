@@ -73,7 +73,7 @@ const WeddingForm = () => {
 						dispatch(weddingdata.actions.setComment(null));
 						dispatch(weddingdata.actions.setGuestpassword(null));
 						dispatch(weddingdata.actions.setError(data.response));
-						Swal.fire(weddingdata.response)
+						Swal.fire('This password is already taken. Please select a unique one!')
 					});
 				}
 			})

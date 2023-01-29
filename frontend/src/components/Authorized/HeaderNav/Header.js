@@ -16,9 +16,9 @@ const Header = () => {
       <StyledNav>
         <StyledLink to="/wedding/:guestpassword">Home</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/wedding/:guestpassword/location">Location</StyledLink>
+        <StyledLink to="/wedding/location/:guestpassword">Location</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/wedding/:guestpassword/rsvp">RSVP</StyledLink>
+        <StyledLink to="/wedding/rsvp/:guestpassword">RSVP</StyledLink>
       </StyledNav>
     </StyledHeader >
   )

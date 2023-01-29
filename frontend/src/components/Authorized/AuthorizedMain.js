@@ -9,6 +9,7 @@ import { InnerWrapper, OuterWrapper, StyledHeading, StyledSubHeading } from "sty
 import { Headings } from "components/Reusable/Headings/Headings";
 import cheers from "assets/images/timeline_cheers.jpg";
 
+
 const AuthorizedMain = () => {
 
     const weddingdata = useSelector((store) => store.weddingdata)
@@ -17,10 +18,10 @@ const AuthorizedMain = () => {
         <OuterWrapper>
             <Header />
             <InnerWrapper>
-                <Headings subheading="Save the date" heading="Celebrate love with us" />
+                <Headings tabIndex={0}  subheading="Save the date" heading="Celebrate love with us" />
                 <StyledSubHeading>{weddingdata.date} {weddingdata.time}</StyledSubHeading>
                 <StyledHeading>{weddingdata.firstperson} & {weddingdata.secondperson} are getting married!</StyledHeading>
-                <Countdown />
+                <Countdown/>
                 <StyledImg src={cheers} />
             </InnerWrapper>
             <Footer subheading="Blissful beginnings" heading="Please, take a moment and respond to our invitation" footerButton="RSVP" />

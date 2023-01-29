@@ -7,7 +7,7 @@ import infinity from "assets/icons/icon_infinity.svg";
 export const Headings = ({ subheading, heading }) => {
 
     return (
-        <StyledHeadings>
+        <StyledHeadings tabIndex={0}>
             {subheading && <StyledSubHeading>{subheading}</StyledSubHeading>}
             {heading && <StyledHeading>{heading}</StyledHeading>}
             <StyledInfinityImg src={infinity} alt="Infinity shaped icon" />

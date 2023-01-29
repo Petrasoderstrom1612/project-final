@@ -8,7 +8,6 @@ import Login from 'components/UnauthorizedStartPage/RegLog/Login';
 import WeddingForm from 'components/Authorized/WeddingForm/WeddingForm';
 import NotFound from 'components/NotFound/NotFound';
 import RSVP from 'components/Authorized/RSVPform/RSVPform';
-import Toastmasters from 'components/Authorized/Toastmasters/Toastmasters';
 import Location from 'components/Authorized/Location/Location';
 import AuthorizedMain from 'components/Authorized/AuthorizedMain';
 import RsvpConfirmation from 'components/Authorized/RSVPform/RsvpConfirmation';
@@ -34,7 +33,6 @@ export const App = () => {
           <Route path='/login' element={<Login />}></Route>
           <Route path='/wedding' element={<WeddingForm />}></Route>
           <Route path='/wedding/location/:guestpassword' element={<Location />}></Route>
-          <Route path='/wedding/toastmasters/:guestpassword' element={<Toastmasters />}></Route>
           <Route path='/wedding/rsvp/:guestpassword' element={<RSVP />}></Route>
           <Route path='/wedding/:guestpassword' element={<AuthorizedMain />}></Route>
           <Route path='/wedding/confirmation/:guestpassword' element={<RsvpConfirmation />}></Route>

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, batch } from "react-redux";
 import Swal from "sweetalert2";
-
 import rsvps from "reducers/rsvps";
 import { API_URL } from "utils/utils";
 
@@ -57,7 +56,7 @@ const RSVP = () => {
             dispatch(rsvps.actions.setFoodrestrictions(null));
             dispatch(rsvps.actions.setGuestComment(null));
             dispatch(rsvps.actions.setError(data.response));
-            Swal.fire(rsvps.response)
+            Swal.fire('The e-mail is invalid, please register a correct e-mail!')
           });
         }
       })
