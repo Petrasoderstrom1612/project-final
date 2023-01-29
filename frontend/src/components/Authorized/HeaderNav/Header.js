@@ -18,8 +18,6 @@ const Header = () => {
         <StyledHeaderSpan> | </StyledHeaderSpan>
         <StyledLink to="/wedding/:guestpassword/location">Location</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        {/*  <StyledLink to="/wedding/:guestpassword/toastmasters">Toastmasters</StyledLink>
-        <StyledHeaderSpan> | </StyledHeaderSpan> */}
         <StyledLink to="/wedding/:guestpassword/rsvp">RSVP</StyledLink>
       </StyledNav>
     </StyledHeader >
@@ -38,10 +36,6 @@ min-height: 50vh;
 display: flex;
 align-items: center;
 flex-direction: column;
-
-/* @media (min-width: 1024px) {
-    min-height: 50vh;
-} */
 `
 
 const StyledNav = styled.nav`

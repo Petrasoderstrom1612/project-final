@@ -1,5 +1,4 @@
 import React from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { StyledHeading } from "styles/GlobalStyles";
 import styled from "styled-components/macro";
@@ -34,8 +33,7 @@ const SwiperIntro = () => {
                 <SwiperSlide>
                     <SlideTextContainer>
                         <StyledHeading>About us</StyledHeading>
-                        {/*                         <p>Blissful Beginnings creates personalized wedding landing pages for couples to share information with guests. Our platform includes couple details, venue information, and easy RSVP.</p>
- */}                        <p>We specialize in creating beautiful and personalized wedding landing pages for couples. With Blissful Beginnings, you can rest assured that your guests will have all the information they need to make your special day even more memorable.</p>
+<p>We specialize in creating beautiful and personalized wedding landing pages for couples. With Blissful Beginnings, you can rest assured that your guests will have all the information they need to make your special day even more memorable.</p>
                     </SlideTextContainer>
                     <img src={flowers} />
                 </SwiperSlide>

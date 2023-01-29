@@ -70,11 +70,11 @@ const RSVP = () => {
         <form onSubmit={onFormSubmit}>
           <StyledRadioContainer>
             <div>
-              <StyledRadioButton type="radio" id="attendance" name="attendance" onChange={e => setAttendance(e.target.value)} />
+              <StyledRadioButton type="radio" id="attendance" name="attendance" value={attendance} onChange={e => setAttendance(e.target.value)} />
               <label>Yes, I will join you</label>
             </div>
             <div>
-              <StyledRadioButton type="radio" id="attendance" name="attendance" onChange={e => setAttendance(e.target.value)} />
+              <StyledRadioButton type="radio" id="attendance" name="attendance" value={attendance} onChange={e => setAttendance(e.target.value)} />
               <label>No, I will not</label>
             </div>
           </StyledRadioContainer>

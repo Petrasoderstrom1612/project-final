@@ -33,11 +33,11 @@ export const App = () => {
           <Route path='/' element={<UnauthorizedMain />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/wedding' element={<WeddingForm />}></Route>
-          <Route path='/wedding/:guestpassword/location' element={<Location />}></Route>
-          <Route path='/wedding/:guestpassword/toastmasters' element={<Toastmasters />}></Route>
-          <Route path='/wedding/:guestpassword/rsvp' element={<RSVP />}></Route>
+          <Route path='/wedding/location/:guestpassword' element={<Location />}></Route>
+          <Route path='/wedding/toastmasters/:guestpassword' element={<Toastmasters />}></Route>
+          <Route path='/wedding/rsvp/:guestpassword' element={<RSVP />}></Route>
           <Route path='/wedding/:guestpassword' element={<AuthorizedMain />}></Route>
-          <Route path='/wedding/:guestpassword/confirmation' element={<RsvpConfirmation />}></Route>
+          <Route path='/wedding/confirmation/:guestpassword' element={<RsvpConfirmation />}></Route>
           <Route path='/404' element={<NotFound />}></Route>
           <Route path='*' element={<Navigate to="/404" />}></Route>
         </Routes>

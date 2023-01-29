@@ -16,12 +16,6 @@ export const SidebarData = [
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
-  /*   {
-      title: 'Toastmasters',
-      path: '/wedding/:guestpassword/toastmasters',
-      icon: <IoIcons.IoMdPeople />,
-      cName: 'nav-text'
-    }, */
   {
     title: 'RSVP',
     path: '/wedding/:guestpassword/rsvp',
