@@ -96,11 +96,11 @@ const WeddingForm = () => {
 					<label>
 						<StyledFormInput type="email" placeholder="E-mail address" value={email} onChange={e => setEmail(e.target.value)} required /></label>
 					<label>
-						<StyledFormInput type="text" placeholder="Phone number" value={phonenumber} onChange={e => setPhonenumber(e.target.value)} required /></label>
+						<StyledFormInput type="tel" placeholder="Phone number" value={phonenumber} onChange={e => setPhonenumber(e.target.value)} required /></label>
 					<label>
-						<StyledFormInput type="date" value={date} onChange={e => setDate(e.target.value)} required /></label>
+						<StyledFormInput type="date" placeholder="Date of wedding" value={date} onChange={e => setDate(e.target.value)} required /></label>
 					<label>
-						<StyledFormInput type="time" value={time} onChange={e => setTime(e.target.value)} required /></label>
+						<StyledFormInput type="time" placeholder="Time of wedding" value={time} onChange={e => setTime(e.target.value)} required /></label>
 					<label>
 						<StyledFormInput type="text" placeholder="Location of wedding venue" value={location} onChange={e => setLocation(e.target.value)} required /></label>
 					<label>

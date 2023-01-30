@@ -12,13 +12,13 @@ export const SidebarData = [
   },
   {
     title: 'Location',
-    path: '/wedding/:guestpassword/location',
+    path: '/wedding/location/:guestpassword',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text'
   },
   {
     title: 'RSVP',
-    path: '/wedding/:guestpassword/rsvp',
+    path: '/wedding/rsvp/:guestpassword',
     icon: <FaIcons.FaEnvelopeOpenText />,
     cName: 'nav-text'
   }

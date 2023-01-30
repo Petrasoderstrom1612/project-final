@@ -36,7 +36,6 @@ const RSVP = () => {
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          console.log("RSVPform post", data.response)
           batch(() => {
             dispatch(rsvps.actions.setAttendance(data.response.attendance));
             dispatch(rsvps.actions.setGuestName(data.response.guestname));
@@ -45,7 +44,7 @@ const RSVP = () => {
             dispatch(rsvps.actions.setFoodrestrictions(data.response.foodrestrictions));
             dispatch(rsvps.actions.setGuestComment(data.response.guestcomment));
             dispatch(rsvps.actions.setError(null));
-            navigate("/wedding/:guestpassword/confirmation")
+            navigate(`/wedding/confirmation/${guestpassword}`)
           });
         } else {
           batch(() => {
@@ -63,7 +62,7 @@ const RSVP = () => {
   }
   return (
     <OuterWrapper>
-      <Header tabIndex="0"/>
+      <Header tabIndex="0" />
       <InnerWrapper>
         <Headings tabIndex="0" subheading="Magical moments" heading="Will you attend to our special day?" />
         <form onSubmit={onFormSubmit}>
