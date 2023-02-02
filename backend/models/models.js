@@ -7,7 +7,8 @@ const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: [true, "Username required"],
-    unique: true
+    unique: true,
+    trim: true
   },
   password: {
     type: String,
@@ -48,7 +49,8 @@ const WeddingSchema = new mongoose.Schema({
       },
       message: "Please enter a valid email"
     },
-    required: [true, "Email required"]
+    required: [true, "Email required"],
+    trim: true
   },
   phonenumber: {
     type: String,
@@ -62,7 +64,8 @@ const WeddingSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    required: [true, "Location required"]
+    required: [true, "Location required"],
+    trim: true
   },
   comment: {
     type: String
@@ -92,8 +95,7 @@ const GuestSchema = new mongoose.Schema({
 // * SCHEMA FOR RSVP FORM
 const RSVPSchema = new mongoose.Schema({
   attendance: {
-    type: Boolean,
-    default: true,
+    type: String,
     required: [true, "Attendance required"]
   },
   guestname: {
@@ -114,8 +116,7 @@ const RSVPSchema = new mongoose.Schema({
     required: [true, "Email required"]
   },
   accommodation: {
-    type: Boolean,
-    default: true,
+    type: String,
     required: [true, "Accommodation required"]
   },
   foodrestrictions: {

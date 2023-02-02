@@ -4,7 +4,7 @@ import { StyledSubHeading } from 'styles/GlobalStyles';
 
 const Countdown = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2023-01-15T16:00:00+01:00") /*wedding date*/ - +new Date();
+    const difference = +new Date("2023-01-15T16:00:00+01:00") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

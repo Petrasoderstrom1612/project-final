@@ -68,14 +68,14 @@ const Login = () => {
 				<UserDetails>
 					<label htmlFor="username" tabIndex="0">Username</label>
 					<StyledInputField
-          tabIndex="0"
+						tabIndex="0"
 						type="text"
 						id="username"
 						value={username}
 						onChange={e => setUsername(e.target.value)} />
 					<label htmlFor="password" tabIndex="0">Password</label>
 					<StyledInputField
-          tabIndex="0"
+						tabIndex="0"
 						type="password"
 						id="password"
 						value={password}

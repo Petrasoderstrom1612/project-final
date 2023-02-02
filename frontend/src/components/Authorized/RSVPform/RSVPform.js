@@ -22,7 +22,6 @@ const RSVP = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
   const onFormSubmit = (e) => {
     e.preventDefault();
     const options = {
@@ -55,7 +54,7 @@ const RSVP = () => {
             dispatch(rsvps.actions.setFoodrestrictions(null));
             dispatch(rsvps.actions.setGuestComment(null));
             dispatch(rsvps.actions.setError(data.response));
-            Swal.fire('The e-mail is invalid, please register a correct e-mail!')
+            Swal.fire("Oh, there's an error! Please re-check your responses")
           });
         }
       })
@@ -84,11 +83,11 @@ const RSVP = () => {
           <StyledSubHeading tabIndex="0">Accommodation</StyledSubHeading>
           <StyledRadioContainer>
             <div>
-              <StyledRadioButton type="radio" id="accommodation" name="accommodation" value="YesAccommodation" onChange={e => setAccommodation(e.target.value)} />
+              <StyledRadioButton type="radio" id="YesAccommodation" name="accommodation" value="YesAccommodation" onChange={e => setAccommodation(e.target.value)} />
               <label tabIndex="0">I need accommodation</label>
             </div>
             <div>
-              <StyledRadioButton type="radio" id="accommodation" name="accommodation" value="NoAccommodation" onChange={e => setAccommodation(e.target.value)} />
+              <StyledRadioButton type="radio" id="NoAccommodation" name="accommodation" value="NoAccommodation" onChange={e => setAccommodation(e.target.value)} />
               <label tabIndex="0">I have accommodation</label>
             </div>
           </StyledRadioContainer>

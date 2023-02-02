@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { StyledHeading, StyledSubHeading, StyledButton } from "styles/GlobalStyles"
 
 
-export const Footer = ({ subheading, heading, footerButton }) => {
+export const Footer = ({ subheading, heading, footerButton, guestpassword }) => {
     return (
         <StyledFooter tabIndex="0">
             {subheading && <StyledSubHeading>{subheading}</StyledSubHeading>}
             {heading && <StyledHeading>{heading}</StyledHeading>}
-            {footerButton && <Link to="/wedding/rsvp/:guestpassword"><StyledButton type="button" tabIndex="0">{footerButton}</StyledButton></Link>}
+            {footerButton && <Link to={`/wedding/rsvp/${guestpassword}`}><StyledButton type="button" tabIndex="0">{footerButton}</StyledButton></Link>}
         </StyledFooter>
     )
 }

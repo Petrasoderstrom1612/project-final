@@ -45,15 +45,10 @@ app.post('/register', registerCouple);
 app.post('/login', loginUser);
 
 //POST THE WEDDINGFORM API AS A COUPLE
-app.post('/wedding', authenticateUser, createWedding); //Osäker på authenticateUser här....
+app.post('/wedding', authenticateUser, createWedding);
 
-//GET THE WHOLE WEDDINGFORM API AS A COUPLE |DELETE?| for a specific wedding
-app.get("/wedding/:guestpassword", authenticateUser, viewSpecificWedding); //login as authorized couple
-
-//UPDATE THE WEDDING FORM AS A COUPLE |NOT WORKING| //I get an empty array when I try to update and include all the fields, otherwise error
-app.patch('/wedding/id/:id/adjust', updateWedding);
-
-app.post('/guestaccess', giveGuestAccess);
+//GET THE WHOLE WEDDINGFORM API AS A COUPLE 
+app.get("/wedding/:guestpassword", authenticateUser, viewSpecificWedding);
 
 //GET THE ENTIRE API FOR RSVP FORM AS A GUEST |DELETE?|
 app.get("/rsvpform", viewRSVP);

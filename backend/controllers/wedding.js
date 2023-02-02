@@ -67,18 +67,3 @@ export const viewSpecificWedding = async (req, res) => {
     });
   }
 };
-
-
-/* // * This does not work ATM... empty array
-// ! Remember to remove
-export const updateWedding = async (req, res) => {
-  const { id } = req.params;
-  const opts = { runValidators: true };
-  try {
-    const adjustToUpdate = await Wedding.findByIdAndUpdate(id, { firstperson, secondperson, email, registrationdate, guestpassword }, opts);
-    res.status(200).json({ success: true, response: `this information: ${adjustToUpdate.id} has been updated` })
-  } catch (error) {
-    res.status(400).json({ success: false, response: error.stack });
-  }
-};
- */
