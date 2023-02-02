@@ -31,8 +31,6 @@ app.get("/", (req, res) => {
         "/login": "the couple logs in to access the wedding form via POST method",
         "/wedding": "the couple can GET the API information of the wedding form",
         "/wedding": "the couple can POST information on the wedding form",
-        "/wedding/:id/adjust": "the couple can change info on the wedding form via PATCH",
-        "/wedding/id/:id": "to GET the weddinginfo for specific wedding",
         "/wedding/": "to GET a list of all weddings in db",
         "/rsvpform": "the guests GET the entire API for RSVP",
         "/rsvpform": "the guests POST their RSVP answer"

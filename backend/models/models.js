@@ -56,7 +56,6 @@ const WeddingSchema = new mongoose.Schema({
   },
   date: {
     type: String,
-    // TODO: validate: YYYY-MM-DD?,
   },
   time: {
     type: String,
@@ -93,7 +92,7 @@ const GuestSchema = new mongoose.Schema({
 // * SCHEMA FOR RSVP FORM
 const RSVPSchema = new mongoose.Schema({
   attendance: {
-    type: String,
+    type: Boolean,
     default: true,
     required: [true, "Attendance required"]
   },
@@ -115,7 +114,9 @@ const RSVPSchema = new mongoose.Schema({
     required: [true, "Email required"]
   },
   accommodation: {
-    type: String
+    type: Boolean,
+    default: true,
+    required: [true, "Accommodation required"]
   },
   foodrestrictions: {
     type: String

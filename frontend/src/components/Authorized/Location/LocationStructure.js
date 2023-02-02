@@ -12,7 +12,6 @@ import { Headings } from "components/Reusable/Headings/Headings";
 const LocationStructure = () => {
 
   const weddingdata = useSelector((store) => store.weddingdata)
-  console.log("Data", weddingdata)
 
   return (
     <InnerWrapper>

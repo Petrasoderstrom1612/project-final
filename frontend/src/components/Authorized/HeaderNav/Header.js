@@ -8,17 +8,17 @@ import heroimg from "../../../assets/images/hero-img-rings.jpg";
 import NavHamburger from "./NavHamburger";
 
 
-const Header = () => {
+const Header = ({ guestpassword }) => {
   return (
     <StyledHeader>
       <NavHamburger />
-      <Link to="/wedding/:guestpassword"><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
+      <Link to={`/wedding/${guestpassword}`}><StyledCatchPhrase>Blissful Beginnings</StyledCatchPhrase></Link>
       <StyledNav>
-        <StyledLink to="/wedding/:guestpassword">Home</StyledLink>
+        <StyledLink to={`/wedding/${guestpassword}`}>Home</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/wedding/location/:guestpassword">Location</StyledLink>
+        <StyledLink to={`/wedding/location/${guestpassword}`}>Location</StyledLink>
         <StyledHeaderSpan> | </StyledHeaderSpan>
-        <StyledLink to="/wedding/rsvp/:guestpassword">RSVP</StyledLink>
+        <StyledLink to={`/wedding/rsvp/${guestpassword}`}>RSVP</StyledLink>
       </StyledNav>
     </StyledHeader >
   )

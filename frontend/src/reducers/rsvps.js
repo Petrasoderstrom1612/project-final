@@ -6,7 +6,7 @@ const rsvpdata = createSlice({
     attendance: null,
     guestname: null,
     guestemail: null,
-    accomodation: null,
+    accommodation: null,
     foodrestrictions: null,
     guestcomment: null,
     error: null,
@@ -21,8 +21,8 @@ const rsvpdata = createSlice({
     setGuestEmail: (store, action) => {
       store.guestemail = action.payload;
     },
-    setAccomodation: (store, action) => {
-      store.accomodation = action.payload
+    setAccommodation: (store, action) => {
+      store.accommodation = action.payload
     },
     setFoodrestrictions: (store, action) => {
       store.foodrestrictions = action.payload

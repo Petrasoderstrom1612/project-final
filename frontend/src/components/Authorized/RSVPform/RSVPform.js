@@ -15,7 +15,7 @@ const RSVP = () => {
   const [attendance, setAttendance] = useState("");
   const [guestname, setGuestName] = useState("");
   const [guestemail, setGuestEmail] = useState("");
-  const [accomodation, setAccomodation] = useState("");
+  const [accommodation, setAccommodation] = useState("");
   const [foodrestrictions, setFoodrestrictions] = useState("");
   const [guestcomment, setGuestComment] = useState("");
 
@@ -30,7 +30,7 @@ const RSVP = () => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ attendance: attendance, guestname: guestname, guestemail: guestemail, accomodation: accomodation, foodrestrictions: foodrestrictions, guestcomment: guestcomment })
+      body: JSON.stringify({ attendance: attendance, guestname: guestname, guestemail: guestemail, accommodation: accommodation, foodrestrictions: foodrestrictions, guestcomment: guestcomment })
     }
     fetch(API_URL("rsvpform"), options)
       .then(response => response.json())
@@ -40,18 +40,18 @@ const RSVP = () => {
             dispatch(rsvps.actions.setAttendance(data.response.attendance));
             dispatch(rsvps.actions.setGuestName(data.response.guestname));
             dispatch(rsvps.actions.setGuestEmail(data.response.guestemail));
-            dispatch(rsvps.actions.setAccomodation(data.response.accomodation));
+            dispatch(rsvps.actions.setAccommodation(data.response.accommodation));
             dispatch(rsvps.actions.setFoodrestrictions(data.response.foodrestrictions));
             dispatch(rsvps.actions.setGuestComment(data.response.guestcomment));
             dispatch(rsvps.actions.setError(null));
-            navigate(`/wedding/confirmation/${guestpassword}`)
+            navigate(`/wedding/confirmation/:guestpassword`);
           });
         } else {
           batch(() => {
             dispatch(rsvps.actions.setAttendance(null));
             dispatch(rsvps.actions.setGuestName(null));
             dispatch(rsvps.actions.setGuestEmail(null));
-            dispatch(rsvps.actions.setAccomodation(null));
+            dispatch(rsvps.actions.setAccommodation(null));
             dispatch(rsvps.actions.setFoodrestrictions(null));
             dispatch(rsvps.actions.setGuestComment(null));
             dispatch(rsvps.actions.setError(data.response));
@@ -68,11 +68,11 @@ const RSVP = () => {
         <form onSubmit={onFormSubmit}>
           <StyledRadioContainer>
             <div>
-              <StyledRadioButton type="radio" id="attendance" name="attendance" value={attendance} onChange={e => setAttendance(e.target.value)} />
+              <StyledRadioButton type="radio" id="attendance" name="attendance" value="YesAttend" onChange={e => setAttendance(e.target.value)} />
               <label tabIndex="0">Yes, I will join you</label>
             </div>
             <div>
-              <StyledRadioButton type="radio" id="attendance" name="attendance" value={attendance} onChange={e => setAttendance(e.target.value)} />
+              <StyledRadioButton type="radio" id="attendance" name="attendance" value="NotAttend" onChange={e => setAttendance(e.target.value)} />
               <label tabIndex="0">No, I will not</label>
             </div>
           </StyledRadioContainer>
@@ -84,11 +84,11 @@ const RSVP = () => {
           <StyledSubHeading tabIndex="0">Accommodation</StyledSubHeading>
           <StyledRadioContainer>
             <div>
-              <StyledRadioButton type="radio" id="accommodation-help" name="accommodation" value={accomodation} onChange={e => setAccomodation(e.target.value)} />
+              <StyledRadioButton type="radio" id="accommodation" name="accommodation" value="YesAccommodation" onChange={e => setAccommodation(e.target.value)} />
               <label tabIndex="0">I need accommodation</label>
             </div>
             <div>
-              <StyledRadioButton type="radio" id="accommodation-done" name="accommodation" value={accomodation} onChange={e => setAccomodation(e.target.value)} />
+              <StyledRadioButton type="radio" id="accommodation" name="accommodation" value="NoAccommodation" onChange={e => setAccommodation(e.target.value)} />
               <label tabIndex="0">I have accommodation</label>
             </div>
           </StyledRadioContainer>

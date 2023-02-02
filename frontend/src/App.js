@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import UnauthorizedMain from 'components/UnauthorizedStartPage/UnauthorizedMain';
-import Login from 'components/UnauthorizedStartPage/RegLog/Login';
 import WeddingForm from 'components/Authorized/WeddingForm/WeddingForm';
 import NotFound from 'components/NotFound/NotFound';
 import RSVP from 'components/Authorized/RSVPform/RSVPform';
@@ -29,15 +28,14 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<UnauthorizedMain />}></Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/wedding' element={<WeddingForm />}></Route>
-          <Route path='/wedding/location/:guestpassword' element={<Location />}></Route>
-          <Route path='/wedding/rsvp/:guestpassword' element={<RSVP />}></Route>
-          <Route path='/wedding/:guestpassword' element={<AuthorizedMain />}></Route>
-          <Route path='/wedding/confirmation/:guestpassword' element={<RsvpConfirmation />}></Route>
-          <Route path='/404' element={<NotFound />}></Route>
-          <Route path='*' element={<Navigate to="/404" />}></Route>
+          <Route path='/' element={<UnauthorizedMain />} />
+          <Route path='/wedding' element={<WeddingForm />} />
+          <Route path='/wedding/:guestpassword' element={<AuthorizedMain />} />
+          <Route path='/wedding/location/:guestpassword' element={<Location />} />
+          <Route path='/wedding/rsvp/:guestpassword' element={<RSVP />} />
+          <Route path='/wedding/confirmation/:guestpassword' element={<RsvpConfirmation />} />
+          <Route path='/404' element={<NotFound />} />
+          <Route path='*' element={<Navigate to="/404" />} />
         </Routes>
       </BrowserRouter>
     </Provider>
