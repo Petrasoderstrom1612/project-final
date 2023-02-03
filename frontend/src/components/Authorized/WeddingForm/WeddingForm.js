@@ -110,7 +110,7 @@ const WeddingForm = () => {
 					<StyledButton type="submit">Send</StyledButton>
 				</form>
 			</InnerWrapper>
-			<Footer subheading="Congratulations" heading="We're sure you'll have an amazing wedding day!" />
+			<Footer subheading="Congratulations" heading="We're sure you'll have an amazing wedding day!" guestpassword= {guestpassword} />
 		</OuterWrapper >
 	)
 }

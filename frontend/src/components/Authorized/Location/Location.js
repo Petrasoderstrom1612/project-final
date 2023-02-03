@@ -7,6 +7,7 @@ import Header from "components/Authorized/HeaderNav/Header";
 import { OuterWrapper } from "styles/GlobalStyles";
 
 const Location = () => {
+	
 	return (
 		<OuterWrapper>
 			<Header tabIndex="0"/>

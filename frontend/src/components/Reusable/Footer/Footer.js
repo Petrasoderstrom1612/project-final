@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { StyledHeading, StyledSubHeading, StyledButton } from "styles/GlobalStyles"
 
 
-export const Footer = ({ subheading, heading, footerButton, guestpassword }) => {
+export const Footer = ({ subheading, heading, footerButton }) => {
+    const { guestpassword } = useParams();
     return (
         <StyledFooter tabIndex="0">
             {subheading && <StyledSubHeading>{subheading}</StyledSubHeading>}

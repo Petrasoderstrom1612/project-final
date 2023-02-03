@@ -10,6 +10,7 @@ const rsvpdata = createSlice({
     foodrestrictions: null,
     guestcomment: null,
     error: null,
+    repeatgestpassword: null,
   },
   reducers: {
     setAttendance: (store, action) => {
@@ -32,6 +33,9 @@ const rsvpdata = createSlice({
     },
     setError: (store, action) => {
       store.error = action.payload;
+    },
+    setRepeatGuestPassword: (store, action) => {
+      store.repeatguestpassword = action.payload;
     },
   }
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Header from "components/Authorized/HeaderNav/Header";
 import { InnerWrapper, OuterWrapper } from "styles/GlobalStyles";
 import { Headings } from "components/Reusable/Headings/Headings";

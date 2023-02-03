@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, batch } from "react-redux";
 import Swal from "sweetalert2";
 import rsvps from "reducers/rsvps";
@@ -19,8 +19,14 @@ const RSVP = () => {
   const [foodrestrictions, setFoodrestrictions] = useState("");
   const [guestcomment, setGuestComment] = useState("");
 
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  //const repeatguestpassword = dispatch(weddingdata.actions.setGuestpassword(data.response.guestpassword));
+	//const repeatguestpassword = useSelector((store) => store.weddingdata.guestpassword);
+  //console.log(guestpassword);
+
+  const { guestpassword } = useParams();
 
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +49,8 @@ const RSVP = () => {
             dispatch(rsvps.actions.setFoodrestrictions(data.response.foodrestrictions));
             dispatch(rsvps.actions.setGuestComment(data.response.guestcomment));
             dispatch(rsvps.actions.setError(null));
-            navigate(`/wedding/confirmation/:guestpassword`);
+            navigate(`/wedding/confirmation/${guestpassword}`);
+
           });
         } else {
           batch(() => {
