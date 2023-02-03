@@ -10,7 +10,7 @@ const rsvpdata = createSlice({
     foodrestrictions: null,
     guestcomment: null,
     error: null,
-    repeatgestpassword: null,
+    repeatguestpassword: null,
   },
   reducers: {
     setAttendance: (store, action) => {

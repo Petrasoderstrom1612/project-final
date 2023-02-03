@@ -19,12 +19,8 @@ const RSVP = () => {
   const [foodrestrictions, setFoodrestrictions] = useState("");
   const [guestcomment, setGuestComment] = useState("");
 
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  //const repeatguestpassword = dispatch(weddingdata.actions.setGuestpassword(data.response.guestpassword));
-	//const repeatguestpassword = useSelector((store) => store.weddingdata.guestpassword);
-  //console.log(guestpassword);
 
   const { guestpassword } = useParams();
 
