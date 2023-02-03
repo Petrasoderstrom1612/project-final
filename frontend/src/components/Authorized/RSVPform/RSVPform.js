@@ -33,6 +33,7 @@ const RSVP = () => {
       },
       body: JSON.stringify({ attendance: attendance, guestname: guestname, guestemail: guestemail, accommodation: accommodation, foodrestrictions: foodrestrictions, guestcomment: guestcomment })
     }
+    dispatch(rsvps.actions.setLoading(true))
     fetch(API_URL("rsvpform"), options)
       .then(response => response.json())
       .then(data => {
@@ -45,6 +46,7 @@ const RSVP = () => {
             dispatch(rsvps.actions.setFoodrestrictions(data.response.foodrestrictions));
             dispatch(rsvps.actions.setGuestComment(data.response.guestcomment));
             dispatch(rsvps.actions.setError(null));
+            dispatch(rsvps.actions.setLoading(false));
             navigate(`/wedding/confirmation/${guestpassword}`);
 
           });

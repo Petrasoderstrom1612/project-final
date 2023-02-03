@@ -1,25 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useSelector } from "react";
 import ReactLoading from "react-loading";
 
 const Loading = () => {
 
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-        }, 2000);
-    }, [])
+    const isLoading = useSelector((store) => store.rsvps.isLoading)
+    /* 
+        useEffect(() => {
+            setLoading(true);
+            setTimeout(() => {
+                setLoading(false);
+            }, 2000);
+        }, []) */
 
     return (
         <div>
-            <ReactLoading
-                type="spinningBubbles"
-                color="#555"
-                height={100}
-                width={80}
-            />
+            {isLoading
+                &&
+                <ReactLoading
+                    type="spinningBubbles"
+                    color="#555"
+                    height={100}
+                    width={80}
+                />
+            }
         </div>
     );
 }
