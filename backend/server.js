@@ -3,8 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { loginUser } from './controllers/login.js';
 import { registerCouple } from './controllers/register.js';
-import { giveGuestAccess } from "./controllers/guestaccess.js";
-import { createWedding, updateWedding, viewSpecificWedding } from "./controllers/wedding.js";
+import { createWedding, viewSpecificWedding } from "./controllers/wedding.js";
 import { viewRSVP, createRSVP } from "./controllers/rsvp.js";
 import { authenticateUser } from './controllers/authentication.js'
 
